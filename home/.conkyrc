@@ -1,0 +1,144 @@
+########################################################################
+#
+# ~/.conkyrc
+# Konfigurationsdatei für Conky
+#
+########################################################################
+
+########################################################################
+# MPD - Music Player Daemon
+mpd_host 127.0.0.1
+mpd_port 6600
+
+########################################################################
+# Globale Optionen
+
+# Ausrichtung und Grösse
+alignment top_left
+gap_x 10
+gap_y 10
+maximum_width 320
+# minimum_size 1280 50
+
+# Allgemein
+update_interval 5.0
+#double_buffer no
+draw_outline no
+border_width 0
+default_bar_size 0 5
+
+# Fenster
+own_window no
+own_window_type override
+own_window_colour 000000
+own_window_transparent no
+own_window_hints undecorated below sticky skip_taskbar skip_pager
+
+# Spezifische Einstellungen
+cpu_avg_samples 2
+net_avg_samples 2
+no_buffers yes
+
+# Schrift
+use_spacer none
+use_xft yes
+xftfont Terminus:pixelsize=11
+draw_shades no
+uppercase no
+
+# Farben (1 = Text; 2 = Data; 3 = Überschrift)
+color1 AAAAAA
+color2 FFFFFF
+color3 999999
+
+# Vorlagen (1 = Simple; 3 = Filesystem; 5 = Überschrift)
+template1 ${color1}\1 ${color2}\2
+template2 ${color1}\1 ${color2}\2/\3 (\4%)
+template3 ${color1}\1: ${color2}${fs_used \1}/${fs_size \1} (${fs_used_perc \1}%) ${fs_bar \1}
+template5 ${color3}\1 ${hr 2}
+
+########################################################################
+# Output
+TEXT
+${template5 SYSTEM\ INFORMATION}
+${color1}Hostname: ${color2}$nodename \
+ | ${color1}Kernel: ${color2}$kernel
+${color1}Time: ${color2}${time %Y-%m-%d %H:%M} \
+ | ${color1}Uptime: ${color2}$uptime_short
+${color1}Battery: ${color2}$battery $battery_time ${battery_bar 5}
+
+${template5 CPU\ AND\ PROCESSES}
+${color1}Usage: ${color2}${cpu}% \
+ | ${color1}Freq: ${color2}$freq_g GHz \
+| ${color1}Load: ${color2}$loadavg
+${cpubar cpu0 5} ${color #cc0033}$color
+${cpugraph cpu0 20 000000 CFCFCF}
+${color1}Processes: ${color2}$processes \
+ | ${color1}Running: ${color2}$running_processes
+${color white}NAME              PID    CPU     MEM
+${color #FFFFFF}${top name 1}${top pid 1} ${top cpu 1}  ${top mem 1}
+${color #EFEFEF}${top name 2}${top pid 2} ${top cpu 2}  ${top mem 2}
+${color #DFDFDF}${top name 3}${top pid 3} ${top cpu 3}  ${top mem 3}
+${color #CFCFCF}${top name 4}${top pid 4} ${top cpu 4}  ${top mem 4}
+${color #BFBFBF}${top name 5}${top pid 5} ${top cpu 5}  ${top mem 5}
+
+${template5 MEMORY\ AND\ SWAP}
+${color1}RAM:  ${color2}$mem/$memmax ($memperc%) ${membar 5}
+${color1}SWAP: ${color2}$swap/$swapmax ($swapperc%) ${swapbar 5}
+
+${template5 FILESYSTEMS}
+${template3 /}
+${template3 /home}
+${template3 /var}
+${template3 /tmp}
+
+${template5 MUSIC\ PLAYER\ DAEMON}
+${color1}Volume Master: ${color2}${exec amixer get Master | awk '/%/{ gsub(/\[|\]/,""); print $4 }'} \
+ | ${color1}PCM: ${color2} ${exec amixer get PCM | awk '/%/{ gsub(/\[|\]/,""); print $5; exit }'} \
+ | ${color1}Speaker: ${color2} ${exec amixer get Speaker | awk '/%/{ gsub(/\[|\]/,""); print $5; exit }'}
+${if_mpd_playing}
+${template1 MPD: $mpd_status} \
+| $mpd_elapsed / $mpd_length ($mpd_percent%) $mpd_bar
+${template1 Song: $mpd_artist\ -\ $mpd_title\ ($mpd_album)}
+${template1 Volume: $mpd_vol%} \
+| ${template1 Repeat: $mpd_repeat} \
+| ${template1 Random: $mpd_random} \
+${else}
+${template1 MPD: Stopped}\
+${endif}
+
+${template5 NETWORK}
+${if_gw}\
+${template1 Network: Online}
+${template1 DGW: $gw_ip\ ($gw_iface)} \
+| ${template1 Nameserver: $nameserver}
+\
+${if_up usb0}
+${color1}Interface:${color2} usb0 \
+| ${color1}IP-Address:${color2} ${addr usb0}
+${color1}Speed:${color2} Down: ${downspeedf usb0} / Up: ${upspeedf usb0}
+${downspeedgraph usb0 20,150 000000 FFFFFF} ${alignr}${color #CFCFCF}\
+${upspeedgraph usb0 20,150 000000 CFCFCF}
+${endif}\
+\
+${if_up eth0}
+${color1}Interface:${color2} eth0 \
+| ${color1}IP-Address:${color2} ${addr eth0}
+${color1}Speed:${color2} Down: ${downspeedf eth0} / Up: ${upspeedf eth0}
+${downspeedgraph eth0 20,150 000000 FFFFFF} ${alignr}${color #CFCFCF}\
+${upspeedgraph eth0 20,150 000000 CFCFCF}
+${endif}\
+\
+${if_up wlan0}
+${template1 Interface: wlan0} \
+| ${color1}IP-Address:${color2} ${addr wlan0}
+${color1}ESSID:${color2} ${wireless_essid wlan0} \
+| ${color1}Quality:${color2} ${wireless_link_qual_perc wlan0}%
+${color1}Speed:${color2} Down: ${downspeedf wlan0} / Up: ${upspeedf wlan0}
+${downspeedgraph wlan0 20,150 000000 FFFFFF} ${alignr}${color #CFCFCF}\
+${upspeedgraph wlan0 20,150 000000 CFCFCF}
+${endif} \
+${else}\
+${template1 Network: Offline}
+${endif}\
+# EOF
