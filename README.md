@@ -3,6 +3,7 @@ Configs
 
 My personal configuration files.
 
-./home (dotfiles)
------------------
-* `.conkyrc`: conky (light-weight system monitor)
+./home
+------
+* `.conkyrc`: conky (Light-weight system monitor)
+* `.exrc`: vi (Classic Unix text editor)
