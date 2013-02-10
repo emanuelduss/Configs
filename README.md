@@ -7,3 +7,4 @@ My personal configuration files.
 ------
 * `.conkyrc`: conky (Light-weight system monitor)
 * `.exrc`: vi (Classic Unix text editor)
+* `.inputrc`: Readline Bibliothek (Usereingaben über Konsole einlesen)

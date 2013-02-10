@@ -1,0 +1,11 @@
+########################################################################
+#
+# ~/.inputrc
+# Konfigurationsdatei für die Readline-Bibliothek
+#
+########################################################################
+
+# VI-Mode in allen Tools, welche die Readline-Bibliothek benutzen
+set editing-mode vi
+
+# EOF
