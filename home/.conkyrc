@@ -72,7 +72,7 @@ ${color1}Usage: ${color2}${cpu}% \
  | ${color1}Freq: ${color2}$freq_g GHz \
 | ${color1}Load: ${color2}$loadavg
 ${cpubar cpu0 5} ${color #cc0033}$color
-${cpugraph cpu0 20 000000 CFCFCF}
+${cpugraph cpu0 20 FFFFFF CFCFCF}
 ${color1}Processes: ${color2}$processes \
  | ${color1}Running: ${color2}$running_processes
 ${color white}NAME              PID    CPU     MEM
