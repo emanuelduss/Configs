@@ -22,7 +22,7 @@ maximum_width 320
 
 # Allgemein
 update_interval 5.0
-#double_buffer no
+double_buffer yes
 draw_outline no
 border_width 0
 default_bar_size 0 5
