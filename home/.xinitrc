@@ -42,6 +42,7 @@ urxvt -e screen &
 eval `cat ~/.fehbg`;
 xcompmgr -c -r 20 &
 conky &
+keepassx &
 volwheel &
 pidgin &
 ) &
