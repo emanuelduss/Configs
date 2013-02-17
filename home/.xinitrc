@@ -42,7 +42,7 @@ urxvt -e tmux &
 eval `cat ~/.fehbg`;
 xcompmgr -c -r 20 &
 conky &
-keepassx &
+keepassx -min -lock &
 volwheel &
 pidgin &
 ) &
