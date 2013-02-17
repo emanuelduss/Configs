@@ -38,7 +38,7 @@ urxvt -fn "xft:Bitstream Vera Sans Mono:pixelsize=23" \
 # Programme starten
 xbindkeys &
 (sleep 1;
-urxvt -e screen &
+urxvt -e tmux &
 eval `cat ~/.fehbg`;
 xcompmgr -c -r 20 &
 conky &
