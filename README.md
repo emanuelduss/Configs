@@ -9,7 +9,7 @@ home
 * `.exrc`: vi (Classic Unix text editor)
 * `.inputrc`: Readline Bibliothek (Usereingaben über Konsole einlesen)
 * `.xinitrc`: Shell script which starts my windowmanager
-* `..screenrc`: screen (screen manager)
+* `.screenrc`: screen (screen manager)
 
 etc
 ---
