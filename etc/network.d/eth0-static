@@ -1,0 +1,16 @@
+########################################################################
+#
+# /etc/network.d/eth0-static-home
+# Netcfg Profil: eth0 statisch zu Hause
+#
+########################################################################
+
+CONNECTION='ethernet'
+DESCRIPTION='eth0 statisch zu Hause'
+INTERFACE='eth0'
+IP='static'
+ADDR='10.0.0.23'
+GATEWAY='10.0.0.1'
+DNS=('10.0.0.10')
+
+# EOF

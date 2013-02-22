@@ -1,0 +1,14 @@
+########################################################################
+#
+# /etc/network.d/usb0-android
+# Netcfg Profil: usb0 dhclient (Android Phone)
+#
+########################################################################
+
+CONNECTION='ethernet'
+DESCRIPTION='usb0 dhclient (Android Phone)
+INTERFACE='usb0'
+IP='dhcp'
+DHCLIENT='yes'
+
+# EOF

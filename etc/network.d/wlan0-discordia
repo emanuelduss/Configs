@@ -1,0 +1,17 @@
+########################################################################
+#
+# /etc/network.d/wlan0-discordia.conf
+# Netcfg Profil: wlan0 discordia dhclient
+#
+########################################################################
+
+CONNECTION='wireless'
+DESCRIPTION='wlan0 discordia'
+INTERFACE='wlan0'
+SECURITY='wpa'
+ESSID='discordia'
+KEY='passwort'
+IP='dhcp'
+DHCLIENT='yes'
+
+# EOF

@@ -1,0 +1,16 @@
+########################################################################
+#
+# /etc/network.d/wlan0-hsr_secure
+# Netcfg Profil: wlan0 HSR-Secure mit wpa_supplicant dhclient
+#
+########################################################################
+
+CONNECTION='wireless'
+DESCRIPTION='HSR-Secure mit wpa_supplicant dhclient'
+INTERFACE='wlan0'
+SECURITY='wpa-config'
+WPA_CONF='/etc/network.d/wlan0-hsr_secure.conf'
+IP='dhcp'
+DHCLIENT='yes'
+
+# EOF

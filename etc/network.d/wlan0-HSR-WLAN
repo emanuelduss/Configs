@@ -1,0 +1,15 @@
+########################################################################
+#
+# /etc/network.d/wlan0-hsr_wlan.conf
+# Netcfg Profil: wlan0 HSR-WLAN dhcpcd
+#
+########################################################################
+
+CONNECTION='wireless'
+DESCRIPTION='wlan0 HSR-WLAN dhcpcd'
+INTERFACE='wlan0'
+SECURITY='none'
+ESSID=HSR-WLAN
+IP='dhcp'
+
+#EOF

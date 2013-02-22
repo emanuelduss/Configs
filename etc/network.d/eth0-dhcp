@@ -1,0 +1,14 @@
+########################################################################
+#
+# /etc/network.d/eth0-dhcp
+# Netcfg Profil: eth0 dhclient
+#
+########################################################################
+
+CONNECTION='ethernet'
+DESCRIPTION='eth0 dhclient'
+INTERFACE='eth0'
+IP='dhcp'
+DHCLIENT='yes'
+
+# EOF

@@ -1,0 +1,16 @@
+########################################################################
+#
+# /etc/network.d/wlan0-sonnenbuehlstrasse.conf
+# Netcfg Profil: wlan0 sonnenbuehlstrasse dhcpcd
+#
+########################################################################
+
+CONNECTION='wireless'
+DESCRIPTION='wlan0 sonnenbuehlstrasse dhcpcd'
+INTERFACE='wlan0'
+SECURITY='wpa'
+ESSID=sonnenbuehlstrasse
+KEY='passwort'
+IP='dhcp'
+
+# EOF
