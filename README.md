@@ -9,3 +9,5 @@ My personal configuration files.
 * `.exrc`: vi (Classic Unix text editor)
 * `.inputrc`: Readline Bibliothek (Usereingaben über Konsole einlesen)
 * `.xinitrc`: Shell script which starts my windowmanager
+* `..screenrc`: screen (screen manager)
+
