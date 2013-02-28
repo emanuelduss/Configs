@@ -1,0 +1,18 @@
+#########################################################################
+#
+# disablebluetooth.service
+# systemd service: disable bluetooth at start
+#
+#########################################################################
+
+[Unit]
+Description=Disable Bluetooth
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/rfkill block bluetooth
+
+[Install]
+WantedBy=multi-user.target
+
+# EOF
