@@ -20,6 +20,7 @@ home (/home/username)
 ---------------------
 * `.conkyrc`: conky (Light-weight system monitor)
 * `.exrc`: vi (Classic Unix text editor)
+* `.gitconfig`: git (Version Control System)
 * `.inputrc`: Readline Bibliothek (Usereingaben über Konsole einlesen)
 * `.screenrc`: screen (screen manager)
 * `.tmux.conf`: tmux (screen manager)
