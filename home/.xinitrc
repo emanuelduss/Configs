@@ -35,6 +35,9 @@ eval `ssh-agent`
 urxvt -fn "xft:Bitstream Vera Sans Mono:pixelsize=23" \
   -bg red -fg black -geometry 80x4 -e sh -c "ssh-add"
 
+# GPG-Agent
+eval `gpg-agent --daemon`
+
 # Programme starten
 xbindkeys &
 (sleep 1;
