@@ -1,0 +1,13 @@
+!#######################################################################
+!#
+!# ~/.xmodmaprc
+!# Konfigurationsdatei für xmodmap
+!#
+!#######################################################################
+
+!# Caps Lock = Escape; Scroll Lock = Caps Lock
+remove Lock = Caps_Lock
+keysym Caps_Lock = Escape
+keysym Scroll_Lock = Caps_Lock
+
+!# EOF

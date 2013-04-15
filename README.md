@@ -25,6 +25,7 @@ home (/home/username)
 * `.screenrc`: screen (screen manager)
 * `.tmux.conf`: tmux (screen manager)
 * `.xinitrc`: Shell script which starts my windowmanager
+* `.xmodmaprc`: Konfigurationsdatei für xmodmap
 
 systemd (/lib/systemd)
 ----------------------

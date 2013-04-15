@@ -39,6 +39,7 @@ urxvt -fn "xft:Bitstream Vera Sans Mono:pixelsize=23" \
 eval `gpg-agent --daemon`
 
 # Programme starten
+xmodmap ~/.xmodmaprc
 xbindkeys &
 (sleep 1;
 urxvt -e tmux &
