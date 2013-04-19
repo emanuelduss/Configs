@@ -6,7 +6,7 @@
 ########################################################################
 
 CONNECTION='ethernet'
-DESCRIPTION='usb0 dhclient (Android Phone)
+DESCRIPTION='usb0 dhclient (Android Phone)'
 INTERFACE='usb0'
 IP='dhcp'
 DHCLIENT='yes'
