@@ -10,7 +10,7 @@ Description=Disable Bluetooth
 
 [Service]
 Type=oneshot
-ExecStart=/usr/sbin/rfkill block bluetooth
+ExecStart=/usr/bin/rfkill block bluetooth
 
 [Install]
 WantedBy=multi-user.target
