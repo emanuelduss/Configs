@@ -28,6 +28,8 @@ home (/home/username)
 * `.xinitrc`: Shell script which starts my windowmanager
 * `.xmodmaprc`: Konfigurationsdatei für xmodmap
 
+* `.config/tint2/tint2rc`: Konfiguration für tint2 (Panel)
+
 systemd (/lib/systemd)
 ----------------------
 * `services/disablebluetooth.service`: systemd Service: Disable Bluetoot at start
