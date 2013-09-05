@@ -19,12 +19,14 @@ etc (/etc)
 
 home (/home/username)
 ---------------------
+* `.bashrc`: Konfigurationsdatei für die Bash
 * `.conkyrc`: conky (Light-weight system monitor)
 * `.exrc`: vi (Classic Unix text editor)
 * `.gitconfig`: git (Version Control System)
 * `.inputrc`: Readline Bibliothek (Usereingaben über Konsole einlesen)
 * `.screenrc`: screen (screen manager)
 * `.tmux.conf`: tmux (screen manager)
+* `.vimrc`: Konfigurationsdatei für vim Texteditor
 * `.xinitrc`: Shell script which starts my windowmanager
 * `.xmodmaprc`: Konfigurationsdatei für xmodmap
 
