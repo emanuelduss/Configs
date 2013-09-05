@@ -27,7 +27,9 @@ home (/home/username)
 * `.screenrc`: screen (screen manager)
 * `.tmux.conf`: tmux (screen manager)
 * `.vimrc`: Konfigurationsdatei für vim Texteditor
+* `.Xdefaults`: Konfigurationsdatei fuer X-Anwendungen
 * `.xinitrc`: Shell script which starts my windowmanager
+* `.xbindkeysrc`: Konfigurationsdatei für xbindkeys
 * `.xmodmaprc`: Konfigurationsdatei für xmodmap
 
 * `.config/tint2/tint2rc`: Konfiguration für tint2 (Panel)
