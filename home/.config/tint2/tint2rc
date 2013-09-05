@@ -29,7 +29,7 @@ border_color = #000000 100
 # Panel
 panel_monitor = all
 panel_position = bottom center horizontal
-panel_size = 100% 23
+panel_size = 100% 25
 panel_margin = 0 0
 panel_padding = 0 0 0
 panel_dock = 0
@@ -110,17 +110,17 @@ battery_low_cmd = notify-send "battery low"
 battery_hide = 95
 bat1_font = Terminus 9
 bat2_font = Terminus 9
-battery_font_color = #FFFFFF 73
+battery_font_color = #FFFFFF
 battery_padding = 3
 battery_background_id = 0
 
 ########################################################################
 # Clock
 time1_format = %H:%M
-time1_font = Terminus 9
+time1_font = Terminus 8
 time2_format = %Y-%m-%d
-time2_font = Terminus 9
-clock_font_color = #FFFFFF 73
+time2_font = Terminus 8
+clock_font_color = #FFFFFF
 clock_padding = 6 2
 clock_background_id = 0
 clock_rclick_command = zenity  --calendar --text="Datum zum kopieren auswählen." --date-format %Y-%m-%d | xclip
