@@ -1,0 +1,68 @@
+########################################################################
+#
+# ~/.xbindkeysrc
+# Konfigurationsdatei für xbindkeysrc
+#
+########################################################################
+
+# "notify-send --urgency=critical "`acpi`""
+#    XF86WakeUp
+
+"i3lock -u --dpms -c 333333 --pointer default"
+    XF86ScreenSaver
+
+# "date "+i3lock: Lock: %Y-%m-%d %H:%M" >> $HOME/.i3/i3lock.log && \
+# i3lock --dpms -c 333333 --pointer default >> $HOME/.i3/i3lock.log 2>&1 && \
+# sudo pm-suspend && date "+i3lock: Unlock: %Y-%m-%d %H:%M" >> $HOME/.i3/i3lock.log"
+# "i3lock --dpms -c 333333 --pointer default >> $HOME/.i3/i3lock.log 2>&1 && sudo pm-suspend"
+
+"propersuspend"
+    XF86Sleep
+
+########################################################################
+# Alsamixer
+
+"screenshot"
+    Print
+
+"dmenu_run -p $ -l 10 -i -nb gray16 -nf white -sb gray16 -sb black"
+    Mod4 + r
+
+########################################################################
+# Desktop
+"ario"
+    Mod4 + a
+
+"thunar"
+    Mod4 + e
+
+"urxvt"
+    Mod4 + t
+
+"urxvt -fg gray -bg black -e ncmpcpp"
+    Mod4 + u
+
+########################################################################
+# Multimedia (Audio und MPD)
+"amixer set Master playback 5+"
+    XF86AudioRaiseVolume
+
+"amixer set Master playback 5-"
+    XF86AudioLowerVolume
+
+"amixer set Master toggle"
+    XF86AudioMute
+
+"mpc next"
+    XF86AudioNext
+
+"mpc prev"
+    XF86AudioPrev
+
+"mpc toggle"
+    XF86AudioPlay
+
+"mpc stop"
+    XF86AudioStop
+
+# EOF

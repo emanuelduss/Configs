@@ -1,0 +1,107 @@
+!#######################################################################
+!#
+!# .Xdefaults
+!# Konfigurationsdatei fuer X-Anwendungen
+!#
+!#######################################################################
+
+!#######################################################################
+!# Urxvt-Terminal
+
+!# Fenster
+URxvt.geometry:         100x30
+URxvt.saveLines:        65535
+URxvt.scrollBar:        false
+!URxvt.iconFile:         /usr/share/icons/gnome/scalable/apps/utilities-terminal-symbolic.svg
+
+!# Farben
+URxvt.background:       #101010
+!URxvt.background:       #2A211C
+!URxvt.background:       #002b36
+!URxvt.foreground:       #fdf6e3
+URxvt.foreground:       #EFEFEF
+URxvt.Fading: 50
+
+!# Cursor
+URxvt.pointerColor:     green
+URxvt.cursorColor:      green
+URxvt.cursorBlink:      true
+
+!# URLs im Browser öffnen
+URxvt.perl-ext-common:  default,matcher
+URxvt.matcher.button:   1
+URxvt.urlLauncher:      firefox
+
+!# Schriftart
+URxvt.font:             xft:Terminus:size=9
+!URxvt.font:             9x15
+!URxvt.font:             7x14
+
+!# Shortcuts
+URxvt.keysym.M-C-1: command:\033]710;xft:Terminus:size=9\007\033]711;xft:Terminus:size=9\007
+URxvt.keysym.M-C-2: command:\033]710;xft:Terminus:size=10\007\033]711;xft:Terminus:size=10\007
+URxvt.keysym.M-C-3: command:\033]710;xft:Terminus:size=18\007\033]711;xft:Terminus:size=18\007
+
+!# Transparenz
+URxvt*inheritPixmap:    true
+URxvt*tintColor:        white
+URxvt*shading:          50
+
+!# Farben
+!# Black
+URxvt*color0:  #000000
+URxvt*color8:  #555753
+!# Red
+URxvt*color1:  #ff6565
+URxvt*color9:  #cf0000
+!# Green
+URxvt*color2:  #93d44f
+URxvt*color10: #00cf00
+!# Yellow
+URxvt*color3:  #eab93d
+URxvt*color11: #ffc123
+!# Blue
+URxvt*color4:  #204a87
+URxvt*color12: #3465a4
+!# Mangenta
+URxvt*color5:  #ce5c00
+URxvt*color13: #f57900
+!# Cyan
+URxvt*color6:  #89b6e2
+URxvt*color14: #46a4ff
+!# White
+URxvt*color7:  #cccccc
+URxvt*color15: #ffffff
+
+!########################################################################
+!# xterm
+
+!# Fenster
+term*geometry:            80x25
+xterm*saveLines:          1024
+xterm*utf8:               2
+xterm*scrollTtyKeypress:  true
+xterm*scrollTtyOutput:    false
+xterm*scrollBar:          false
+xterm*jumpScroll:         true
+xterm*multiScroll:        true
+xterm*toolBar:            false
+xterm*dynamicColors:      true
+xterm*eightBitInput:      true
+
+!# Farben
+XTerm*background:         gray16
+XTerm*foreground:         orange
+
+!# Schriftart
+xterm*faceName:           xft:Terminus:pixelsize=12
+
+!#######################################################################
+!# Xpdf - PDF Viewer
+xpdf*enableFreetype:  yes
+xpdf*antialias:       yes
+xpdf*foreground:      black
+xpdf*background:      white
+xpdf*urlCommand:      /usr/bin/firefox %s
+
+!# EOF
