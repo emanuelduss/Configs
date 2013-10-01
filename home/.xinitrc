@@ -46,9 +46,11 @@ urxvt -e tmux &
 eval `cat ~/.fehbg`;
 xcompmgr -c -r 20 &
 conky &
+conky -c ~/.conkyrc_stundenplan &
 keepassx -min -lock &
 volwheel &
 pidgin &
+redshift -l 47.22:8.33 -b 1.0
 ) &
 
 # Windowmanager starten
