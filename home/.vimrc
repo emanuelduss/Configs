@@ -23,7 +23,7 @@ if isdirectory(BACKUPDIR)
   set backup
   set backupdir=~/.vimbackup
 else
-  set backup
+  set nobackup
 endif
 
 "hi statement ctermfg=darkblue guifg=darkblue
