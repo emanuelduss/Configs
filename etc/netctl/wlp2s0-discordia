@@ -1,0 +1,7 @@
+Description='WLAN discordia'
+Interface=wlp2s0
+Connection=wireless
+Security=wpa
+ESSID=discordia
+IP=dhcp
+KEY='passwort'

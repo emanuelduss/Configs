@@ -1,0 +1,8 @@
+Description='LAN DHCP'
+Interface=enp0s25
+Connection=ethernet
+IP=dhcp
+## for DHCPv6
+#IP6=dhcp
+## for IPv6 autoconfiguration
+#IP6=stateless
