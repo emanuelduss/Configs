@@ -5,6 +5,7 @@ My personal configuration files.
 
 etc (/etc)
 ----------
+* `locale.conf`: Local-Specifit Settings
 * `modprobe.d/eris.conf`: Modprobe Config for host `eris`
 * `netctl/enp0s25-dhcp`: Netctl Profile: Ethernet dhcp
 * `netctl/wlp2s0-discordia`: Netctl Profile: WLAN WPA2
