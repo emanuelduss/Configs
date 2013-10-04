@@ -17,6 +17,7 @@ etc (/etc)
 * `network.d/wlan0-HSR-WLAN`: Netcfg Profil: wlan0 HSR-WLAN dhcpcd
 * `network.d/wlan0-sonnenbuehlstrasse`: Netcfg Profil: wlan0 sonnenbuehlstrasse dhcpcd
 * `resolv.conf`: Zu verwendende DNS-Server
+* `slim.conf`: Slim Login Manager
 * `systemd/logind.conf`: Systemd `logind.conf`
 * `vpnc/hsr_remote.conf`: vpnc Konfigurationsdatei für die HSR
 * `X11/xorg.conf.d/10-keymap.conf`: X11-Konfigurationsdatei für schweizer Tastaturlayout
