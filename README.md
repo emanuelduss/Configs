@@ -21,6 +21,7 @@ etc (/etc)
 
 home (/home/username)
 ---------------------
+* `.bash_profile`: Bash-Profile
 * `.bashrc`: Konfigurationsdatei für die Bash
 * `.conkyrc`: conky (Light-weight system monitor)
 * `.exrc`: vi (Classic Unix text editor)
