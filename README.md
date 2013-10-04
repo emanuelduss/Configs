@@ -20,6 +20,7 @@ etc (/etc)
 * `resolv.conf`: Zu verwendende DNS-Server
 * `slim.conf`: Slim Login Manager
 * `systemd/logind.conf`: Systemd `logind.conf`
+* `vconsole.conf`: Virtual Console Configuration
 * `vpnc/hsr_remote.conf`: vpnc Konfigurationsdatei für die HSR
 * `X11/xorg.conf.d/10-keymap.conf`: X11-Konfigurationsdatei für schweizer Tastaturlayout
 * `X11/xorg.conf.d/20-trackpoint.conf`: X11-Konfigurationsdatei für ThinkPad Trackpoint
