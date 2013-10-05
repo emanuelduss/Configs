@@ -29,7 +29,6 @@ endif
 "hi statement ctermfg=darkblue guifg=darkblue
 "hi identifier ctermfg=black guifg=black
 "colorscheme desert
-colorscheme desert
 set background=light
 
 
@@ -118,5 +117,7 @@ autocmd BufNewFile,BufRead *.tex set textwidth=72
 autocmd BufNewFile,BufRead *.java map <F5> :w! <CR>:!javac %; java `basename % .java`<CR>
 autocmd BufNewFile,BufRead *.c map <F5> :w! <CR>:!clear; gcc -o `basename % .c` % && ./`basename % .c` <CR>
 autocmd BufNewFile,BufRead *.md map <F5> :w! <CR>:!markdown % > `basename % .md`.html<CR>
+
+colorscheme delek
 
 " EOF
