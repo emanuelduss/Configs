@@ -15,7 +15,8 @@ URxvt.scrollBar:        false
 !URxvt.iconFile:         /usr/share/icons/gnome/scalable/apps/utilities-terminal-symbolic.svg
 
 !# Farben
-URxvt.background:       #101010
+URxvt.background:       #000000
+!URxvt.background:       #101010
 !URxvt.background:       #2A211C
 !URxvt.background:       #002b36
 !URxvt.foreground:       #fdf6e3
@@ -43,9 +44,9 @@ URxvt.keysym.M-C-2: command:\033]710;xft:Terminus:size=10\007\033]711;xft:Termin
 URxvt.keysym.M-C-3: command:\033]710;xft:Terminus:size=18\007\033]711;xft:Terminus:size=18\007
 
 !# Transparenz
-URxvt*inheritPixmap:    true
-URxvt*tintColor:        white
-URxvt*shading:          50
+#URxvt*inheritPixmap:    true
+#URxvt*tintColor:        white
+#URxvt*shading:          50
 
 !# Farben
 !# Black
