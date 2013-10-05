@@ -10,26 +10,26 @@
 # Background Nr. 1
 rounded = 0
 border_width = 0
-background_color = #232323 100
+background_color = #222222 100
 border_color = #4E4E4E 100
 
 # Background Nr. 2
 rounded = 0
 border_width = 0
-background_color = #050505 100
+background_color = #005577 100
 border_color = #000000 100
 
 # Background Nr. 3
 rounded = 0
 border_width = 0
-background_color = #232323 100
+background_color = #222222 100
 border_color = #000000 100
 
 ########################################################################
 # Panel
 panel_monitor = all
 panel_position = bottom center horizontal
-panel_size = 100% 25
+panel_size = 100% 22
 panel_margin = 0 0
 panel_padding = 0 0 0
 panel_dock = 0
@@ -69,11 +69,11 @@ task_active_icon_asb = 100 0 0
 task_urgent_icon_asb = 100 0 0
 task_iconified_icon_asb = 70 0 0
 
-task_font = Terminus 9
-task_font_color = #FFFFFF 67
-task_active_font_color = #FFFFFF 82
-task_urgent_font_color = #FFFFFF 82
-task_iconified_font_color = #FFFFFF 67
+task_font = Sans 8
+task_font_color = #BBBBBB 100
+task_active_font_color = #EEEEEE 100
+task_urgent_font_color = #000000 100
+task_iconified_font_color = #EEEEEE 100
 font_shadow = 0
 
 ########################################################################
@@ -100,7 +100,7 @@ tooltip_show_timeout = 0.7
 tooltip_hide_timeout = 0.3
 tooltip_background_id = 0
 tooltip_font = sans 10
-tooltip_font_color = #000000 80
+tooltip_font_color = #EEEEEE 80
 
 ########################################################################
 # Battery
@@ -108,19 +108,19 @@ battery = 1
 battery_low_status = 10
 battery_low_cmd = notify-send "battery low"
 battery_hide = 95
-bat1_font = Terminus 9
-bat2_font = Terminus 9
-battery_font_color = #FFFFFF
+bat1_font = Sans 8
+bat2_font = Sans 8
+battery_font_color = #EEEEEE
 battery_padding = 3
 battery_background_id = 0
 
 ########################################################################
 # Clock
 time1_format = %H:%M
-time1_font = Terminus 8
+time1_font = Sans 8
 time2_format = %Y-%m-%d
-time2_font = Terminus 8
-clock_font_color = #FFFFFF
+time2_font = Sans 8
+clock_font_color = #EEEEEE
 clock_padding = 6 2
 clock_background_id = 0
 clock_rclick_command = zenity  --calendar --text="Datum zum kopieren auswählen." --date-format %Y-%m-%d | xclip
