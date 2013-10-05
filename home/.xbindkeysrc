@@ -25,7 +25,7 @@
 "screenshot"
     Print
 
-"dmenu_run -p $ -l 10 -i -nb gray16 -nf white -sb gray16 -sb black"
+"dmenu_run -p $ -l 10 -i"
     Mod4 + r
 
 ########################################################################
