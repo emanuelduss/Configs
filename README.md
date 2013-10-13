@@ -18,6 +18,7 @@ etc (/etc)
 * `network.d/wlan0-HSR-WLAN`: Netcfg Profil: wlan0 HSR-WLAN dhcpcd
 * `network.d/wlan0-sonnenbuehlstrasse`: Netcfg Profil: wlan0 sonnenbuehlstrasse dhcpcd
 * `profile.d/libreoffice-common.sh`: LibreOffice Environment
+* `profile.d/mpd.sh`: MPD Hostname and Password
 * `resolv.conf`: Zu verwendende DNS-Server
 * `slim.conf`: Slim Login Manager
 * `systemd/logind.conf`: Systemd `logind.conf`

@@ -55,7 +55,6 @@ fi
 export EDITOR=vi
 export VISUAL=$EDITOR
 export PAGER=less
-MPD_HOST="listentomusic@localhost"
 
 if [ -x "/usr/bin/lesspipe.sh" ]
 then
