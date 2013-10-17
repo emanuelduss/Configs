@@ -35,6 +35,7 @@ home (/home/username)
 * `.exrc`: vi (Classic Unix text editor)
 * `.gitconfig`: git (Version Control System)
 * `.inputrc`: Readline Bibliothek (Usereingaben über Konsole einlesen)
+* `.psqlrc`: PostgreSQL RC Script
 * `.screenrc`: screen (screen manager)
 * `.tmux.conf`: tmux (screen manager)
 * `.vimrc`: Konfigurationsdatei für vim Texteditor
