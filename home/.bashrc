@@ -42,11 +42,14 @@ shopt -s histappend      # Befehle an der History anhängen statt überschr.
 shopt -s checkwinsize    # LINES unc COLUMNS nach jedem Command prüfen und upaten
 
 # Prompt PS1
+git_prompt() {
+  git branch 2>/dev/null| awk '/^\*/{ print "("$2")" }'
+}
 if [ "$UID" -eq 0 ]
 then
-  PS1="${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\\n# "
+  PS1="${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \[\033[31m\]\$(git_prompt)\n\[\033[00m\]$ "
 else
-  PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\\n$ "
+  PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \[\033[31m\]\$(git_prompt)\n\[\033[00m\]$ "
 fi
 
 
