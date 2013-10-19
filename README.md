@@ -45,7 +45,12 @@ home (/home/username)
 * `.xmodmaprc`: Konfigurationsdatei für xmodmap
 
 * `.config/tint2/tint2rc`: Konfiguration für tint2 (Panel)
+* `.config/user-dirs.dirs`: XDG Default Dirs
 
 systemd (/lib/systemd)
 ----------------------
 * `services/disablebluetooth.service`: systemd Service: Disable Bluetoot at start
+
+
+
+
