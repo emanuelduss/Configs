@@ -118,6 +118,6 @@ autocmd BufNewFile,BufRead *.java map <F5> :w! <CR>:!javac %; java `basename % .
 autocmd BufNewFile,BufRead *.c map <F5> :w! <CR>:!clear; gcc -o `basename % .c` % && ./`basename % .c` <CR>
 autocmd BufNewFile,BufRead *.md map <F5> :w! <CR>:!markdown % > `basename % .md`.html<CR>
 
-colorscheme delek
+colorscheme default
 
 " EOF
