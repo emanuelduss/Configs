@@ -100,7 +100,7 @@ nnoremap <silent> <Space> :nohl<Bar>:echo<CR> " space = keine markierungen mehr 
 set modeline
 
 nmap \l :setlocal number!<CR>
-nmap \o :set paste!<CR>
+nmap \p :set paste!<CR>
 
 " Beim Datei-Öffnen zur letzten Position springen
 " (nur wenn "autocommands" einkompiliert, Pos. gültig und nicht in Event-Handler)
