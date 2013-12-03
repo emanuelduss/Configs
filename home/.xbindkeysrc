@@ -19,6 +19,9 @@
 "propersuspend"
     XF86Sleep
 
+"bildschirm dialog"
+    XF86Display
+
 ########################################################################
 # Alsamixer
 
