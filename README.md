@@ -10,6 +10,7 @@ etc (/etc)
 * `netctl/enp0s25-dhcp`: Netctl Profile: Ethernet dhcp
 * `netctl/wlp2s0-discordia`: Netctl Profile: WLAN WPA2
 * `netctl/wlp2s0-HSR-Secure`: Netctl Profile: WLAN HSR
+* `netctl/wlp2s0-HSR-WLAN`: Netctl Profile: WLAN HSR-WLAN (Excluded from `netctl-auto`)
 * `network.d/eth0-dhcp`: Netcfg Profil: eth0 dhclient
 * `network.d/eth0-static`: Netcfg Profil: eth0 statisch zu Hause
 * `network.d/usb0-android`: Netcfg Profil: usb0 dhclient (Android Phone)

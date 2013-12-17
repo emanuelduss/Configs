@@ -1,0 +1,7 @@
+Description='WLAN HSR-WLAN0'
+Interface=wlp2s0
+Connection=wireless
+Security=none
+ESSID=HSR-WLAN
+IP=dhcp
+ExcludeAuto=yes
