@@ -7,6 +7,7 @@ etc (/etc)
 ----------
 * `locale.conf`: Local-Specifit Settings
 * `modprobe.d/eris.conf`: Modprobe Config for host `eris`
+* `modules-load.d/iptables.conf`: Nötige Module für `iptables`
 * `modules-load.d/virtualbox.conf`: Nötige Module für VirtualBox
 * `netctl/enp0s25-dhcp`: Netctl Profile: Ethernet dhcp
 * `netctl/wlp2s0-discordia`: Netctl Profile: WLAN WPA2
