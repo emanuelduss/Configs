@@ -113,7 +113,7 @@ alias slideshow="feh --fullscreen --auto-zoom --randomize --hide-pointer --slide
 alias feh="feh --auto-zoom --sort filename --borderless --scale-down --draw-filename --image-bg black"
 alias pickcolor="zenity --color-selection | xclip"
 alias urxvtdemo="urxvt -geometry 70x20 +tr -bg '#232323' -fg white -fn 'xft:Terminus:size=18'"
-alias pandoro="sleep 25m && play -q -n synth 1 pl 500"
+alias pandoro="sleep 25m && play -q -n synth sine 480 sine 620 remix 1-2 fade 0 0.5 delay 0.5 repeat 5"
 
 alias cds3='cd ~/Daten/Studium/Semester_3_HS13'
 alias cdsk3='cd ~/Daten/Studium/Semester_3_HS13_Skripteserver'
