@@ -37,6 +37,7 @@ set -o vi
 export HISTTIMEFORMAT="%F %T "
 export HISTSIZE=1048576
 export HISTFILE="$HOME/.bash_history-`uname -n`"
+export HISTIGNORE="clear:bg:fg:cd:cd -:exit:date:w:* --help"
 export HISTCONTROL=ignoreboth # Ignoriere doppelte Eingaben und Eingaben, welche mit einem Whitespace beginnen
 shopt -s histappend      # Befehle an der History anhängen statt überschr.
 shopt -s checkwinsize    # LINES unc COLUMNS nach jedem Command prüfen und upaten
