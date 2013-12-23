@@ -117,6 +117,7 @@ autocmd BufNewFile,BufRead *.tex map <F5> :w! <CR>:! pdflatex % <CR>
 autocmd BufNewFile,BufRead *.tex set textwidth=72
 autocmd BufNewFile,BufRead *.java map <F5> :w! <CR>:!javac %; java `basename % .java`<CR>
 autocmd BufNewFile,BufRead *.c map <F5> :w! <CR>:!clear; gcc -o `basename % .c` % && ./`basename % .c` <CR>
+autocmd BufNewFile,BufRead *.cpp map <F5> :w! <CR>:!clear; clang++ -o `basename % .cpp` % && ./`basename % .cpp` <CR>
 autocmd BufNewFile,BufRead *.md map <F5> :w! <CR>:!markdown % > `basename % .md`.html<CR>
 
 colorscheme default
