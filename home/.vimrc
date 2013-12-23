@@ -101,6 +101,7 @@ set modeline
 
 nmap \l :setlocal number!<CR>
 nmap \p :set paste!<CR>
+nmap \w :set wrap!<CR>
 
 " Beim Datei-Öffnen zur letzten Position springen
 " (nur wenn "autocommands" einkompiliert, Pos. gültig und nicht in Event-Handler)
