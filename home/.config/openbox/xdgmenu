@@ -1,0 +1,27 @@
+#!/bin/bash
+
+MENUFILE="$HOME/.config/openbox/menu_xdg.xml"
+
+print_usage(){
+cat << EOI
+Usage:
+  xdgmenu show
+  xdgmenu refresh
+EOI
+}
+
+case "$1"
+in
+  "show")
+    cat $MENUFILE
+  ;;
+  "refresh")
+    echo  "<openbox_pipe_menu>" > $MENUFILE
+    mmaker OpenBox3 -t Xterm  -c -i >> $MENUFILE
+    echo  "</openbox_pipe_menu>" >> $MENUFILE
+  ;;
+  *)
+    print_usage;
+    exit 1;
+  ;;
+esac

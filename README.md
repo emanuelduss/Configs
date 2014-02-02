@@ -49,6 +49,9 @@ home (/home/username)
 
 * `.config/tint2/tint2rc`: Konfiguration für tint2 (Panel)
 * `.config/user-dirs.dirs`: XDG Default Dirs
+* `.config/openbox/menu.xml`: Openbox Menu Configuration
+* `.config/openbox/menu_ssh.xml`: Openbox Menu SSH entries
+* `.config/openbox/xdgmenu`: Generates XDG Menu for Openbox
 
 systemd (/lib/systemd)
 ----------------------

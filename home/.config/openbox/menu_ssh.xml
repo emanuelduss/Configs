@@ -1,0 +1,8 @@
+<openbox_pipe_menu>
+  <item label="ssh example.org">
+    <action name="Execute">
+      <command>urxvt -bg '#232323' -fg white +tr -e ssh -t example.org "tmux a || tmux"</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+</openbox_pipe_menu>
