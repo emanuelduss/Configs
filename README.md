@@ -25,6 +25,7 @@ etc (/etc)
 * `resolv.conf`: Zu verwendende DNS-Server
 * `slim.conf`: Slim Login Manager
 * `systemd/logind.conf`: Systemd `logind.conf`
+* `sysctl.d/ipv6_tempaddr.conf`: Enables IPv6 Privacy Extensions
 * `vconsole.conf`: Virtual Console Configuration
 * `vpnc/hsr_remote.conf`: vpnc Konfigurationsdatei für die HSR
 * `X11/xorg.conf.d/10-keymap.conf`: X11-Konfigurationsdatei für schweizer Tastaturlayout
