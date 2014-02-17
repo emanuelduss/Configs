@@ -115,8 +115,8 @@ alias pickcolor="zenity --color-selection | xclip"
 alias urxvtdemo="urxvt -geometry 70x20 +tr -bg '#232323' -fg white -fn 'xft:Terminus:size=18'"
 alias pomodoro="sleep 25m && play -q -n synth sine 480 sine 620 remix 1-2 fade 0 0.5 delay 0.5 repeat 5"
 
-alias cds3='cd ~/Daten/Studium/Semester_3_HS13'
-alias cdsk3='cd ~/Daten/Studium/Semester_3_HS13_Skripteserver'
+alias cds4='cd ~/Daten/Studium/Semester_4_FS14'
+alias cdsk4='cd ~/Daten/Studium/Semester_4_FS14_Skripteserver'
 
 
 ########################################################################
