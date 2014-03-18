@@ -19,7 +19,7 @@
 "propersuspend"
     XF86Sleep
 
-"bildschirm dialog"
+"screenctl dialog"
     XF86Display
 
 ########################################################################
