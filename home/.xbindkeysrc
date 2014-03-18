@@ -29,7 +29,7 @@
     Print
 
 "dmenu_run -p $ -l 10 -i"
-    Mod4 + r
+    Mod4 + p
 
 ########################################################################
 # Desktop
@@ -37,7 +37,7 @@
     Mod4 + m
 
 "thunar"
-    Mod4 + e
+    Mod4 + x
 
 "urxvt"
     Mod4 + t
