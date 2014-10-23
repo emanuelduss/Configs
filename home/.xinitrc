@@ -56,7 +56,7 @@ pidgin &
 # Windowmanager starten
 case $SESSION in
 awesome|fluxbox|icewm|i3|dwm|wmii|fvwm|twm|wmfs)
-  exec ck-launch-session $1
+  exec $1
   ;;
 openbox)
   tint2 &
