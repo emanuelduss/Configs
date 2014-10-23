@@ -1,5 +1,5 @@
 #
-# ~/.gitconfig
+# ~.gitconfig
 #
 
 [user]
@@ -14,7 +14,7 @@
 	safecrlf = true
 	editor = vim
 [alias]
-	hist = log --pretty=format:\"%h %ad [%an] | %s%d \" --date=short --all --graph --decorate --oneline
+	hist = log --pretty=format:\"%h %ad [%an] | %s%d \" --date=short --all --decorate
 	type = cat-file -t
 	dump = cat-file -p
 [merge]
