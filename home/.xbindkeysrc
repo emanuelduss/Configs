@@ -39,8 +39,11 @@
 "thunar"
     Mod4 + x
 
-"urxvt"
+"urxvt -bg '#002B36' -fg '#EEE8D5'"
     Mod4 + t
+
+"urxvt -bg '#EEE8D5' -fg '#002B36'"
+    Mod4 + Shift + t
 
 "urxvt -fg gray -bg black -e ncmpcpp"
     Mod4 + u
