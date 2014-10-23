@@ -1,19 +1,20 @@
-########################################################################
 #
 # ~/.gitconfig
-# Globale Konfigurationsdatei für git
 #
-########################################################################
 
 [user]
 	name = Emanuel Duss
 	email = emanuel.duss@gmail.com
+[credential "https://git.hsr.ch"]
+	username = eduss
+[credential]
+	helper = cache --timeout 36000
 [core]
 	autocrlf = input
 	safecrlf = true
 	editor = vim
 [alias]
-	hist = log --pretty=format:\"%h %ad [%an] | %s%d \" --graph --date=short
+	hist = log --pretty=format:\"%h %ad [%an] | %s%d \" --date=short --all --graph --decorate --oneline
 	type = cat-file -t
 	dump = cat-file -p
 [merge]
@@ -26,5 +27,3 @@
 	diff = auto
 [push]
 	default = matching
-
-# EOF
