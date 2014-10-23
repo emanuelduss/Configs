@@ -115,8 +115,8 @@ alias pickcolor="zenity --color-selection | xclip"
 alias urxvtdemo="urxvt -geometry 70x20 +tr -bg '#232323' -fg white -fn 'xft:Terminus:size=18'"
 alias pomodoro="sleep 25m && play -q -n synth sine 480 sine 620 remix 1-2 fade 0 0.5 delay 0.5 repeat 5"
 
-alias cds4='cd ~/Daten/Studium/Semester_4_FS14'
-alias cdsk4='cd ~/Daten/Studium/Semester_4_FS14_Skripteserver'
+alias cds5='cd ~/Daten/Studium/Semester_5_HS14'
+alias cdsk5='cd ~/Daten/Studium/Semester_5_HS14_Skripteserver'
 
 
 ########################################################################
@@ -144,5 +144,10 @@ grepp() {
     perl -00ne "print if /$1/i" < $2
   fi
 }
+
+alias urxvt-sl="urxvt -bg '#EEE8D5' -fg '#002B36'"
+alias urxvt-sd="urxvt -bg '#002B36' -fg '#EEE8D5'"
+
+umask 077
 
 # EOF
