@@ -92,8 +92,10 @@ map <F2>  O<ESC>72i#<ESC>
 map <F3>  :r!date +\%Y-\%m-\%d<CR>
 " map <F11> :!javac %; basename % .java | xargs java
 
+" kopiert Selektion in Clipboard, erreichbar über Mittelklick
 map <C-C> : w ! xclip<CR><CR>
-
+" kopiert Selektion in Clipboard, erreichbar über Ctrl+V
+"map <C-S-C> : w ! xclip -selection clipboard<CR><CR>
 
 nnoremap <silent> <Space> :nohl<Bar>:echo<CR> " space = keine markierungen mehr und ruhig sein
 
