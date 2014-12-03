@@ -28,7 +28,7 @@ etc (/etc)
 * `sysctl.d/ipv6_tempaddr.conf`: Enables IPv6 Privacy Extensions
 * `vconsole.conf`: Virtual Console Configuration
 * `vpnc/hsr_remote.conf`: vpnc Konfigurationsdatei für die HSR
-* `X11/xorg.conf.d/10-keymap.conf`: X11-Konfigurationsdatei für schweizer Tastaturlayout
+* `X11/xorg.conf.d/10-keyboard.conf`: X11 Keyboard Configuration
 * `X11/xorg.conf.d/20-trackpoint.conf`: X11-Konfigurationsdatei für ThinkPad Trackpoint
 
 home (/home/username)
