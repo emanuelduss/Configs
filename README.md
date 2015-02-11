@@ -31,6 +31,7 @@ etc (/etc)
 * `X11/xorg.conf.d/10-keyboard.conf`: X11 Keyboard Configuration
 * `X11/xorg.conf.d/20-trackpoint.conf`: X11-Konfigurationsdatei für ThinkPad Trackpoint
 
+
 home (/home/username)
 ---------------------
 * `.bash_profile`: Bash-Profile
@@ -60,5 +61,8 @@ systemd (/lib/systemd)
 * `services/disablebluetooth.service`: systemd Service: Disable Bluetoot at start
 
 
+various
+-------
 
+* `grub_multiboot_stick/grub.cfg`: Multiboot USB Stick Grub Config
 
