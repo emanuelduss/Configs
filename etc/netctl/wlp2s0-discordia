@@ -1,11 +1,19 @@
 Description='WLAN discordia'
+
 Interface=wlp2s0
 Connection=wireless
-Security=wpa
 ESSID=discordia
+Security=wpa
+Key='passwort'
+
 IP=static
 Address=10.0.0.23/24
 Gateway=10.0.0.1
-DNS=10.0.0.1
+
+IP6=stateless
+#IP6=static
+#Address6=2001:470:26:4c6::23/64
+#Gateway6=2001:470:26:4c6::1
+
+DNS=(77.109.148.136 77.109.148.137)
 DNSDomain=duss.lan
-Key='passwort'
