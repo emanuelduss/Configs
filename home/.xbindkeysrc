@@ -48,6 +48,9 @@
 "urxvt -fg gray -bg black -e ncmpcpp"
     Mod4 + u
 
+"/usr/local/bin/magnify"
+    Mod4 + o
+
 ########################################################################
 # Multimedia (Audio und MPD)
 "amixer set Master playback 5+"
