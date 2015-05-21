@@ -1,13 +1,11 @@
-!#######################################################################
-!#
-!# ~/.xmodmaprc
-!# Konfigurationsdatei für xmodmap
-!#
-!#######################################################################
+!
+! ~/.xmodmaprc
+!
 
-!# Caps Lock = Escape; Scroll Lock = Caps Lock
+! Caps Lock = Escape; Scroll Lock = Caps Lock
 remove Lock = Caps_Lock
 keysym Caps_Lock = Escape
 keysym Scroll_Lock = Caps_Lock
 
-!# EOF
+!keycode 49 = section degree NoSymbol NoSymbol dead_diaeresis
+keycode 49 = NoSymbol NoSymbol NoSymbol NoSymbol dead_diaeresis
