@@ -116,6 +116,7 @@ alias feh="feh --auto-zoom --sort filename --borderless --scale-down --draw-file
 alias pickcolor="zenity --color-selection | xclip"
 alias urxvtdemo="urxvt -geometry 70x20 +tr -bg '#232323' -fg white -fn 'xft:Terminus:size=18'"
 alias pomodoro="sleep 25m && play -q -n synth sine 480 sine 620 remix 1-2 fade 0 0.5 delay 0.5 repeat 5"
+alias shit='sudo $(history -p \!\!)' 
 
 alias cds5='cd ~/Daten/Studium/Semester_5_HS14'
 alias cdsk5='cd ~/Daten/Studium/Semester_5_HS14_Skripteserver'
