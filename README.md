@@ -46,7 +46,7 @@ home (/home/username)
 * `.tmux.conf`: tmux (screen manager)
 * `.vimrc`: Konfigurationsdatei für vim Texteditor
 * `.Xdefaults`: Konfigurationsdatei fuer X-Anwendungen
-* `.xinitrc`: Shell script which starts my windowmanager
+* `.xprofile`: Shell script which starts wit X11 login
 * `.xbindkeysrc`: Konfigurationsdatei für xbindkeys
 * `.xmodmaprc`: Konfigurationsdatei für xmodmap
 

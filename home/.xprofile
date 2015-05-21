@@ -1,0 +1,29 @@
+#
+# ~/.xinitrc
+#
+
+if [ -d /etc/X11/xinit/xinitrc.d ]
+then
+  for f in /etc/X11/xinit/xinitrc.d/*
+  do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
+fi
+
+eval `ssh-agent`
+urxvt -fn "xft:Bitstream Vera Sans Mono:pixelsize=23" \
+  -bg red -fg black -geometry 80x4 -e sh -c "ssh-add"
+
+eval `gpg-agent --daemon`
+
+xrandr --dpi 80 &
+xrdb ~/.colors/tango
+xmodmap ~/.xmodmaprc
+xbindkeys &
+urxvt -e tmux &
+eval `cat ~/.fehbg`
+keepassx -min -lock &
+volwheel &
+pidgin &
+# redshift -l 47.22:8.33 -b 1.0
