@@ -18,7 +18,7 @@ SOURCEFILES="/etc/bashrc \
   /usr/share/git/completion/git-completion.bash \
   ~/.bash_aliases"
 
-for file in "$SOURCEFILES"
+for file in $SOURCEFILES
 do
   if [ -f "$file" ]
   then
