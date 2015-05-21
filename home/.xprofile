@@ -22,7 +22,10 @@ xrdb ~/.colors/tango
 xmodmap ~/.xmodmaprc
 xbindkeys &
 urxvt -e tmux &
-eval `cat ~/.fehbg`
+if [ -f ~/.fehbg ]
+then
+  ~/.fehbg
+fi
 keepassx -min -lock &
 volwheel &
 pidgin &
