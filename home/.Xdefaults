@@ -15,64 +15,51 @@ URxvt.scrollBar:        false
 !URxvt.iconFile:         /usr/share/icons/gnome/scalable/apps/utilities-terminal-symbolic.svg
 
 !# Farben
-URxvt.background:       #000000
+#URxvt.background:       #000000
+#URxvt.foreground:       #ffffff
+
+#URxvt.background:       #0e0e0e
 !URxvt.background:       #101010
 !URxvt.background:       #2A211C
 !URxvt.background:       #002b36
 !URxvt.foreground:       #fdf6e3
-URxvt.foreground:       #EFEFEF
-URxvt.Fading: 50
+!URxvt.foreground:       #EFEFEF
+!URxvt.Fading: 50
 
-!# Cursor
-URxvt.pointerColor:     green
-URxvt.cursorColor:      green
-URxvt.cursorBlink:      true
+!URxvt.background:       #002B36
+!URxvt.foreground:       #EEE8D5
 
-!# URLs im Browser öffnen
-URxvt.perl-ext-common:  default,matcher
-URxvt.matcher.button:   1
-URxvt.urlLauncher:      firefox
-
-!# Schriftart
-URxvt.font:             xft:Terminus:size=9
-!URxvt.font:             9x15
-!URxvt.font:             7x14
-
-!# Shortcuts
-URxvt.keysym.M-C-1: command:\033]710;xft:Terminus:size=9\007\033]711;xft:Terminus:size=9\007
-URxvt.keysym.M-C-2: command:\033]710;xft:Terminus:size=10\007\033]711;xft:Terminus:size=10\007
-URxvt.keysym.M-C-3: command:\033]710;xft:Terminus:size=18\007\033]711;xft:Terminus:size=18\007
+!URxvt.intensityStyles: false
 
 !# Transparenz
-#URxvt*inheritPixmap:    true
-#URxvt*tintColor:        white
-#URxvt*shading:          50
+!URxvt*inheritPixmap:    true
+!URxvt*tintColor:        white
+URxvt*shading:          50
 
-!# Farben
-!# Black
-URxvt*color0:  #000000
-URxvt*color8:  #555753
-!# Red
-URxvt*color1:  #ff6565
-URxvt*color9:  #cf0000
-!# Green
-URxvt*color2:  #93d44f
-URxvt*color10: #00cf00
-!# Yellow
-URxvt*color3:  #eab93d
-URxvt*color11: #ffc123
-!# Blue
-URxvt*color4:  #204a87
-URxvt*color12: #3465a4
-!# Mangenta
-URxvt*color5:  #ce5c00
-URxvt*color13: #f57900
-!# Cyan
-URxvt*color6:  #89b6e2
-URxvt*color14: #46a4ff
-!# White
-URxvt*color7:  #cccccc
-URxvt*color15: #ffffff
+!# Cursor
+!URxvt.pointerColor:     green
+#URxvt.cursorColor:      green
+URxvt.cursorBlink:      true
+
+!# Schriftart
+!URxvt.font:             7x14
+!URxvt.font:             9x15
+!URxvt.font:             8x13
+!URxvt.font:             7x13
+!URxvt.font:             xft:Terminus:pixelsize=14
+URxvt.font:             -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
+URxvt.boldfont:         -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*
+
+!# Shortcuts
+URxvt.keysym.M-C-1: command:\033]710;-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*\007\033]711;-*-terminus-bold-*-*-*-12-*-*-*-*-*-*-*\007
+URxvt.keysym.M-C-2: command:\033]710;-*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*\007\033]711;-*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*\007
+URxvt.keysym.M-C-3: command:\033]710;-*-terminus-medium-*-*-*-32-*-*-*-*-*-*-*\007\033]711;-*-terminus-bold-*-*-*-32-*-*-*-*-*-*-*\007
+
+URxvt.perl-ext-common:default,font-size,clipboard,matcher,keyboard-select
+URxvt.keysym.M-u:     perl:url-select:select_next
+URxvt.url-launcher:   /usr/bin/firefox
+URxvt.underlineURLs:  True
+URxvt.matcher.button: 1
 
 !########################################################################
 !# xterm
