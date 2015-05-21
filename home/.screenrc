@@ -1,16 +1,9 @@
-########################################################################
 #
 # ~/.screenrc
-# Konfigurationsdatei fuer screen
 #
-########################################################################
 
-########################################################################
-# Variabeln
 setenv FOO bar
 
-########################################################################
-# Allgemein
 startup_message  off   # Keine Willkommensnachricht
 vbell            off   # Kein visuelles Blinken
 msgwait 1              # Nachrichten für 1 Sekunden anzeigen
@@ -21,8 +14,6 @@ hardcopydir $HOME      # Screenshots ins Homeverzeichnis
 defscrollback 10000    # Buffer
 defmonitor off         # Aktivitäten nicht in Fenstertitel schreiben
 
-########################################################################
-# Meine Fenster
 screen -t bash
 screen -t bash
 screen -t bash
@@ -32,8 +23,4 @@ screen -t bash
 select 1
 select 0
 
-########################################################################
-# Statuszeile
 caption always "%{= wk} %-w%{= KW} [%n %t] %{-}%+w %= | @%H | %l | %Y-%m-%d %c "
-
-# EOF
