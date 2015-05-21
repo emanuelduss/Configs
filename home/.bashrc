@@ -72,6 +72,8 @@ then
   alias vi='vim'
 fi
 
+GPG_TTY=$(tty)
+export GPG_TTY
 
 ########################################################################
 # Farben
