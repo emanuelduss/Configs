@@ -20,6 +20,7 @@ etc (/etc)
 * `network.d/wlan0-hsr_secure`: Netcfg Profil: wlan0 HSR-Secure mit wpa\_supplicant dhclient
 * `network.d/wlan0-HSR-WLAN`: Netcfg Profil: wlan0 HSR-WLAN dhcpcd
 * `network.d/wlan0-sonnenbuehlstrasse`: Netcfg Profil: wlan0 sonnenbuehlstrasse dhcpcd
+* `papersize`: System wide paper size configuration
 * `profile.d/libreoffice-common.sh`: LibreOffice Environment
 * `profile.d/mpd.sh`: MPD Hostname and Password
 * `resolv.conf`: Zu verwendende DNS-Server
