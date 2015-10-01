@@ -1,20 +1,14 @@
-########################################################################
 #
 # ~/.xbindkeysrc
-# Konfigurationsdatei für xbindkeys
 #
-########################################################################
 
 # "notify-send --urgency=critical "`acpi`""
 #    XF86WakeUp
 
+# Desktop Environment
+#
 "i3lock -u --dpms -c 333333 --pointer default"
     XF86ScreenSaver
-
-# "date "+i3lock: Lock: %Y-%m-%d %H:%M" >> $HOME/.i3/i3lock.log && \
-# i3lock --dpms -c 333333 --pointer default >> $HOME/.i3/i3lock.log 2>&1 && \
-# sudo pm-suspend && date "+i3lock: Unlock: %Y-%m-%d %H:%M" >> $HOME/.i3/i3lock.log"
-# "i3lock --dpms -c 333333 --pointer default >> $HOME/.i3/i3lock.log 2>&1 && sudo pm-suspend"
 
 "propersuspend"
     XF86Sleep
@@ -22,17 +16,9 @@
 "screenctl dialog"
     XF86Display
 
-########################################################################
-# Alsamixer
-
-"screenshot"
-    Print
-
 "dmenu_run -p $ -l 10 -i"
     Mod4 + p
 
-########################################################################
-# Desktop
 "ario"
     Mod4 + m
 
@@ -51,8 +37,8 @@
 "/usr/local/bin/magnify"
     Mod4 + o
 
-########################################################################
-# Multimedia (Audio und MPD)
+# Multimedia
+
 "amixer set Master playback 5+"
     XF86AudioRaiseVolume
 
@@ -61,6 +47,8 @@
 
 "amixer set Master toggle"
     XF86AudioMute
+
+# MPD
 
 "mpc next"
     XF86AudioNext
