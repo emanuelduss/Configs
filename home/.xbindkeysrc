@@ -53,13 +53,23 @@
 "mpc next"
     XF86AudioNext
 
+"mpc next"
+    control + alt + Right
+
 "mpc prev"
     XF86AudioPrev
+
+"mpc prev"
+    control + alt + Left
 
 "mpc toggle"
     XF86AudioPlay
 
+"mpc toggle"
+    control + alt + Down
+
 "mpc stop"
     XF86AudioStop
 
-# EOF
+"mpc stop"
+    control + alt + Up
