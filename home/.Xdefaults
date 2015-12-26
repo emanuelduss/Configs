@@ -1,9 +1,7 @@
-!#######################################################################
 !#
 !# .Xdefaults
 !# Konfigurationsdatei fuer X-Anwendungen
 !#
-!#######################################################################
 
 !#######################################################################
 !# Urxvt-Terminal
@@ -47,8 +45,8 @@ URxvt.cursorBlink:      true
 !URxvt.font:             8x13
 !URxvt.font:             7x13
 !URxvt.font:             xft:Terminus:pixelsize=14
-URxvt.font:             -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
-URxvt.boldfont:         -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*
+URxvt.font:             -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
+URxvt.boldfont:         -*-terminus-bold-*-*-*-12-*-*-*-*-*-*-*
 
 !# Shortcuts
 URxvt.keysym.M-C-1: command:\033]710;-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*\007\033]711;-*-terminus-bold-*-*-*-12-*-*-*-*-*-*-*\007
