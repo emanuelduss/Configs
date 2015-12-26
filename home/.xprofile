@@ -20,13 +20,12 @@ eval `gpg-agent --daemon`
 xrandr --dpi 80 &
 xrdb ~/.colors/tango
 xmodmap ~/.xmodmaprc
-xbindkeys &
+xbindkeys
 urxvt -e tmux &
-if [ -f ~/.fehbg ]
-then
-  ~/.fehbg
-fi
 keepassx -min -lock &
 volwheel &
 pidgin &
-# redshift -l 47.22:8.33 -b 1.0
+if [ -f ~/.fehbg ]
+then
+  sleep 1 && ~/.fehbg &
+fi
