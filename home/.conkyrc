@@ -1,63 +1,55 @@
-########################################################################
 #
 # ~/.conkyrc
-# Konfigurationsdatei für Conky
 #
-########################################################################
 
-########################################################################
-# MPD - Music Player Daemon
+# MPD
 mpd_host 127.0.0.1
 mpd_port 6600
 
-########################################################################
-# Globale Optionen
-
-# Ausrichtung und Grösse
+# Alignment and size
 alignment top_left
 gap_x 10
 gap_y 10
 maximum_width 320
 # minimum_size 1280 50
 
-# Allgemein
+# Genreal
 update_interval 5.0
 double_buffer yes
 draw_outline no
 border_width 0
 default_bar_size 0 5
 
-# Fenster
+# Windows
 own_window yes
 own_window_type desktop
 own_window_colour 000000
 own_window_transparent yes
 own_window_hints undecorated below sticky skip_taskbar skip_pager
 
-# Spezifische Einstellungen
+# Specific settings
 cpu_avg_samples 2
 net_avg_samples 2
 no_buffers yes
 
-# Schrift
+# Font
 use_spacer none
 use_xft yes
 xftfont Terminus:pixelsize=11
 draw_shades no
 uppercase no
 
-# Farben (1 = Text; 2 = Data; 3 = Überschrift)
+# Colors (1 = Text; 2 = Data; 3 = Heading)
 color1 AAAAAA
 color2 FFFFFF
 color3 999999
 
-# Vorlagen (1 = Simple; 3 = Filesystem; 5 = Überschrift)
+# Template (1 = Simple; 3 = Filesystem; 5 = Heading)
 template1 ${color1}\1 ${color2}\2
 template2 ${color1}\1 ${color2}\2/\3 (\4%)
 template3 ${color1}\1: ${color2}${fs_used \1}/${fs_size \1} (${fs_used_perc \1}%) ${fs_bar \1}
 template5 ${color3}\1 ${hr 2}
 
-########################################################################
 # Output
 TEXT
 ${template5 SYSTEM\ INFORMATION}
@@ -141,4 +133,3 @@ ${endif} \
 ${else}\
 ${template1 Network: Offline}
 ${endif}\
-# EOF
