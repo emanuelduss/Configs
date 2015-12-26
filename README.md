@@ -39,6 +39,7 @@ home (/home/username)
 * `.bashrc`: Konfigurationsdatei für die Bash
 * `.conkyrc`: conky (Light-weight system monitor)
 * `.exrc`: vi (Classic Unix text editor)
+* `.fehbg`: Set wallpaper using `feh`
 * `..gdbinit`: gdb configuration file
 * `.gitconfig`: git (Version Control System)
 * `.inputrc`: Readline Bibliothek (Usereingaben über Konsole einlesen)
