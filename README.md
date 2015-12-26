@@ -43,6 +43,7 @@ home (/home/username)
 * `..gdbinit`: gdb configuration file
 * `.gitconfig`: git (Version Control System)
 * `.inputrc`: Readline Bibliothek (Usereingaben über Konsole einlesen)
+* `.i3status.conf`: i3status configuration
 * `.psqlrc`: PostgreSQL RC Script
 * `.screenrc`: screen (screen manager)
 * `.tmux.conf`: tmux (screen manager)
