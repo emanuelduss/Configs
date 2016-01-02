@@ -1,0 +1,11 @@
+[Unit]
+Description=Execute script before suspend
+
+[Service]
+Type=simple
+User=emanuel
+Environment=DISPLAY=:0
+ExecStart=/usr/local/bin/pre-suspend
+
+[Install]
+WantedBy=sleep.target
