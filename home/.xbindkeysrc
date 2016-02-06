@@ -16,6 +16,9 @@
 "screenctl dialog"
     XF86Display
 
+"screenctl dialog"
+    control + alt + 7
+
 "dmenu_run -p $ -l 10 -i"
     Mod4 + p
 
