@@ -30,6 +30,15 @@ shopt -s histappend
 shopt -s checkwinsize
 set -o vi
 
+# Path
+for i in ~/.gem/ruby/*/bin
+do
+  if [[ -d $i ]]
+  then
+    PATH=$PATH:$i
+  fi
+done
+
 # Prompt
 git_prompt() {
   git branch 2>/dev/null| awk '/^\*/{ print "("$2")" }'
