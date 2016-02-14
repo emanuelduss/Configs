@@ -26,8 +26,11 @@ export HISTTIMEFORMAT="%F %T "
 export HISTSIZE=100000
 export HISTIGNORE="clear:bg:fg:cd:cd -:exit:date:w:* --help"
 export HISTCONTROL=ignoreboth
-shopt -s histappend
+shopt -s autocd
+shopt -s cdspell
 shopt -s checkwinsize
+shopt -s cmdhist
+shopt -s histappend
 set -o vi
 
 # Path
