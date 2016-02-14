@@ -106,5 +106,8 @@ alias wlanscan='sudo iwlist wlp2s0 scan | grep -e Address -e Channel\: -e Encryp
 awkalc() {
   echo true | awk "{print $*}"
 }
+bcq(){
+  bc <<< "$@"
+}
 
 umask 077
