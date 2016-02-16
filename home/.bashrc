@@ -105,6 +105,7 @@ alias shit='sudo $(history -p \!\!)'
 alias slideshow="feh --fullscreen --auto-zoom --randomize --hide-pointer --slideshow-delay 3"
 alias urxvtdemo="urxvt -geometry 70x20 +tr -bg '#232323' -fg white -fn 'xft:Terminus:size=18'"
 alias wlanscan='sudo iwlist wlp2s0 scan | grep -e Address -e Channel\: -e Encryption -e ESSID -e IEEE -e Quality'
+alias hideprev='history -d $((HISTCMD-2)) && history -d $((HISTCMD-1))'
 
 awkalc() {
   echo true | awk "{print $*}"
