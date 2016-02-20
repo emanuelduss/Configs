@@ -43,15 +43,28 @@ do
 done
 
 # Prompt
-git_prompt() {
-  git branch 2>/dev/null| awk '/^\*/{ print "("$2")" }'
+color_red="$(tput setaf 1)"
+color_green="$(tput setaf 2)"
+color_yellow="$(tput setaf 2)"
+color_blue="$(tput setaf 4)"
+color_orange="$(tput setaf 6)"
+font_bold="$(tput bold)"
+color_reset="$(tput sgr0)"
+
+git_branch() {
+  git branch 2>/dev/null | awk '/^\*/{ print "("$2")" }'
 }
+
 if [ "$UID" -eq 0 ]
 then
-  PS1="\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \[\033[31m\]\$(git_prompt)\n\[\033[00m\]$ "
+  color_user="$color_red"
 else
-  PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \[\033[31m\]\$(git_prompt)\n\[\033[00m\]$ "
+  color_user="$color_green"
 fi
+
+PS1="${font_bold}${color_user}\u@\h${color_reset}\
+${font_bold}:${color_blue}\w \
+${color_orange}$(git_branch)${color_reset}\n\$ "
 
 # Colors
 if [ -x /usr/bin/dircolors ]
