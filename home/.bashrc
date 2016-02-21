@@ -55,16 +55,24 @@ git_branch() {
   git branch 2>/dev/null | awk '/^\*/{ print "("$2")" }'
 }
 
-if [ "$UID" -eq 0 ]
+exitcode() {
+  if [[ "$EXITCODE" != "0" ]]
+  then
+    echo "$EXITCODE "
+  fi
+}
+
+if [[ "$UID" == "0" ]]
 then
   color_user="$color_red"
 else
   color_user="$color_green"
 fi
 
+PROMPT_COMMAND="EXITCODE=\$?"
 PS1="${font_bold}${color_user}\u@\h${color_reset}\
 ${font_bold}:${color_blue}\w \
-${color_orange}$(git_branch)${color_reset}\n\$ "
+${color_orange}\$(git_branch)${color_reset} \$(exitcode)\n\$ "
 
 # Colors
 if [ -x /usr/bin/dircolors ]
