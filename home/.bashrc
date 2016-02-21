@@ -65,6 +65,9 @@ exitcode() {
 if [[ "$UID" == "0" ]]
 then
   color_user="$color_red"
+elif [[ -n "$SUDO_USER" ]]
+then
+  color_user="$color_orange"
 else
   color_user="$color_green"
 fi
