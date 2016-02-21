@@ -52,7 +52,7 @@ font_bold="$(tput bold)"
 color_reset="$(tput sgr0)"
 
 git_branch() {
-  git branch 2>/dev/null | awk '/^\*/{ print "("$2")" }'
+  git branch 2>/dev/null | awk '/^\*/{ print " ("$2")" }'
 }
 
 exitcode() {
@@ -74,7 +74,7 @@ fi
 
 PROMPT_COMMAND="EXITCODE=\$?"
 PS1="${font_bold}${color_user}\u@\h${color_reset}\
-${font_bold}:${color_blue}\w \
+${font_bold}:${color_blue}\w\
 ${color_orange}\$(git_branch)${color_reset} \$(exitcode)\n\$ "
 
 # Colors
