@@ -19,16 +19,21 @@ ttf-ubuntu-font-family
 
 elementary-icon-theme
 gnome-themes-standard
+gnome-icon-theme
+gnome-icon-theme
 
 # Basic desktop applications and helpers
 
 arandr
 ffmpegthumbnailer
+gnome-online-accounts
 gvfs
 gvfs-gphoto2
 gvfs-mtp
 gvfs-nfs
 gvfs-smb
+libgsf # ODF thumbnails
+libopenraw # RAW thumbnails
 lxappearance-gtk3
 notification-daemon
 thunar
@@ -61,17 +66,17 @@ xournal
 
 # Programming
 
-base-devel
-git
 ack
-subversion
+base-devel
 binutils
+git
 indent
-zenity
+jshon
 make
 nasm
 scapy
-jshon
+subversion
+zenity
 
 # Programming Languages
 
@@ -87,33 +92,41 @@ python2-virtualenv
 
 # Debugging
 
-jad
 gdb
+jad
 strace
+vim-jad
 
 # Multimedia Graphical
 
 audacity
 gimp
-vlc
 inkscape
 transmission-gtk
+vlc
 
 # Multimedia
 
+ario # MPD Client
 aspell
 aspell-de
 aspell-en
 feh
 ffmpeg
+gst-libav # Nonfree media decoding
+gst-plugins-good # Media decoding
 hunspell-de
 hunspell-en
 imagemagick
 jhead
+libdvdcss
 mencoder
 mp3info
+mpc
+mpd
 mpv
 mtpfs
+ncmpcpp
 newsbeuter
 pdfgrep
 pdfpc # PDF presenter console
@@ -129,9 +142,11 @@ zbar # reading bar codes
 
 # Networking
 
+bind-tools
 cifs-utils
 ethtool
 fping
+freerdp
 iperf
 iptraf-ng
 links
@@ -151,14 +166,12 @@ sshfs
 swaks # Swiss Army Knife SMTP
 tcpdump
 tftp-hpa
-wget
-whois
-freerdp
-bind-tools
 traceroute
 tsocks
 vpnc
 weechat
+wget
+whois
 wireshark-gtk
 wireshark-qt
 x11vnc
@@ -171,14 +184,17 @@ binwalk
 dsniff
 ettercap-gtk
 fcrackzip
+firmware-mod-kit
 hping
 hydra
 john
 kismet
+lhasa # LHA support for binwalk
 masscan
 ncrack
 nikto
 nmap
+sleuthkit
 thc-ipv6
 zmap
 
@@ -192,9 +208,8 @@ yubikey-personalization-tool
 
 # Desktop
 
-
 flashplugin
-haskell-pandoc
+pandoc
 rsnapshot
 texlive-most
 virtualbox
@@ -203,13 +218,17 @@ virtualbox-guest-iso
 # System Tools
 
 ansible
+arj
 autofs
 bc
+cabextract
 cdrkit
 convmv
+cpio
 ddrescue
 dos2unix
 dosfstools
+ed
 exfat-utils
 exfat-utils
 fdupes
@@ -221,7 +240,9 @@ lrzip
 lsb-release
 lshw
 lsof
+lzop
 mlocate
+mtd-utils # JFFS filesystem support
 p7zip
 parallel
 pv
@@ -229,6 +250,7 @@ renameutils
 rfkill
 rsync
 smartmontools
+squashfs-tools
 sysdig
 sysstat
 testdisk
