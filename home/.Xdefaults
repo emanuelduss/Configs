@@ -24,19 +24,19 @@ URxvt.scrollBar:        false
 !URxvt.foreground:       #EFEFEF
 !URxvt.Fading: 50
 
-!URxvt.background:       #002B36
-!URxvt.foreground:       #EEE8D5
+URxvt.background:        #232323
+URxvt.foreground:        #ffffff
 
 !URxvt.intensityStyles: false
 
 !# Transparenz
-!URxvt*inheritPixmap:    true
+!URxvt*.transparent: true
 !URxvt*tintColor:        white
-URxvt*shading:          50
+!URxvt*shading:          50
 
 !# Cursor
 !URxvt.pointerColor:     green
-#URxvt.cursorColor:      green
+!URxvt.cursorColor:      green
 URxvt.cursorBlink:      true
 
 !# Schriftart
@@ -45,8 +45,9 @@ URxvt.cursorBlink:      true
 !URxvt.font:             8x13
 !URxvt.font:             7x13
 !URxvt.font:             xft:Terminus:pixelsize=14
-URxvt.font:             -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
-URxvt.boldfont:         -*-terminus-bold-*-*-*-12-*-*-*-*-*-*-*
+####URxvt.font:             -*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
+URxvt.boldfont:         -*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*
+URxvt.font:             xft:Bitstream Vera Sans Mono:pixelsize=16
 
 !# Shortcuts
 URxvt.keysym.M-C-1: command:\033]710;-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*\007\033]711;-*-terminus-bold-*-*-*-12-*-*-*-*-*-*-*\007
@@ -58,6 +59,14 @@ URxvt.keysym.M-u:     perl:url-select:select_next
 URxvt.url-launcher:   /usr/bin/firefox
 URxvt.underlineURLs:  True
 URxvt.matcher.button: 1
+
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher:  firefox
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+
 
 !########################################################################
 !# xterm
@@ -91,3 +100,5 @@ xpdf*background:      white
 xpdf*urlCommand:      /usr/bin/firefox %s
 
 !# EOF
+
+
