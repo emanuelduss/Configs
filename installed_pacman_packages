@@ -140,6 +140,7 @@ xclip
 youtube-dl
 zbar # reading bar codes
 
+
 # Networking
 
 bind-tools
@@ -170,6 +171,7 @@ traceroute
 tsocks
 vpnc
 weechat
+mcabber # Jabber Client
 wget
 whois
 wireshark-gtk
