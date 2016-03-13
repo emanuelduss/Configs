@@ -2,24 +2,24 @@
 # ~/.bashrc
 #
 
-# Shell must be interactive
-[ -z "$PS1" ] && return
-
-SOURCEFILES="/etc/bashrc \
-  /etc/bash_completion \
-  /usr/share/bash-completion/bash_completion \
-  /usr/share/doc/pkgfile/command-not-found.bash \
-  /usr/share/git/completion/git-completion.bash \
-  ~/.bash_aliases"
-
-for file in $SOURCEFILES
-do
-  if [ -f "$file" ]
-  then
-    . "$file"
-  fi
-done
-unset SOURCEFILES
+# # Shell must be interactive
+# [ -z "$PS1" ] && return
+# 
+# SOURCEFILES="/etc/bashrc \
+#   /etc/bash_completion \
+#   /usr/share/bash-completion/bash_completion \
+#   /usr/share/doc/pkgfile/command-not-found.bash \
+#   /usr/share/git/completion/git-completion.bash \
+#   ~/.bash_aliases"
+# 
+# for file in $SOURCEFILES
+# do
+#   if [ -f "$file" ]
+#   then
+#     . "$file"
+#   fi
+# done
+# unset SOURCEFILES
 
 # Bash settings
 export HISTTIMEFORMAT="%F %T "
