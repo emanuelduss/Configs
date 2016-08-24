@@ -130,9 +130,7 @@ set background=light
 " templates
 autocmd BufNewFile *.html 0r ~/skeleton.html
 
-"colorscheme delek
-silent! colorscheme molokai
-set background=dark
+colorscheme peachpuff
 syntax on
 
 " filetype plugin indent on
