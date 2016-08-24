@@ -1,3 +1,9 @@
+#
+# Packages I install after a fresh installation
+#
+# $ sudo pacman -S $(cat installed_pacman_packages | grep -o "^ *[^#]*" | less)
+#
+
 # Fonts
 
 adobe-source-code-pro-fonts
@@ -8,6 +14,8 @@ terminus-font
 ttf-bitstream-vera
 ttf-dejavu
 ttf-droid
+ttf-fira-mono
+ttf-fira-sans
 ttf-freefont
 ttf-gentium
 ttf-inconsolata
@@ -18,9 +26,10 @@ ttf-ubuntu-font-family
 # Icons and Themes
 
 elementary-icon-theme
+faenza-icon-theme
+gnome-icon-theme
+gnome-icon-theme
 gnome-themes-standard
-gnome-icon-theme
-gnome-icon-theme
 
 # Basic desktop applications and helpers
 
@@ -69,17 +78,25 @@ xournal
 ack
 base-devel
 binutils
+checksec
 git
 indent
+ipython
+ipython2
 jshon
+linux-docs
+linux-manpages
 make
+maven
 nasm
 scapy
+shellcheck
 subversion
 zenity
 
 # Programming Languages
 
+java-environment
 java-environment-common
 java-runtime
 openjdk8-src
@@ -92,8 +109,12 @@ python2-virtualenv
 
 # Debugging
 
+adb
 gdb
 jad
+jadx
+ltrace
+radare2
 strace
 vim-jad
 
@@ -115,6 +136,7 @@ feh
 ffmpeg
 gst-libav # Nonfree media decoding
 gst-plugins-good # Media decoding
+gstreamer
 hunspell-de
 hunspell-en
 imagemagick
@@ -145,12 +167,16 @@ zbar # reading bar codes
 
 bind-tools
 cifs-utils
+davfs2
 ethtool
 fping
 freerdp
+httpie
 iperf
 iptraf-ng
+lftp
 links
+mosh
 mtr
 ncftp
 ndisc6
@@ -163,6 +189,8 @@ openbsd-netcat
 openvpn
 sipcalc # Subnet IP calculator
 smbclient
+socat
+speedtest-cli
 sshfs
 swaks # Swiss Army Knife SMTP
 tcpdump
@@ -192,11 +220,19 @@ hydra
 john
 kismet
 lhasa # LHA support for binwalk
+lynis
 masscan
+mdk3
+mitmproxy
+nbtscan
 ncrack
 nikto
 nmap
+p0f
 sleuthkit
+sslscan
+sslsplit
+sslstrip
 thc-ipv6
 zmap
 
@@ -220,6 +256,8 @@ virtualbox-guest-iso
 # System Tools
 
 ansible
+arch-wiki-docs
+arch-wiki-lite
 arj
 autofs
 bc
@@ -238,6 +276,7 @@ figlet
 hdparm
 htop
 inotify-tools
+lrwrap
 lrzip
 lsb-release
 lshw
@@ -251,6 +290,7 @@ pv
 renameutils
 rfkill
 rsync
+screen
 smartmontools
 squashfs-tools
 sysdig
