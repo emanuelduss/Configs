@@ -13,14 +13,39 @@
 "propersuspend"
     XF86Sleep
 
+"xbacklight -inc 10"
+    XF86MonBrightnessUp
+
+"xbacklight -dec 10"
+    XF86MonBrightnessDown
+
+"sleep 1; xset dpms force off"
+    Mod4 + b
+
+"amixer set Master playback 5+"
+    XF86AudioRaiseVolume
+
+"amixer set Master playback 5-"
+    XF86AudioLowerVolume
+
+"amixer set Master toggle"
+    XF86AudioMute
+
+# Desktop Helper
+
+"dmenu_run -p $ -l 10 -i"
+    Mod4 + p
+
 "screenctl dialog"
     XF86Display
 
 "screenctl dialog"
     control + alt + 7
 
-"dmenu_run -p $ -l 10 -i"
-    Mod4 + p
+"/usr/local/bin/magnify"
+    Mod4 + o
+
+# Applications
 
 "ario"
     Mod4 + m
@@ -39,20 +64,6 @@
 
 "urxvt -fg gray -bg black -e ncmpcpp"
     Mod4 + u
-
-"/usr/local/bin/magnify"
-    Mod4 + o
-
-# Multimedia
-
-"amixer set Master playback 5+"
-    XF86AudioRaiseVolume
-
-"amixer set Master playback 5-"
-    XF86AudioLowerVolume
-
-"amixer set Master toggle"
-    XF86AudioMute
 
 # MPD
 
