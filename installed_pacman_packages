@@ -166,12 +166,15 @@ zbar # reading bar codes
 # Networking
 
 bind-tools
+bmon
+bwm-ng
 cifs-utils
 davfs2
 ethtool
 fping
 freerdp
 httpie
+iftop
 iperf
 iptraf-ng
 lftp
@@ -197,6 +200,7 @@ tcpdump
 tftp-hpa
 traceroute
 tsocks
+vnstat
 vpnc
 weechat
 mcabber # Jabber Client
