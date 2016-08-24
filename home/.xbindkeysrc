@@ -2,13 +2,13 @@
 # ~/.xbindkeysrc
 #
 
-# "notify-send --urgency=critical "`acpi`""
-#    XF86WakeUp
-
 # Desktop Environment
-#
-"i3lock -u --dpms -c 333333 --pointer default"
+
+"i3lock -u -c 333333 --pointer default; xset dpms force off"
     XF86ScreenSaver
+
+"i3lock -u -c 333333 --pointer default; xset dpms force off"
+    Control + Mod1 + Delete
 
 "propersuspend"
     XF86Sleep
