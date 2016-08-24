@@ -96,6 +96,8 @@ nmap \l :setlocal list!<CR>
 nmap \p :setlocal paste!<CR>
 nmap \w :setlocal wrap!<CR>
 set spelllang=de_ch
+nnoremap <leader>f 1z=
+nnoremap <leader>s :set spell!
 
 " Filetype spezifisch
 " autocmd BufNewFile,BufRead *.tex map <F5> :w! <CR>:! pdflatex % <CR>
