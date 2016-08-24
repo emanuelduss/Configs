@@ -1,29 +1,6 @@
 "
 " ~/.vimrc
 "
-
-"
-" Start Vundle
-"
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Bundle "surround.vim"
-Bundle 'closetags.vim'
-
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'mattn/emmet-vim'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-"
-" Ende Vundle
-"
-
 set colorcolumn=80
 set icon
 set report=0
