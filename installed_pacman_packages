@@ -79,6 +79,7 @@ ack
 base-devel
 binutils
 checksec
+cmake
 git
 indent
 ipython
@@ -219,6 +220,7 @@ dsniff
 ettercap-gtk
 fcrackzip
 firmware-mod-kit
+hashcat
 hping
 hydra
 john
@@ -227,6 +229,7 @@ lhasa # LHA support for binwalk
 lynis
 masscan
 mdk3
+metasploit
 mitmproxy
 nbtscan
 ncrack
@@ -279,6 +282,7 @@ fdupes
 figlet
 hdparm
 htop
+hwinfo
 inotify-tools
 lrwrap
 lrzip
