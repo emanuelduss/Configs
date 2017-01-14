@@ -52,6 +52,8 @@ home (/home/username)
 * `.xprofile`: Shell script which starts wit X11 login
 * `.xbindkeysrc`: Konfigurationsdatei für xbindkeys
 * `.xmodmaprc`: Konfigurationsdatei für xmodmap
+* `.vimperatorrc`: Default configuration file for Vimperator
+* `.vimperatorrc.local`: Personal configuration file for Vimperator
 
 * `.config/tint2/tint2rc`: Konfiguration für tint2 (Panel)
 * `.config/user-dirs.dirs`: XDG Default Dirs

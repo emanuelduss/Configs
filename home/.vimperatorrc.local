@@ -1,0 +1,3 @@
+" Disable/enable CSS
+nmap s :emenu View.Page Style.No Style<CR>
+nmap <S-s> :emenu View.Page Style.Basic Page Style<CR>
