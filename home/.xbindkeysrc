@@ -13,28 +13,31 @@
 "propersuspend"
     XF86Sleep
 
-"xbacklight -inc 10"
+"xbacklight -inc 5"
     XF86MonBrightnessUp
 
-"xbacklight -dec 10"
+"xbacklight -dec 5"
     XF86MonBrightnessDown
 
 "sleep 1; xset dpms force off"
     Mod4 + b
 
-"amixer set Master playback 5+"
+"pactl -- set-sink-volume 0 +5%"
     XF86AudioRaiseVolume
 
-"amixer set Master playback 5-"
+"pactl -- set-sink-volume 0 -5%"
     XF86AudioLowerVolume
 
-"amixer set Master toggle"
+"pactl -- set-sink-mute 0 toggle"
     XF86AudioMute
+
+"scrot /tmp/screenshot.png; xclip -target image/png -selection clipboard /tmp/screenshot.png; feh /tmp/screenshot.png"
+    Print
 
 # Desktop Helper
 
-"dmenu_run -p $ -l 10 -i"
-    Mod4 + p
+#"dmenu_run -p $ -l 10 -i"
+    #Mod4 + p
 
 "screenctl dialog"
     XF86Display
