@@ -45,6 +45,7 @@ libgsf # ODF thumbnails
 libopenraw # RAW thumbnails
 lxappearance-gtk3
 notification-daemon
+qrencode
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
@@ -93,6 +94,7 @@ nasm
 scapy
 shellcheck
 subversion
+the_silver_searcher
 zenity
 
 # Programming Languages
@@ -241,6 +243,7 @@ sslscan
 sslsplit
 sslstrip
 thc-ipv6
+vulscan
 zmap
 
 # Security
@@ -266,6 +269,7 @@ ansible
 arch-wiki-docs
 arch-wiki-lite
 arj
+asciinema
 autofs
 bc
 cabextract
@@ -280,6 +284,7 @@ exfat-utils
 exfat-utils
 fdupes
 figlet
+foremost
 hdparm
 htop
 hwinfo
