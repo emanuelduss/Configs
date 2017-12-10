@@ -20,12 +20,12 @@ eval `gpg-agent --daemon`
 xrandr --dpi 80 &
 xrdb ~/.colors/tango
 xmodmap ~/.xmodmaprc
-echo 255 | sudo tee /sys/devices/platform/i8042/serio1/serio2/speed
-echo 200 | sudo tee /sys/devices/platform/i8042/serio1/serio2/sensitivity
+#echo 255 | sudo tee /sys/devices/platform/i8042/serio1/serio2/speed
+#echo 200 | sudo tee /sys/devices/platform/i8042/serio1/serio2/sensitivity
 xbindkeys
+autolock &
 urxvt -e tmux &
-keepassx -min -lock &
-pidgin &
+keepassx2 &
 if [ -f ~/.fehbg ]
 then
   sleep 1 && ~/.fehbg &
