@@ -67,7 +67,7 @@ if has("autocmd")
     \ endif
 endif
 
-let mapleader = "-"
+let mapleader = "\<Space>"
 
 map <leader>hex :%!xxd<CR>        " Hexeditor mit \hex starten
 map <leader>nhex :%!xxd -r<CR>    " Hexeditor mit \nhex beenden
