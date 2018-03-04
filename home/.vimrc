@@ -1,7 +1,6 @@
 "
 " ~/.vimrc
 "
-set colorcolumn=80
 set icon
 set report=0
 set ruler
@@ -51,7 +50,6 @@ set nofoldenable
 
 set autoindent     " Automatisch einrücken
 set wrap           " Zeilenumbruch aktivieren
-set textwidth=80
 set list           " listchars anzeigen
 set listchars=tab:▸·,trail:· " Tabs und Leerzeichen am Zeilenende anzeigen
 set scrolloff=3     " Beginne mit Scrollen 3 Zeilen vorher
