@@ -64,6 +64,8 @@ zathura-djvu
 zathura-pdf-poppler
 zathura-ps
 
+pulseaudio-alsa pulseaudio-bluetooth bluez bluez-libs bluez-utils
+
 # Desktop Applications
 
 chromium
