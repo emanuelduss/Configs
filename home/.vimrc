@@ -69,10 +69,11 @@ endif
 
 let mapleader = "\<Space>"
 
+
 map <leader>hex :%!xxd<CR>        " Hexeditor mit \hex starten
 map <leader>nhex :%!xxd -r<CR>    " Hexeditor mit \nhex beenden
 map <leader>ipsort :%! sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4<CR> " IPv4 Adressen sortieren
-map <leader>sudowrite :w ! sudo tee %<CR>:q!<CR> " sudo trick
+cmap w!! w !sudo tee > /dev/null %
 
 map <F3>  :r!date +\%Y-\%m-\%d<CR>
 map <C-C> : w ! xclip<CR><CR>
