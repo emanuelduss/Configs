@@ -54,7 +54,7 @@ exitcode() {
   fi
 }
 
-if hash git
+if hash git &> /dev/null
 then
   git_branch() {
     git branch 2>/dev/null | awk '/^\*/{ print " ("$2")" }'
