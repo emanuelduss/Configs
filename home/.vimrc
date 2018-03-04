@@ -76,7 +76,7 @@ map <leader>ipsort :%! sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4<CR> " IPv4 Adres
 cmap w!! w !sudo tee > /dev/null %
 
 map <F3>  :r!date +\%Y-\%m-\%d<CR>
-map <C-C> : w ! xclip<CR><CR>
+map <C-C> :w ! xclip<CR><CR>
 map <F12> :w!<CR>:!aspell --lang=de_CH check %<CR>:e! %<CR>
 
 map <F4>  :r!./getscreenshot<CR>
