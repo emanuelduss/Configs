@@ -134,6 +134,7 @@ alias shit='sudo $(history -p \!\!)'
 alias slideshow="feh --fullscreen --auto-zoom --randomize --hide-pointer --slideshow-delay 3"
 alias hideprev='history -d $((HISTCMD-2)) && history -d $((HISTCMD-1))'
 alias env='env | cat -v'
+alias pstop='ps -eo user,pid,ppid,pcpu,cpu,pmem,rss,cmd --sort -pcpu --width $COLUMNS | numfmt --header --to=iec --field 7 --padding 6 | head -10'
 
 if [[ -f "~/.bash_aliases" ]]
 then
