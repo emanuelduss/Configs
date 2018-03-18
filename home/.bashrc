@@ -134,7 +134,7 @@ alias shit='sudo $(history -p \!\!)'
 alias slideshow="feh --fullscreen --auto-zoom --randomize --hide-pointer --slideshow-delay 3"
 alias hideprev='history -d $((HISTCMD-2)) && history -d $((HISTCMD-1))'
 alias env='env | cat -v'
-alias pstop='ps -eo user,pid,ppid,pcpu,cpu,pmem,rss,cmd --sort -pcpu --width $COLUMNS | numfmt --header --to=iec --field 7 --padding 6 | head -10'
+alias pstop='ps -eo user,pid,ppid,pcpu,cpu,pmem,rss,cmd --sort -pcpu --width $COLUMNS | numfmt --header --to=iec --field 7 --padding 6 | cut -c 1-$COLUMNS | head -n $(($LINES-5))'
 
 if [[ -f "~/.bash_aliases" ]]
 then
@@ -145,3 +145,6 @@ bcq(){
   bc <<< "$@"
 }
 
+crtsh(){
+  curl -s "https://crt.sh/?q=%25.${1}&output=json" | jq -r .name_value | sort -u
+}
