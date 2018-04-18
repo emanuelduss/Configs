@@ -17,6 +17,9 @@ else
   set nobackup
 endif
 
+
+
+
 set undofile
 set undodir=~/.vimundo
 
@@ -67,8 +70,7 @@ if has("autocmd")
     \ endif
 endif
 
-let mapleader = "\<Space>"
-
+let mapleader = "-"
 
 map <leader>hex :%!xxd<CR>        " Hexeditor mit \hex starten
 map <leader>nhex :%!xxd -r<CR>    " Hexeditor mit \nhex beenden
