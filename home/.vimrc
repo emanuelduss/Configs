@@ -76,6 +76,7 @@ map <leader>hex :%!xxd<CR>        " Hexeditor mit \hex starten
 map <leader>nhex :%!xxd -r<CR>    " Hexeditor mit \nhex beenden
 map <leader>ipsort :%! sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4<CR> " IPv4 Adressen sortieren
 cmap w!! w !sudo tee > /dev/null %
+noremap <leader>v :read !xclip -selection clipboard -o<CR>
 
 map <F3>  :r!date +\%Y-\%m-\%d<CR>
 map <C-C> :w ! xclip<CR><CR>
