@@ -45,6 +45,21 @@
 "screenctl dialog"
     control + alt + 7
 
+"screenctl internal"
+    control + Mod4 + alt + i
+
+"screenctl external"
+    control + Mod4 + alt + e
+
+"screenctl extend right"
+    control + Mod4 + alt + r
+
+"screenctl extend left"
+    control + Mod4 + alt + l
+
+"screenctl clone"
+    control + Mod4 + alt + c
+
 "/usr/local/bin/magnify"
     Mod4 + o
 
