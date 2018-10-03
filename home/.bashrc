@@ -158,3 +158,8 @@ pj(){
   cd -- "$DIRECTORY"
 }
 
+how_in()
+{
+  where="$1"; shift
+  IFS=+ curl "https://cht.sh/$where/ $@"
+}
