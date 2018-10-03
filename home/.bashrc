@@ -137,6 +137,8 @@ alias env='env | cat -v'
 alias pstop='ps -eo user,pid,ppid,pcpu,cpu,pmem,rss,cmd --sort -pcpu --width $COLUMNS | numfmt --header --to=iec --field 7 --padding 6 | cut -c 1-$COLUMNS | head -n $(($LINES-5))'
 alias ip="ip --color"
 alias ipb="ip --color --brief"
+alias ipba="ip --color --brief adr list"
+alias ipbl="ip --color --brief link list"
 
 if [[ -f "~/.bash_aliases" ]]
 then
