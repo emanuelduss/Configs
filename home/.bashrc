@@ -112,7 +112,7 @@ export PAGER=less
 export LESS='-iMnR'
 
 # Path
-for i in ~/.gem/ruby/*/bin
+for i in ~/.gem/ruby/*/bin ~/.local/bin
 do
   if [[ -d $i ]]
   then
