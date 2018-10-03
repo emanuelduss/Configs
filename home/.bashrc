@@ -152,3 +152,9 @@ bcq(){
 crtsh(){
   curl -s "https://crt.sh/?q=%25.${1}&output=json" | jq -r .name_value | sort -u
 }
+
+pj(){
+  DIRECTORY="$(find ~/Documents/Projects/ -iname "*$@*" -print | head -1)"
+  cd -- "$DIRECTORY"
+}
+
