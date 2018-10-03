@@ -6,5 +6,5 @@ BASEURL="https://raw.githubusercontent.com/mindfuckup/Configs/master/home/"
 for dotfile in $DOTFILES
 do
   echo "[*] Getting dotfile $HOME/$dotfile"
-  curl -s "$BASEURL/$dotfile" -o "$HOME/$dotfile"
+  wget -q "$BASEURL/$dotfile" -O "$HOME/$dotfile"
 done
