@@ -56,9 +56,25 @@ exitcode() {
 
 if hash git &> /dev/null
 then
-  git_branch() {
-    git branch 2>/dev/null | awk '/^\*/{ print " ("$2")" }'
-  }
+  for file in "/usr/share/git/git-prompt.sh" \
+    "/usr/share/git/completion/git-prompt.sh" \
+    "/usr/share/git-core/contrib/completion/git-prompt.sh" \
+    "/usr/share/git/completion/git-prompt.sh"
+  do
+    if [[ -r "$file" ]]
+    then
+      . "$file"
+      GIT_PS1_SHOWDIRTYSTATE=true
+      GIT_PS1_SHOWSTASHSTATE=true
+      GIT_PS1_SHOWUNTRACKEDFILES=true
+      GIT_PS1_SHOWUPSTREAM="auto"
+      break
+    else
+      __git_ps1() {
+        git branch 2>/dev/null | awk '/^\*/{ print " ("$2")" }'
+      }
+    fi
+  done
 else
   git_branch() {
     echo ""
@@ -68,7 +84,10 @@ fi
 PROMPT_COMMAND="EXITCODE=\$?"
 PS1="${font_bold}${color_user}\u@\h${color_reset}\
 ${font_bold}:${color_blue}\w\
-${color_orange}\$(git_branch)${color_reset} \$(exitcode)\n$cmd_line "
+${color_orange}\$(__git_ps1)${color_reset} \$(exitcode)\n$cmd_line "
+
+# Window Title
+PS1="\[\e]0;\u@\h:\w\a\]$PS1"
 
 ################################################################################
 # Colors
