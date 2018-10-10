@@ -59,7 +59,8 @@ then
   for file in "/usr/share/git/git-prompt.sh" \
     "/usr/share/git/completion/git-prompt.sh" \
     "/usr/share/git-core/contrib/completion/git-prompt.sh" \
-    "/usr/share/git/completion/git-prompt.sh"
+    "/usr/share/git/completion/git-prompt.sh" \
+    "/usr/lib/git-core/git-sh-prompt"
   do
     if [[ -r "$file" ]]
     then
