@@ -5,7 +5,12 @@
 ! Caps Lock = Escape; Shift + Caps Lock = Caps Lock
 remove Lock = Caps_Lock
 keysym Caps_Lock = Escape Caps_Lock Multi_key NoSymbol Multi_key NoSymbol
+
 ! Shift + Escape = Compose Key
 keysym Escape = Escape Multi_key
 
+! ?
 keycode 49 = NoSymbol NoSymbol NoSymbol NoSymbol dead_diaeresis
+
+! No dead key for `^~
+keycode  21 = asciicircum grave equal plus asciitilde dead_ogonek equal plus
