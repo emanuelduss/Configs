@@ -173,8 +173,13 @@ crtsh(){
   curl -s "https://crt.sh/?q=%25.${1}&output=json" | jq -r .name_value | sort -u
 }
 
+f(){
+  DIRECTORY="$(find ~/Documents/ -type d -ipath "*$@*" -print 2>/dev/null | head -1)"
+  cd -- "$DIRECTORY"
+}
+
 pj(){
-  DIRECTORY="$(find ~/Documents/Projects/ -iname "*$@*" -print | head -1)"
+  DIRECTORY="$(find ~/Documents/Projects/ -type d -iname "*$@*" -print 2>/dev/null | head -1)"
   cd -- "$DIRECTORY"
 }
 
