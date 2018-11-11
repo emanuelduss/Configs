@@ -34,6 +34,9 @@
 "scrot /tmp/screenshot.png; xclip -target image/png -selection clipboard /tmp/screenshot.png; feh /tmp/screenshot.png"
     Print
 
+"xclip -out -selection clipboard | dos2unix | xclip -in -selection clipboard"
+    Control + Shift + C
+
 # Desktop Helper
 
 #"dmenu_run -p $ -l 10 -i"
