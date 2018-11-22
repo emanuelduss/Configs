@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-HOME=/tmp/home
 CONFIGDIR="$HOME/.configs"
 DOTFILES=".bash_profile .bashrc .exrc .gdbinit .gitconfig .inputrc .screenrc .tmux.conf .vimrc"
 
@@ -10,5 +9,5 @@ git clone --depth 1 https://github.com/mindfuckup/Configs.git "$CONFIGDIR"
 for dotfile in $DOTFILES
 do
   echo "[*] Linking dotfile $HOME/$dotfile"
-  ln -s "$CONFIGDIR/home/$dotfile" "$HOME/$dotfile"
+  ln -fs "$CONFIGDIR/home/$dotfile" "$HOME/$dotfile"
 done
