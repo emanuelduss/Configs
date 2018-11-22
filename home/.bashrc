@@ -174,7 +174,7 @@ crtsh(){
 }
 
 f(){
-  DIRECTORY="$(find ~/Documents/ -type d -ipath "*$@*" -print 2>/dev/null | head -1)"
+  DIRECTORY="$(find ~/Documents/ -type d -path "*$@*" -print 2>/dev/null | head -1)"
   cd -- "$DIRECTORY"
 }
 
