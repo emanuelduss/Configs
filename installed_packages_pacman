@@ -200,6 +200,7 @@ smbclient
 socat
 speedtest-cli
 sshfs
+stunnel
 swaks # Swiss Army Knife SMTP
 tcpdump
 tftp-hpa
@@ -301,6 +302,7 @@ mlocate
 mtd-utils # JFFS filesystem support
 p7zip
 parallel
+pacman-contrib
 pv
 renameutils
 rfkill
