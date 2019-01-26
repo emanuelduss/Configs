@@ -77,7 +77,7 @@ then
     fi
   done
 else
-  git_branch() {
+  __git_ps1() {
     echo ""
   }
 fi
