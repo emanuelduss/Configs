@@ -170,7 +170,7 @@ bcq(){
 }
 
 crtsh(){
-  curl -s "https://crt.sh/?q=%25.${1}&output=json" | jq -r .name_value | sort -u
+  curl -s "https://crt.sh/?q=%25.${1}&output=json" | jq -r ".[].name_value" | sort -u
 }
 
 f(){
