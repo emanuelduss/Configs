@@ -6,7 +6,7 @@
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 9
+font pango:DejaVu Sans Mono 10
 #font pango:Droid Sans Regular 9
 
 # Color definitions
@@ -102,7 +102,7 @@ set $ws5  "5"
 set $ws6  "6"
 set $ws7  "7: mpd"
 set $ws8  "8: media"
-set $ws9  "9"
+set $ws9  "9: VMs"
 set $ws10 "10: chat"
 
 # switch to workspace
