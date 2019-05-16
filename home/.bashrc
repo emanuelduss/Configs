@@ -175,11 +175,16 @@ crtsh(){
 }
 
 f(){
+  DIRECTORY="$(find . -type d -path "*$@*" -print 2>/dev/null | head -1)"
+  cd -- "$DIRECTORY"
+}
+
+fd(){
   DIRECTORY="$(find ~/Documents/ -type d -path "*$@*" -print 2>/dev/null | head -1)"
   cd -- "$DIRECTORY"
 }
 
-pj(){
+fp(){
   DIRECTORY="$(find ~/Documents/Projects/ -type d -iname "*$@*" -print 2>/dev/null | head -1)"
   cd -- "$DIRECTORY"
 }
