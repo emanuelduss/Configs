@@ -144,7 +144,7 @@ done
 # Aliases and Functions
 
 alias ls='ls --color=auto'
-alias ed='ed -p "ed> "'
+alias ed='ed -v -p "ed> "'
 alias grep='grep --color=auto'
 alias c='clear'
 alias feh="feh --auto-zoom --sort filename --borderless --scale-down --draw-filename --image-bg black"
