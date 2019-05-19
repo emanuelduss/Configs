@@ -166,31 +166,30 @@ then
   . ~/.bash_aliases
 fi
 
-bcq(){
+bcq() {
   bc <<< "$@"
 }
 
-crtsh(){
+crtsh() {
   curl -s "https://crt.sh/?q=%25.${1}&output=json" | jq -r ".[].name_value" | sort -u
 }
 
-f(){
+f() {
   DIRECTORY="$(find . -type d -path "*$@*" -print 2>/dev/null | head -1)"
   cd -- "$DIRECTORY"
 }
 
-fd(){
+fd() {
   DIRECTORY="$(find ~/Documents/ -type d -path "*$@*" -print 2>/dev/null | head -1)"
   cd -- "$DIRECTORY"
 }
 
-fp(){
+fp() {
   DIRECTORY="$(find ~/Documents/Projects/ -type d -iname "*$@*" -print 2>/dev/null | head -1)"
   cd -- "$DIRECTORY"
 }
 
-how_in()
-{
+how_in() {
   where="$1"; shift
   IFS=+ curl "https://cht.sh/$where/ $@"
 }
