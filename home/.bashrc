@@ -175,12 +175,12 @@ crtsh() {
 }
 
 f() {
-  DIRECTORY="$(find . -type d -path "*$@*" -print 2>/dev/null | head -1)"
+  DIRECTORY="$(find . -type d -ipath "*$@*" -print 2>/dev/null | head -1)"
   cd -- "$DIRECTORY"
 }
 
 fd() {
-  DIRECTORY="$(find ~/Documents/ -type d -path "*$@*" -print 2>/dev/null | head -1)"
+  DIRECTORY="$(find ~/Documents/ -type d -ipath "*$@*" -print 2>/dev/null | head -1)"
   cd -- "$DIRECTORY"
 }
 
@@ -192,4 +192,12 @@ fp() {
 how_in() {
   where="$1"; shift
   IFS=+ curl "https://cht.sh/$where/ $@"
+}
+
+lf(){
+  # Fuzzy search filenames containing the arguments in that order without
+  # knowing the correct filename.
+  local strings="$@"
+  local regex="${strings// /.*}"
+  locate -i --regex "$regex" | grep --color -i -E "$regex"
 }
