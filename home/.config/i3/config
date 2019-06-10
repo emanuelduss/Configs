@@ -6,7 +6,7 @@
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono 9
 #font pango:Droid Sans Regular 9
 
 # Color definitions
@@ -49,6 +49,7 @@ bindsym $mod+Shift+Tab focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+odiaeresis focus right
+bindsym $mod+semicolon focus right
 bindsym $mod+Tab focus right
 
 # alternatively, you can use the cursor keys:
@@ -62,6 +63,7 @@ bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+odiaeresis move right
+bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -160,6 +162,7 @@ mode "resize" {
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym odiaeresis resize grow width 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -192,7 +195,7 @@ bar {
 }
 # class                  border             bground            text         indicator          child_border
 client.focused           $color_focused     $color_focused     $color_text  $color_separator   $color_focused
-client.focused_inactive  $color_separator   $color_background  $color_text   $color_separator  $color_background
+client.focused_inactive  $color_separator   $color_background  $color_text  $color_separator   $color_background
 client.unfocused         $color_background  $color_background  $color_text  $color_separator   $color_background
 client.urgent            $color_urgent      $color_urgent      $color_text  $color_urgent      $color_urgent
 client.placeholder       $color_background  $color_background  $color_text  $color_background  $color_background
