@@ -195,8 +195,8 @@ how_in() {
 }
 
 lf(){
-  # Fuzzy search filenames containing the arguments in that order without
-  # knowing the correct filename.
+  # Fuzzy search filenames containing all arguments case-insensitive in the
+  # provided order without knowing the correct filename.
   local strings="$@"
   local regex="${strings// /.*}"
   locate -i --regex "$regex" | grep --color -i -E "$regex"
