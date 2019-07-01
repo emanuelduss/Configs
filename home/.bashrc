@@ -201,3 +201,7 @@ lf(){
   local regex="${strings// /.*}"
   locate -i --regex "$regex" | grep --color -i -E "$regex"
 }
+
+rgvim(){
+  rg --color never -l $@ | xargs vim
+}
