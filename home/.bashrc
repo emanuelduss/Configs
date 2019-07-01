@@ -166,6 +166,13 @@ then
   . ~/.bash_aliases
 fi
 
+xcp() {
+  read input
+  echo "$input" | xclip -selection primary
+  echo "$input" | xclip -selection secondary
+  echo "$input" | xclip -selection clipboard
+}
+
 bcq() {
   bc <<< "$@"
 }
