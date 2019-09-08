@@ -23,6 +23,10 @@ set $color_separator "#404552"
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -u -c 2f343f --pointer default --nofork
+
 # Modifier
 set $mod Mod4
 
