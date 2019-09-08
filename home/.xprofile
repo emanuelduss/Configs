@@ -21,7 +21,6 @@ eval `gpg-agent --daemon`
 xmodmap ~/.xmodmaprc
 xbindkeys
 /usr/local/bin/autolock &
-xss-lock -- i3lock -u -c 2F343F --pointer default &
 redshift-gtk &
 keepassx2 &
 if [ -f ~/.fehbg ]
