@@ -27,6 +27,13 @@ set $color_separator "#404552"
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -u -c 2f343f --pointer default --nofork
 
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+set $up l
+set $down k
+set $left j
+set $right odiaeresis
+
 # Modifier
 set $mod Mod4
 
@@ -48,11 +55,11 @@ bindsym $mod+d exec dmenu_run -nf "$color_text" -nb "$color_background" -sb "$co
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
+bindsym $mod+$left focus left
 bindsym $mod+Shift+Tab focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+odiaeresis focus right
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 bindsym $mod+semicolon focus right
 bindsym $mod+Tab focus right
 
@@ -109,7 +116,7 @@ set $ws3  "3"
 set $ws4  "4"
 set $ws5  "5"
 set $ws6  "6"
-set $ws7  "7: mpd"
+set $ws7  "7: music"
 set $ws8  "8: media"
 set $ws9  "9: VMs"
 set $ws10 "10: chat"
