@@ -212,3 +212,7 @@ lf(){
 rgvim(){
   rg --color never -l $@ | xargs vim
 }
+
+infoman(){
+  info "$1" | less
+}
