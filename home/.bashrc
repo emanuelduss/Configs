@@ -181,6 +181,12 @@ crtsh() {
   curl -s "https://crt.sh/?q=%25.${1}&output=json" | jq -r ".[].name_value" | sort -u
 }
 
+cdf(){
+  local path="$(pwd | rev | cut -d/ -f2- | rev | grep -o -E ".*$1[^/]*")"
+  echo cd -- "$path"
+  cd -- "$path"
+}
+
 f() {
   DIRECTORY="$(find . -type d -ipath "*$@*" -print 2>/dev/null | head -1)"
   cd -- "$DIRECTORY"
