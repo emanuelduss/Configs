@@ -201,6 +201,10 @@ how_in() {
   IFS=+ curl "https://cht.sh/$where/ $@"
 }
 
+infoman(){
+  info "$1" | less
+}
+
 lf(){
   # Fuzzy search filenames containing all arguments case-insensitive in the
   # provided order without knowing the correct filename.
@@ -213,6 +217,3 @@ rgvim(){
   rg --color never -l $@ | xargs vim
 }
 
-infoman(){
-  info "$1" | less
-}
