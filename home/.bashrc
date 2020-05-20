@@ -88,12 +88,12 @@ else
 fi
 
 PROMPT_COMMAND="EXITCODE=\$?"
-PS1="${font_bold}${color_user}\u@\h${color_reset}\
+PS1="${font_bold}${color_user}\u@\H${color_reset}\
 ${font_bold}:${color_blue}\w\
 ${color_orange}\$(__git_ps1)${color_reset} \$(exitcode)\n$cmd_line "
 
 # Window Title
-PS1="\[\e]0;\u@\h:\w\a\]$PS1"
+PS1="\[\e]0;\u@\H:\w\a\]$PS1"
 
 ################################################################################
 # Colors
