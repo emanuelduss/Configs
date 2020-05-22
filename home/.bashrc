@@ -151,7 +151,10 @@ done
 alias ls='ls --color=auto'
 alias ed='ed -v -p "ed> "'
 alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 alias c='clear'
+alias duchs='du -sch .[!.]* * |sort -h'
 alias feh="feh --auto-zoom --sort filename --borderless --scale-down --draw-filename --image-bg black"
 alias l='ls -hF --group-directories-first'
 alias la='ls -lhAF'
