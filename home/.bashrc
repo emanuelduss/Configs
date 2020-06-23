@@ -195,6 +195,12 @@ cdf(){
   cd -- "$path"
 }
 
+mycd(){
+  \cd "${1:-$HOME}"
+  ls -lah
+}
+alias cd=mycd
+
 f() {
   DIRECTORY="$(find . -type d -ipath "*$@*" -print 2>/dev/null | head -1)"
   cd -- "$DIRECTORY"
