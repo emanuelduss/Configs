@@ -167,6 +167,8 @@ alias pstop='ps -eo user,pid,ppid,pcpu,cpu,pmem,rss,cmd --sort -pcpu --width $CO
 alias ip="ip --color"
 alias ipba="ip --color --brief addr list"
 alias ipbl="ip --color --brief link list"
+alias grep-url="grep -o -E 'https?://[^ ]+'"
+alias grep-ipaddr="grep -o -E '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'"
 
 if [[ -f "~/.bash_aliases" ]]
 then
