@@ -277,3 +277,7 @@ baseconv(){
 imagerename(){
   jhead -nf%Y-%m-%d_%H-%M-%S "$@"
 }
+
+imagerotate(){
+  jhead -autorot "$@"
+}
