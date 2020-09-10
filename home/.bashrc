@@ -268,3 +268,8 @@ ip-pub(){
   echo "Public IPv4 Address: $(curl -s -4 -L --write-out "\nLocal IPv4 Addres:   %{local_ip}" $ipurl)"
   echo "Public IPv6 Address: $(curl -s -6 -L --write-out "\nLocal IPv6 Addres:   %{local_ip}" $ipurl)"
 }
+
+baseconv(){
+  # Converts number ($3) from one base ($1) to another base ($2)
+  bc <<< "obase=${2^^}; ibase=${1^^}; $3"
+}
