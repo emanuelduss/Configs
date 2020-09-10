@@ -281,3 +281,10 @@ imagerename(){
 imagerotate(){
   jhead -autorot "$@"
 }
+
+qrscan(){
+  local image="$(mktemp --tmpdir="/tmp" qrscan_XXXXX.png)"
+  scrot -o -s "$image" 2>/dev/null
+  zbarimg -q --raw "$image"
+  rm $image
+}
