@@ -170,6 +170,8 @@ alias ipbl="ip --color --brief link list"
 alias grep-url="grep -o -E 'https?://[^ ]+'"
 alias grep-ipaddr="grep -o -E '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'"
 alias fop='fzf --preview="ls -l {}; file -b {}; echo; head {}" --preview-window=up:30% --bind "enter:execute(xdg-open {})"'
+alias imagerename="jhead -nf%Y-%m-%d_%H-%M-%S"
+alias imagerotate="jhead -autorot"
 
 if [[ -f "~/.bash_aliases" ]]
 then
@@ -272,14 +274,6 @@ ip-pub(){
 baseconv(){
   # Converts number ($3) from one base ($1) to another base ($2)
   bc <<< "obase=${2^^}; ibase=${1^^}; $3"
-}
-
-imagerename(){
-  jhead -nf%Y-%m-%d_%H-%M-%S "$@"
-}
-
-imagerotate(){
-  jhead -autorot "$@"
 }
 
 qrscan(){
