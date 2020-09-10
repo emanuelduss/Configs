@@ -262,3 +262,9 @@ docker-sh(){
   echo -e "\nRunning command \"$command\" in container $container ...\n"
   docker exec -it "$container" "$command"
 }
+
+ip-pub(){
+  local ipurl="https://motd.ch/ip.php"
+  echo "Public IPv4 Address: $(curl -s -4 -L --write-out "\nLocal IPv4 Addres:   %{local_ip}" $ipurl)"
+  echo "Public IPv6 Address: $(curl -s -6 -L --write-out "\nLocal IPv6 Addres:   %{local_ip}" $ipurl)"
+}
