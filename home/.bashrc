@@ -282,3 +282,11 @@ qrscan(){
   zbarimg -q --raw "$image"
   rm $image
 }
+
+gitpulldirs(){
+  for repo in "$@"
+  do
+    echo -e "\n[*] Updating $repo..."
+    git -C "$repo" pull --ff-only
+  done
+}
