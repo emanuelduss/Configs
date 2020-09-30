@@ -273,7 +273,7 @@ ip-pub(){
 
 baseconv(){
   # Converts number ($3) from one base ($1) to another base ($2)
-  bc <<< "obase=${2^^}; ibase=${1^^}; $3"
+  bc <<< "obase=${2^^}; ibase=${1^^}; ${3^^}"
 }
 
 qrscan(){
