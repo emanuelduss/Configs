@@ -172,6 +172,7 @@ alias grep-ipaddr="grep -o -E '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|
 alias fop='fzf --preview="ls -l {}; file -b {}; echo; head {}" --preview-window=up:30% --bind "enter:execute(xdg-open {})"'
 alias imagerename="jhead -nf%Y-%m-%d_%H-%M-%S"
 alias imagerotate="jhead -autorot"
+alias strip-ansi="sed 's/\x1b\[[0-9;]*m//g'"
 
 if [[ -f "~/.bash_aliases" ]]
 then
