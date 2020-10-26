@@ -291,3 +291,14 @@ gitpulldirs(){
     git -C "$repo" pull --ff-only
   done
 }
+
+androidlogin(){
+  local username="$1"
+  local password="$2"
+  [[ -z "$username" ]] && read -p "Username: " username
+  [[ -z "$password" ]] && read -p "Password: " password
+  adb shell input text "$username"
+  adb shell input keyevent 61 # 61 = Tab
+  adb shell input text "$password"
+  adb shell input keyevent 66 # 61 = Enter
+}
