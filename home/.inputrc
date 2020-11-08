@@ -8,8 +8,11 @@ set editing-mode vi
 # Dont't directly execute pasted content
 set enable-bracketed-paste
 
-# Directly show completion
+# Directly show completion (no bell)
 set show-all-if-ambiguous on
+
+# Always directly show completion options (don't ask if more than x)
+set completion-query-items -1
 
 # Case-insensitive completion
 set completion-ignore-case on
@@ -19,3 +22,4 @@ set colored-completion-prefix on
 
 # Highlight files with LS_COLORS for command completions
 set colored-stats on
+
