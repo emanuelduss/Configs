@@ -4,10 +4,10 @@
 
 # Desktop Environment
 
-"i3lock -u -c 333333 --pointer default; xset dpms force off"
+"loginctl lock-session"
     XF86ScreenSaver
 
-"i3lock -u -c 333333 --pointer default; xset dpms force off"
+"loginctl lock-session"
     Control + Mod1 + Delete
 
 "propersuspend"
