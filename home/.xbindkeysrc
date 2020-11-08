@@ -74,28 +74,28 @@
 "nautilus"
     Mod4 + x
 
-# MPD
+# Playerctl
 
-"mpc next"
+"playerctl next"
     XF86AudioNext
 
-"mpc next"
+"playerctl next"
     control + alt + Right
 
-"mpc prev"
+"playerctl previous"
     XF86AudioPrev
 
-"mpc prev"
+"playerctl previous"
     control + alt + Left
 
-"mpc toggle"
+"playerctl play-pause"
     XF86AudioPlay
 
-"mpc toggle"
+"playerctl play-pause"
     control + alt + Down
 
-"mpc stop"
+"playerctl stop"
     XF86AudioStop
 
-"mpc stop"
+"playerctl stop"
     control + alt + Up
