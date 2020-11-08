@@ -39,9 +39,6 @@
 
 # Desktop Helper
 
-#"dmenu_run -p $ -l 10 -i"
-    #Mod4 + p
-
 "screenctl dialog"
     XF86Display
 
@@ -71,20 +68,11 @@
 "ario"
     Mod4 + m
 
-"thunar"
+"xmag"
+    Mod4 + z
+
+"nautilus"
     Mod4 + x
-
-"urxvt -bg '#002B36' -fg '#EEE8D5'"
-    Mod4 + t
-
-"urxvt -bg '#FFFFFF' -fg '#000000'"
-    Mod4 + Shift + Return
-
-"urxvt -bg '#EEE8D5' -fg '#002B36'"
-    Mod4 + Shift + t
-
-"urxvt -fg gray -bg black -e ncmpcpp"
-    Mod4 + u
 
 # MPD
 
