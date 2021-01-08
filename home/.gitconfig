@@ -23,3 +23,5 @@
 	diff = auto
 [push]
 	default = matching
+[pull]
+	rebase = true
