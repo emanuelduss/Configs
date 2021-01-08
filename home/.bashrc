@@ -134,7 +134,7 @@ then
 fi
 export VISUAL=$EDITOR
 export PAGER=less
-export LESS='-iMnR'
+export LESS='-FiMnR'
 
 # Path
 for i in ~/.gem/ruby/*/bin ~/.local/bin
