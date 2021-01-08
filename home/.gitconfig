@@ -5,10 +5,6 @@
 [user]
 	name = Emanuel Duss
 	email = emanuel.duss@gmail.com
-[credential "https://git.hsr.ch"]
-	username = eduss
-[credential]
-	helper = cache --timeout 36000
 [core]
 	autocrlf = input
 	safecrlf = true
