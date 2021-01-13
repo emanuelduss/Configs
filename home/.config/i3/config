@@ -6,13 +6,14 @@
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 9
+font pango:Fira Code Medium 9
 #font pango:Droid Sans Regular 9
 
 # Color definitions
-set $color_text "#d3d7cf"
-set $color_background "#2a2d37"
-set $color_focused "#3465A4"
+set $color_text "#ffffff"
+#set $color_background "#2a2d37"
+set $color_background "#272A34"
+set $color_focused "#2777FF"
 set $color_urgent "#a40000"
 set $color_separator "#404552"
 
