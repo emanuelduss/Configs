@@ -9,12 +9,12 @@ htop
 httping
 hydra
 linux-man-pages
-macchanger
 mosh
+ncurses-utils
 nmap
 p7zip
+rsync
 sed
-sslscan
 tar
 tmux
 unzip
