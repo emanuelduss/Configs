@@ -9,6 +9,7 @@
 	autocrlf = input
 	safecrlf = true
 	editor = vim
+	pager = less -FiMnRX
 [alias]
 	hist = log --pretty=format:\"%h %ad [%an] | %s%d \" --date=short --all --decorate
 	type = cat-file -t
