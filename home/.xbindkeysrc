@@ -23,6 +23,15 @@
     Mod4 + b
 
 "pactl -- set-sink-volume 0 +5%"
+    Control+Alt + Prior
+
+"pactl -- set-sink-volume 0 -5%"
+    Control+Alt + Next
+
+"pactl -- set-sink-mute 0 toggle"
+    Control+Alt + End
+
+"pactl -- set-sink-volume 0 +5%"
     XF86AudioRaiseVolume
 
 "pactl -- set-sink-volume 0 -5%"
