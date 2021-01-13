@@ -4,13 +4,13 @@
 
 # Desktop Environment
 
-"loginctl lock-session"
+"i3-msg workspace locked; loginctl lock-session"
     XF86ScreenSaver
 
-"loginctl lock-session"
+"i3-msg workspace locked; loginctl lock-session"
     Control + Mod1 + Delete
 
-"propersuspend"
+"i3-msg workspace locked; propersuspend"
     XF86Sleep
 
 "xbacklight -inc 5"
