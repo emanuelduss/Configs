@@ -179,11 +179,8 @@ then
   . ~/.bash_aliases
 fi
 
-xcp() {
-  read input
-  echo "$input" | xclip -selection primary
-  echo "$input" | xclip -selection secondary
-  echo "$input" | xclip -selection clipboard
+xcopy(){
+  tee >(xclip -selection primary) >(xclip -selection clipboard) >(xclip -selection secondary)
 }
 
 bcq() {
