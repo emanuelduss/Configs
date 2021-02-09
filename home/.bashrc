@@ -289,6 +289,11 @@ gitpulldirs(){
   done
 }
 
+pretty_csv() {
+  # Prettifies CSV input (https://www.stefaanlippens.net/pretty-csv.html)
+  column -t -s, -n "$@" | less -F -S -X -K
+}
+
 androidlogin(){
   local username="$1"
   local password="$2"
