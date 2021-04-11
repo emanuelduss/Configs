@@ -22,23 +22,23 @@
 "sleep 1; xset dpms force off"
     Mod4 + b
 
-"pactl -- set-sink-volume 0 +5%"
+"pactl set-sink-volume @DEFAULT_SINK@ +1000"
     Control+Alt + Prior
 
-"pactl -- set-sink-volume 0 -5%"
-    Control+Alt + Next
-
-"pactl -- set-sink-mute 0 toggle"
-    Control+Alt + End
-
-"pactl -- set-sink-volume 0 +5%"
+"pactl set-sink-volume @DEFAULT_SINK@ +1000"
     XF86AudioRaiseVolume
 
-"pactl -- set-sink-volume 0 -5%"
+"pactl set-sink-volume @DEFAULT_SINK@ -1000"
+    Control+Alt + Next
+
+"pactl set-sink-volume @DEFAULT_SINK@ -1000"
     XF86AudioLowerVolume
 
-"pactl -- set-sink-mute 0 toggle"
-    XF86AudioMute
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+   XF86AudioMute
+
+"pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+   XF86AudioMicMute
 
 "scrot /tmp/screenshot.png; xclip -target image/png -selection clipboard /tmp/screenshot.png; feh /tmp/screenshot.png"
     Print
