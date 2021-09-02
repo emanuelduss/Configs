@@ -1,0 +1,54 @@
+:delay 15s
+/user set 0 password="password"
+
+/interface bridge add admin-mac=48:8F:5A:7B:CA:DD auto-mac=no comment=defconf name=bridge
+/interface ethernet set [ find default-name=ether1 ] mac-address=48:8F:5A:11:22:33
+/interface wireless set [ find default-name=wlan1 ] band=2ghz-b/g/n channel-width=20/40mhz-XX distance=indoors frequency=auto installation=indoor mode=ap-bridge ssid=mywifi wireless-protocol=802.11
+/interface wireless set [ find default-name=wlan2 ] band=5ghz-a/n/ac channel-width=20/40/80mhz-XXXX distance=indoors frequency=auto installation=indoor mode=ap-bridge ssid=mywifi wireless-protocol=802.11
+/interface list add comment=defconf name=WAN
+/interface list add comment=defconf name=LAN
+/interface wireless security-profiles set [ find default=yes ] authentication-types=wpa2-psk mode=dynamic-keys supplicant-identity=MikroTik wpa-pre-shared-key=wifipassword wpa2-pre-shared-key=wifipassword
+/ip hotspot profile set [ find default=yes ] html-directory=flash/hotspot
+/ip pool add name=dhcp ranges=10.5.23.50-10.5.23.100
+/ip dhcp-server add address-pool=dhcp disabled=no interface=ether1 name=defconf
+/interface bridge port add bridge=bridge comment=defconf interface=ether2
+/interface bridge port add bridge=bridge comment=defconf interface=ether3
+/interface bridge port add bridge=bridge comment=defconf interface=ether4
+/interface bridge port add bridge=bridge comment=defconf interface=ether5
+/interface bridge port add bridge=bridge comment=defconf interface=wlan1
+/interface bridge port add bridge=bridge comment=defconf interface=wlan2
+/ip neighbor discovery-settings set discover-interface-list=LAN
+/interface list member add comment=defconf interface=bridge list=LAN
+/interface list member add comment=defconf interface=ether1 list=WAN
+/ip address add address=10.5.23.1/24 comment=defconf interface=ether1 network=10.5.23.0
+/ip dhcp-client add comment=defconf dhcp-options=hostname,clientid disabled=yes interface=ether1
+/ip dhcp-server network add address=10.5.23.0/24 comment=defconf gateway=10.5.23.1 netmask=24
+/ip dns set allow-remote-requests=yes
+/ip dns static add address=10.5.23.1 comment=defconf name=router.lan
+/ip firewall filter add action=accept chain=input comment="defconf: accept established,related,untracked" connection-state=established,related,untracked
+/ip firewall filter add action=drop chain=input comment="defconf: drop invalid" connection-state=invalid
+/ip firewall filter add action=accept chain=input comment="defconf: accept ICMP" protocol=icmp
+/ip firewall filter add action=accept chain=input comment="defconf: accept to local loopback (for CAPsMAN)" dst-address=127.0.0.1
+/ip firewall filter add action=drop chain=input comment="defconf: drop all not coming from LAN" in-interface-list=!LAN
+/ip firewall filter add action=accept chain=forward comment="defconf: accept in ipsec policy" ipsec-policy=in,ipsec
+/ip firewall filter add action=accept chain=forward comment="defconf: accept out ipsec policy" ipsec-policy=out,ipsec
+/ip firewall filter add action=fasttrack-connection chain=forward comment="defconf: fasttrack" connection-state=established,related
+/ip firewall filter add action=accept chain=forward comment="defconf: accept established,related, untracked" connection-state=established,related,untracked
+/ip firewall filter add action=drop chain=forward comment="defconf: drop invalid" connection-state=invalid
+/ip firewall filter add action=drop chain=forward comment="defconf: drop all from WAN not DSTNATed" connection-nat-state=!dstnat connection-state=new in-interface-list=WAN
+/ip firewall filter add action=accept chain=input comment="defconf: accept established,related,untracked" connection-state=established,related,untracked
+/ip firewall filter add action=drop chain=input comment="defconf: drop invalid" connection-state=invalid
+/ip firewall filter add action=accept chain=input comment="defconf: accept ICMP" protocol=icmp
+/ip firewall filter add action=accept chain=input comment="defconf: accept to local loopback (for CAPsMAN)" dst-address=127.0.0.1
+/ip firewall filter add action=drop chain=input comment="defconf: drop all not coming from LAN" in-interface-list=!LAN
+/ip firewall filter add action=accept chain=forward comment="defconf: accept in ipsec policy" ipsec-policy=in,ipsec
+/ip firewall filter add action=accept chain=forward comment="defconf: accept out ipsec policy" ipsec-policy=out,ipsec
+/ip firewall filter add action=fasttrack-connection chain=forward comment="defconf: fasttrack" connection-state=established,related
+/ip firewall filter add action=accept chain=forward comment="defconf: accept established,related, untracked" connection-state=established,related,untracked
+/ip firewall filter add action=drop chain=forward comment="defconf: drop invalid" connection-state=invalid
+/ip firewall filter add action=drop chain=forward comment="defconf: drop all from WAN not DSTNATed" connection-nat-state=!dstnat connection-state=new in-interface-list=WAN
+/ip firewall nat add action=masquerade chain=srcnat comment="defconf: masquerade" ipsec-policy=out,none out-interface-list=WAN
+/ip firewall nat add action=masquerade chain=srcnat comment="defconf: masquerade" ipsec-policy=out,none out-interface-list=WAN
+/system identity set name=myrouter
+/tool mac-server set allowed-interface-list=LAN
+/tool mac-server mac-winbox set allowed-interface-list=LAN
