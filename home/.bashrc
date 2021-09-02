@@ -173,7 +173,8 @@ alias fop='fzf --preview="ls -l {}; file -b {}; echo; head {}" --preview-window=
 alias imagerename="jhead -nf%Y-%m-%d_%H-%M-%S"
 alias imagerotate="jhead -autorot"
 alias strip-ansi="sed 's/\x1b\[[0-9;]*m//g'"
-alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias burl='curl -k --proxy http://127.0.0.1:8080'
 
 if [[ -f "~/.bash_aliases" ]]
 then
@@ -295,6 +296,19 @@ pretty_csv() {
   column -t -s, -n "$@" | less -F -S -X -K
 }
 
+androidtype(){
+  local text="$1"
+  if [[ -n "$text" ]]
+  then
+    adb shell input text "$text"
+  else
+    while read -p "Text: " line
+    do
+      adb shell input text "$line"
+    done
+  fi
+}
+
 androidlogin(){
   local username="$1"
   local password="$2"
@@ -304,4 +318,13 @@ androidlogin(){
   adb shell input keyevent 61 # 61 = Tab
   adb shell input text "$password"
   adb shell input keyevent 66 # 61 = Enter
+}
+
+pa-output(){
+  echo "Output devices:"
+  pacmd list-sinks | grep -e device.description -e index:
+  echo -n "Select: ";
+  local number;
+  read number;
+  pacmd set-default-sink "$number"
 }
