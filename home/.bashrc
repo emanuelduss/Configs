@@ -304,7 +304,7 @@ androidtype(){
   else
     while read -p "Text: " line
     do
-      adb shell input text "$line"
+      adb shell input text \""$line"\"
     done
   fi
 }
