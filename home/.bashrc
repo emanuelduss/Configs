@@ -242,7 +242,7 @@ rgvim(){
 
 getmydotfiles(){
   local DOTFILES=".bash_profile .bashrc .exrc .gdbinit .gitconfig .inputrc .screenrc .tmux.conf .vimrc"
-  local BASEURL="https://raw.githubusercontent.com/mindfuckup/Configs/master/home/"
+  local BASEURL="https://raw.githubusercontent.com/emanuelduss/Configs/master/home/"
 
   for dotfile in $DOTFILES
   do

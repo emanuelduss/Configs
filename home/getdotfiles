@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DOTFILES=".bash_profile .bashrc .exrc .gdbinit .gitconfig .inputrc .screenrc .tmux.conf .vimrc"
-BASEURL="https://raw.githubusercontent.com/mindfuckup/Configs/master/home/"
+BASEURL="https://raw.githubusercontent.com/emanuelduss/Configs/master/home/"
 
 for dotfile in $DOTFILES
 do
