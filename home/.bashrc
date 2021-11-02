@@ -328,3 +328,7 @@ pa-output(){
   read number;
   pacmd set-default-sink "$number"
 }
+
+generateuuid(){
+  python3 -c 'import uuid; print(uuid.uuid4())'
+}
