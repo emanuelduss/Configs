@@ -24,8 +24,6 @@ set -o vi
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-
-
 umask 077
 
 ################################################################################
@@ -331,4 +329,23 @@ pa-output(){
 
 generateuuid(){
   python3 -c 'import uuid; print(uuid.uuid4())'
+}
+
+shell-log(){
+  local logdir="$HOME/.shell-logs"
+  local logfile="$(date "+$logdir/%F_%H-%M-%S_$$")"
+
+  if ! [[ -d "$logdir" ]]
+  then
+    echo "Logdir $logdir does not exist."
+    return 1
+  fi
+
+  if [[ "$(ps -ocomm= -p $PPID)" == "script" ]]
+  then
+    echo "Warning: shell-log is already running!"
+    return 1
+  else
+    script -f --log-timing "${logfile}.time" --log-out "${logfile}.script"
+  fi
 }
