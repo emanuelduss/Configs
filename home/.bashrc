@@ -167,6 +167,7 @@ alias ipba="ip --color --brief addr list"
 alias ipbl="ip --color --brief link list"
 alias grep-url="grep -o -E 'https?://[^ ]+'"
 alias grep-ipaddr="grep -o -E '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'"
+alias grep-fqdn="grep -o -E '([a-zA-Z0-9._-])+'"
 alias fop='fzf --preview="ls -l {}; file -b {}; echo; head {}" --preview-window=up:30% --bind "enter:execute(xdg-open {})"'
 alias imagerename="jhead -nf%Y-%m-%d_%H-%M-%S"
 alias imagerotate="jhead -autorot"
