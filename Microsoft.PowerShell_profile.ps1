@@ -4,6 +4,9 @@
 
 Set-PSReadlineOption -EditMode vi
 Set-PSReadlineOption -BellStyle None
+Set-PSReadlineKeyHandler -Key Tab -Function Complete # Command completion like in bash
+Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward # Type command and search history using arrow keys
+Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 
 #
 # Colors
@@ -55,3 +58,12 @@ Set-Alias vi vim
 #
 # Functions
 #
+
+# Update Git Repositories (buggy)
+
+function Update-GitRepositories {
+  Get-ChildItem -Directory | ForEach-Object {
+    echo $_.BaseName
+    git -C $_.BaseName pull --ff-only
+  }
+}
