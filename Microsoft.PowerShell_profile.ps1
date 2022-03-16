@@ -1,9 +1,13 @@
-# PowerShell Options
+#
+# PowerShell Options ($PROFILE)
+#
 
 Set-PSReadlineOption -EditMode vi
 Set-PSReadlineOption -BellStyle None
 
+#
 # Colors
+#
 
 Set-PSReadLineOption -Colors @{
   Command            = 'Magenta'
@@ -28,8 +32,9 @@ Set-PSReadLineOption -Colors @{
  "Command" = "#8181f7"
 }
 
-
+#
 # Prompt
+#
 
 function prompt
 {
@@ -41,6 +46,12 @@ function prompt
   return " "
 }
 
+#
 # Aliases
+#
 
 Set-Alias vi vim
+
+#
+# Functions
+#
