@@ -179,6 +179,7 @@ alias la='ls -lhAF'
 alias ll='ls -hlisF --group-directories-first --time-style +%Y-%m-%d\ %H:%M:%S'
 alias pomodoro='play -q -n synth sine 480 sine 620 remix 1-2 fade 0 0.5 delay 0.5 repeat 5 2>/dev/null'
 alias pstop='ps -eo user,pid,ppid,pcpu,cpu,pmem,rss,cmd --sort -pcpu --width $COLUMNS | numfmt --header --to=iec --field 7 --padding 6 | cut -c 1-$COLUMNS | head -n $(($LINES-5))'
+alias qrscan='maim -qs | zbarimg -q --raw - | tee >(xclip -selection clipboard)'
 alias shit='sudo $(history -p \!\!)' 
 alias slideshow="feh --fullscreen --auto-zoom --randomize --hide-pointer --slideshow-delay 3"
 alias strip-ansi="sed 's/\x1b\[[0-9;]*m//g'"
@@ -283,9 +284,6 @@ baseconv(){
   bc <<< "obase=${2^^}; ibase=${1^^}; ${3^^}"
 }
 
-qrscan(){
-  maim -qs | zbarimg -q --raw - | tee >(xclip -selection clipboard)
-}
 
 gitpulldirs(){
   for repo in "$@"
