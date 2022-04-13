@@ -180,6 +180,8 @@ alias imagerotate="jhead -autorot"
 alias strip-ansi="sed 's/\x1b\[[0-9;]*m//g'"
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias burl='curl -k --proxy http://127.0.0.1:8080'
+alias base16="basenc --base16"
+alias base64url="basenc --base64url"
 
 if [[ -f "~/.bash_aliases" ]]
 then
