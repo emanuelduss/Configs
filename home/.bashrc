@@ -154,6 +154,7 @@ done
 # Aliases and Functions
 
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
 alias base16="basenc --base16"
 alias base64url="basenc --base64url"
 alias burl='curl -k --proxy http://127.0.0.1:8080'
@@ -189,16 +190,37 @@ then
   . ~/.bash_aliases
 fi
 
-xcopy(){
-  xclip -in -selection clipboard -f | xclip -in -selection primary -f | xclip -in -selection secondary
+androidlogin(){
+  local username="$1"
+  local password="$2"
+  [[ -z "$username" ]] && read -p "Username: " username
+  [[ -z "$password" ]] && read -p "Password: " password
+  adb shell input text "$username"
+  adb shell input keyevent 61 # 61 = Tab
+  adb shell input text "$password"
+  adb shell input keyevent 66 # 61 = Enter
+}
+
+androidtype(){
+  local text="$1"
+  if [[ -n "$text" ]]
+  then
+    adb shell input text "$text"
+  else
+    while read -p "Text: " line
+    do
+      adb shell input text \""$line"\"
+    done
+  fi
+}
+
+baseconv(){
+  # Converts number ($3) from one base ($1) to another base ($2)
+  bc <<< "obase=${2^^}; ibase=${1^^}; ${3^^}"
 }
 
 bcq() {
   bc -lq <<< "$@"
-}
-
-crtsh() {
-  curl -s "https://crt.sh/?q=%25.${1}&output=json" | jq -r ".[].name_value" | sort -u
 }
 
 cdf(){
@@ -207,9 +229,22 @@ cdf(){
   cd -- "$path"
 }
 
-mycd(){
-  \cd "${1:-$HOME}"
-  ls -lah
+crtsh() {
+  curl -s "https://crt.sh/?q=%25.${1}&output=json" | jq -r ".[].name_value" | sort -u
+}
+
+docker-sh(){
+  # Lists Docker containers and starts a command (sh by default) in the selected one
+  local command="${1:-sh}"
+  local containers="$(docker ps | nl -v 0 -w 1)"
+  echo -e "Running containers:\n$containers"
+  echo -ne "\nSelect: "
+  local number
+  read number
+  ((number++))
+  local container="$(sed -n "${number}p" <<< "$containers" | awk '{ print $2 }')"
+  echo -e "\nRunning command \"$command\" in container $container ...\n"
+  docker exec -it "$container" "$command"
 }
 
 f() {
@@ -227,25 +262,8 @@ fp() {
   cd -- "$DIRECTORY"
 }
 
-how_in() {
-  where="$1"; shift
-  IFS=+ curl "https://cht.sh/$where/ $@"
-}
-
-infoman(){
-  info "$1" | less
-}
-
-lf(){
-  # Fuzzy search filenames containing all arguments case-insensitive in the
-  # provided order without knowing the correct filename.
-  local strings="$@"
-  local regex="${strings// /.*}"
-  locate -i --regex "$regex" | grep --color -i -E "$regex"
-}
-
-rgvim(){
-  rg --color never -l $@ | xargs vim
+generateuuid(){
+  python3 -c 'import uuid; print(uuid.uuid4())'
 }
 
 getmydotfiles(){
@@ -259,32 +277,6 @@ getmydotfiles(){
   done
 }
 
-docker-sh(){
-  # Lists Docker containers and starts a command (sh by default) in the selected one
-  local command="${1:-sh}"
-  local containers="$(docker ps | nl -v 0 -w 1)"
-  echo -e "Running containers:\n$containers"
-  echo -ne "\nSelect: "
-  local number
-  read number
-  ((number++))
-  local container="$(sed -n "${number}p" <<< "$containers" | awk '{ print $2 }')"
-  echo -e "\nRunning command \"$command\" in container $container ...\n"
-  docker exec -it "$container" "$command"
-}
-
-ip-pub(){
-  local ipurl="https://motd.ch/ip.php"
-  echo "Public IPv4 Address: $(curl -s -4 -L --write-out "\nLocal IPv4 Addres:   %{local_ip}" $ipurl)"
-  echo "Public IPv6 Address: $(curl -s -6 -L --write-out "\nLocal IPv6 Addres:   %{local_ip}" $ipurl)"
-}
-
-baseconv(){
-  # Converts number ($3) from one base ($1) to another base ($2)
-  bc <<< "obase=${2^^}; ibase=${1^^}; ${3^^}"
-}
-
-
 gitpulldirs(){
   for repo in "$@"
   do
@@ -293,33 +285,32 @@ gitpulldirs(){
   done
 }
 
-pretty_csv() {
-  # Prettifies CSV input (https://www.stefaanlippens.net/pretty-csv.html)
-  column -t -s, -n "$@" | less -F -S -X -K
+how_in() {
+  where="$1"; shift
+  IFS=+ curl "https://cht.sh/$where/ $@"
 }
 
-androidtype(){
-  local text="$1"
-  if [[ -n "$text" ]]
-  then
-    adb shell input text "$text"
-  else
-    while read -p "Text: " line
-    do
-      adb shell input text \""$line"\"
-    done
-  fi
+infoman(){
+  info "$1" | less
 }
 
-androidlogin(){
-  local username="$1"
-  local password="$2"
-  [[ -z "$username" ]] && read -p "Username: " username
-  [[ -z "$password" ]] && read -p "Password: " password
-  adb shell input text "$username"
-  adb shell input keyevent 61 # 61 = Tab
-  adb shell input text "$password"
-  adb shell input keyevent 66 # 61 = Enter
+ip-pub(){
+  local ipurl="https://motd.ch/ip.php"
+  echo "Public IPv4 Address: $(curl -s -4 -L --write-out "\nLocal IPv4 Addres:   %{local_ip}" $ipurl)"
+  echo "Public IPv6 Address: $(curl -s -6 -L --write-out "\nLocal IPv6 Addres:   %{local_ip}" $ipurl)"
+}
+
+lf(){
+  # Fuzzy search filenames containing all arguments case-insensitive in the
+  # provided order without knowing the correct filename.
+  local strings="$@"
+  local regex="${strings// /.*}"
+  locate -i --regex "$regex" | grep --color -i -E "$regex"
+}
+
+mycd(){
+  \cd "${1:-$HOME}"
+  ls -lah
 }
 
 pa-output(){
@@ -331,8 +322,13 @@ pa-output(){
   pacmd set-default-sink "$number"
 }
 
-generateuuid(){
-  python3 -c 'import uuid; print(uuid.uuid4())'
+pretty_csv() {
+  # Prettifies CSV input (https://www.stefaanlippens.net/pretty-csv.html)
+  column -t -s, -n "$@" | less -F -S -X -K
+}
+
+rgvim(){
+  rg --color never -l $@ | xargs vim
 }
 
 shell-log(){
@@ -352,4 +348,8 @@ shell-log(){
   else
     script -f --log-timing "${logfile}.time" --log-out "${logfile}.script"
   fi
+}
+
+xcopy(){
+  xclip -in -selection clipboard -f | xclip -in -selection primary -f | xclip -in -selection secondary
 }
