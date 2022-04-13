@@ -185,7 +185,7 @@ then
 fi
 
 xcopy(){
-  tee | >(xclip -selection primary) >(xclip -selection clipboard) >(xclip -selection secondary)
+  tee >(xclip -selection primary) >(xclip -selection clipboard) >(xclip -selection secondary)
 }
 
 bcq() {
@@ -280,7 +280,7 @@ baseconv(){
 }
 
 qrscan(){
-  maim -qs | zbarimg -q --raw -
+  maim -qs | zbarimg -q --raw - | tee >(xclip -selection clipboard)
 }
 
 gitpulldirs(){
