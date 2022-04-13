@@ -153,42 +153,40 @@ done
 ################################################################################
 # Aliases and Functions
 
-alias ed='ed -v -p "ed> "'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias base16="basenc --base16"
+alias base64url="basenc --base64url"
+alias burl='curl -k --proxy http://127.0.0.1:8080'
 alias c='clear'
 alias duchs='du -sch .[!.]* * |sort -h'
-alias feh="feh --auto-zoom --sort filename --borderless --scale-down --draw-filename --image-bg black"
-alias l='ls -hF --group-directories-first'
-alias la='ls -lhAF'
-alias ll='ls -hlisF --group-directories-first --time-style +%Y-%m-%d\ %H:%M:%S'
-alias shit='sudo $(history -p \!\!)' 
-alias slideshow="feh --fullscreen --auto-zoom --randomize --hide-pointer --slideshow-delay 3"
-alias hideprev='history -d $((HISTCMD-2)) && history -d $((HISTCMD-1))'
+alias ed='ed -v -p "ed> "'
 alias env='env | cat -v'
-alias pstop='ps -eo user,pid,ppid,pcpu,cpu,pmem,rss,cmd --sort -pcpu --width $COLUMNS | numfmt --header --to=iec --field 7 --padding 6 | cut -c 1-$COLUMNS | head -n $(($LINES-5))'
-alias pomodoro='play -q -n synth sine 480 sine 620 remix 1-2 fade 0 0.5 delay 0.5 repeat 5 2>/dev/null'
+alias feh="feh --auto-zoom --sort filename --borderless --scale-down --draw-filename --image-bg black"
+alias fop='fzf --preview="ls -l {}; file -b {}; echo; head {}" --preview-window=up:30% --bind "enter:execute(xdg-open {})"'
+alias grep-email="grep -E -o '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b'"
+alias grep-fqdn="grep -o -E '([a-zA-Z0-9._-])+'"
+alias grep-ipaddr="grep -o -E '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'"
+alias grep-paragraph='perl -00ne "print if /$1/i"' # Displays paragraph containing matched lines (grep -p on AIX)
+alias grep-url="grep -o -E 'https?://[^ ]+'"
+alias hideprev='history -d $((HISTCMD-2)) && history -d $((HISTCMD-1))'
+alias imagerename="jhead -nf%Y-%m-%d_%H-%M-%S"
+alias imagerotate="jhead -autorot"
 alias ip="ip --color"
 alias ipba="ip --color --brief addr list"
 alias ipbl="ip --color --brief link list"
-alias grep-url="grep -o -E 'https?://[^ ]+'"
-alias grep-ipaddr="grep -o -E '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'"
-alias grep-fqdn="grep -o -E '([a-zA-Z0-9._-])+'"
-alias grep-email="grep -E -o '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b'"
-alias grep-paragraph='perl -00ne "print if /$1/i"' # Displays paragraph containing matched lines (grep -p on AIX)
-alias fop='fzf --preview="ls -l {}; file -b {}; echo; head {}" --preview-window=up:30% --bind "enter:execute(xdg-open {})"'
-alias imagerename="jhead -nf%Y-%m-%d_%H-%M-%S"
-alias imagerotate="jhead -autorot"
+alias l='ls -hF --group-directories-first'
+alias la='ls -lhAF'
+alias ll='ls -hlisF --group-directories-first --time-style +%Y-%m-%d\ %H:%M:%S'
+alias pomodoro='play -q -n synth sine 480 sine 620 remix 1-2 fade 0 0.5 delay 0.5 repeat 5 2>/dev/null'
+alias pstop='ps -eo user,pid,ppid,pcpu,cpu,pmem,rss,cmd --sort -pcpu --width $COLUMNS | numfmt --header --to=iec --field 7 --padding 6 | cut -c 1-$COLUMNS | head -n $(($LINES-5))'
+alias shit='sudo $(history -p \!\!)' 
+alias slideshow="feh --fullscreen --auto-zoom --randomize --hide-pointer --slideshow-delay 3"
 alias strip-ansi="sed 's/\x1b\[[0-9;]*m//g'"
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-alias burl='curl -k --proxy http://127.0.0.1:8080'
-alias base16="basenc --base16"
-alias base64url="basenc --base64url"
 
 if [[ -f "~/.bash_aliases" ]]
 then
   . ~/.bash_aliases
 fi
-
-
 
 xcopy(){
   xclip -in -selection clipboard -f | xclip -in -selection primary -f | xclip -in -selection secondary
