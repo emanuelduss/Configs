@@ -165,6 +165,7 @@ alias slideshow="feh --fullscreen --auto-zoom --randomize --hide-pointer --slide
 alias hideprev='history -d $((HISTCMD-2)) && history -d $((HISTCMD-1))'
 alias env='env | cat -v'
 alias pstop='ps -eo user,pid,ppid,pcpu,cpu,pmem,rss,cmd --sort -pcpu --width $COLUMNS | numfmt --header --to=iec --field 7 --padding 6 | cut -c 1-$COLUMNS | head -n $(($LINES-5))'
+alias pomodoro='play -q -n synth sine 480 sine 620 remix 1-2 fade 0 0.5 delay 0.5 repeat 5 2>/dev/null'
 alias ip="ip --color"
 alias ipba="ip --color --brief addr list"
 alias ipbl="ip --color --brief link list"
