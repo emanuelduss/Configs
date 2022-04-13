@@ -22,6 +22,12 @@
 "sleep 1; xset dpms force off"
     Mod4 + b
 
+"bash -c 'sleep 0.5; xdotool type --delay 0 $(date +%F)'"
+    Control + Mod4 + alt + t
+
+"zenity  --calendar --date-format='%F' | xclip -in -selection clipboard"
+    Control + Mod4 + alt + d
+
 "pactl set-sink-volume @DEFAULT_SINK@ +1000"
     Control+Alt + Prior
 
