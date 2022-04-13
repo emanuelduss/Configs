@@ -89,7 +89,7 @@
 "xmag"
     Mod4 + z
 
-"nautilus"
+"thunar"
     Mod4 + x
 
 # Playerctl
