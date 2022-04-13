@@ -172,6 +172,7 @@ alias grep-url="grep -o -E 'https?://[^ ]+'"
 alias grep-ipaddr="grep -o -E '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'"
 alias grep-fqdn="grep -o -E '([a-zA-Z0-9._-])+'"
 alias grep-email="grep -E -o '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b'"
+alias grep-paragraph='perl -00ne "print if /$1/i"' # Displays paragraph containing matched lines (grep -p on AIX)
 alias fop='fzf --preview="ls -l {}; file -b {}; echo; head {}" --preview-window=up:30% --bind "enter:execute(xdg-open {})"'
 alias imagerename="jhead -nf%Y-%m-%d_%H-%M-%S"
 alias imagerotate="jhead -autorot"
@@ -183,6 +184,8 @@ if [[ -f "~/.bash_aliases" ]]
 then
   . ~/.bash_aliases
 fi
+
+
 
 xcopy(){
   xclip -in -selection clipboard -f | xclip -in -selection primary -f | xclip -in -selection secondary
