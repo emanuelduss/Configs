@@ -96,6 +96,13 @@ PS1="\[\e]0;\u@\H:\w\a\]$PS1"
 ################################################################################
 # Colors
 
+# Commands
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# ls colors
 if hash dircolors &>/dev/null
 then
   if [[ -r ~/.dircolors ]]
@@ -125,7 +132,7 @@ GPG_TTY=$(tty)
 export GPG_TTY
 
 export EDITOR=vi
-if [ -f "/usr/bin/vim" ]
+if [[ -f "/usr/bin/vim" ]]
 then
   export EDITOR="vim"
   alias vi='vim'
@@ -146,11 +153,7 @@ done
 ################################################################################
 # Aliases and Functions
 
-alias ls='ls --color=auto'
 alias ed='ed -v -p "ed> "'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 alias c='clear'
 alias duchs='du -sch .[!.]* * |sort -h'
 alias feh="feh --auto-zoom --sort filename --borderless --scale-down --draw-filename --image-bg black"
@@ -182,7 +185,7 @@ then
 fi
 
 xcopy(){
-  tee >(xclip -selection primary) >(xclip -selection clipboard) >(xclip -selection secondary)
+  tee | >(xclip -selection primary) >(xclip -selection clipboard) >(xclip -selection secondary)
 }
 
 bcq() {
@@ -277,7 +280,7 @@ baseconv(){
 }
 
 qrscan(){
-  maim -qs | zbarimg -q --raw
+  maim -qs | zbarimg -q --raw -
 }
 
 gitpulldirs(){
