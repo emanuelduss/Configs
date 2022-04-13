@@ -46,6 +46,9 @@
 "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
    XF86AudioMicMute
 
+"maim -s | xclip -selection clipboard -t image/png"
+    Mod4 + Shift + S
+
 "scrot /tmp/screenshot.png; xclip -target image/png -selection clipboard /tmp/screenshot.png; feh /tmp/screenshot.png"
     Print
 
