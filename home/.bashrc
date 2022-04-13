@@ -185,7 +185,7 @@ then
 fi
 
 xcopy(){
-  tee >(xclip -selection primary) >(xclip -selection clipboard) >(xclip -selection secondary)
+  xclip -in -selection clipboard -f | xclip -in -selection primary -f | xclip -in -selection secondary
 }
 
 bcq() {
