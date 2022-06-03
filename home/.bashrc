@@ -21,9 +21,6 @@ shopt -s histappend
 
 set -o vi
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
 umask 077
 
 ################################################################################
@@ -152,6 +149,9 @@ done
 
 ################################################################################
 # External Tools
+
+# lesspipe: make less more friendly for non-text input files
+[[ -x "/usr/bin/lesspipe" ]] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # fzf: command-line fuzzy finder
 if hash fzf &> /dev/null
