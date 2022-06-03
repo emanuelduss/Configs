@@ -9,7 +9,7 @@
 [ -z "$PS1" ] && return
 
 export HISTCONTROL=ignoreboth
-export HISTIGNORE="clear:bg:fg:cd:cd -:exit:date:w:* --help"
+export HISTIGNORE="c;clear:bg:fg:cd:cd -:exit:date:w:* --help"
 export HISTSIZE=100000
 export HISTTIMEFORMAT="%F %T "
 
