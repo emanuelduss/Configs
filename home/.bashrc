@@ -158,6 +158,7 @@ if hash fzf &> /dev/null
 then
   for file in \
     "/usr/share/fzf/key-bindings.bash" \
+    "/usr/share/doc/fzf/examples/key-bindings.bash" \
     "/usr/share/fzf/completion.bash"
   do
     if [[ -r "$file" ]]
