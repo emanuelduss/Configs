@@ -13,16 +13,22 @@
 
 eval `ssh-agent`
 xterm -T "SSH Agent" -bg "#2F343F" -fg "#D3D7CF"  \
-  -fa "xft:Bitstream Vera Sans Mono:pixelsize=14" \
+  -fa "xft:Fira Sans Mono:pixelsize=14" \
   -e "figlet SSH Agent 2>/dev/null || echo SSH Agent; ssh-add; echo OK. Thanks; sleep 1" &
 
 eval `gpg-agent --daemon`
 
 xmodmap ~/.xmodmaprc
 xbindkeys
-/usr/local/bin/autolock &
-redshift-gtk &
-keepassx2 &
+keepassxc &
+nextcloud &
+blueman-applet &
+pasystray &
+
+# Screenlock
+xset s on
+xset s 600
+
 if [ -f ~/.fehbg ]
 then
   ~/.fehbg &
