@@ -1,2 +1,7 @@
+#
+# ~/.gitignore_global
+#
+
+# Temporary Files
 *.swp
 *~

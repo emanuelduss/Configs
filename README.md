@@ -1,3 +1,3 @@
 # Configs
 
-My config files.
+My configuration files.

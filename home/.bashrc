@@ -173,7 +173,6 @@ fi
 # Aliases and Functions
 
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 alias base16="basenc --base16"
 alias base64url="basenc --base64url"
 alias burl='curl -k --proxy http://127.0.0.1:8080'

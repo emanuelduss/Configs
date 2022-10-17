@@ -194,8 +194,9 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+#
+# i3bar
+#
 
 bar {
   status_command i3status
@@ -212,6 +213,11 @@ bar {
     binding_mode        $color_urgent      $color_urgent      $color_text
   }
 }
+
+#
+# Color
+#
+
 # class                  border             bground            text         indicator          child_border
 client.focused           $color_focused     $color_focused     $color_text  $color_separator   $color_focused
 client.focused_inactive  $color_separator   $color_background  $color_text  $color_separator   $color_background

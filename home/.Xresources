@@ -1,6 +1,5 @@
 !#
-!# .Xdefaults
-!# Konfigurationsdatei fuer X-Anwendungen
+!# ~/.Xresources
 !#
 
 !#######################################################################
@@ -98,7 +97,3 @@ xpdf*antialias:       yes
 xpdf*foreground:      black
 xpdf*background:      white
 xpdf*urlCommand:      /usr/bin/firefox %s
-
-!# EOF
-
-
