@@ -1,0 +1,11 @@
+[Security]
+EAP-Method=TTLS
+EAP-Identity=username@example.net
+EAP-TTLS-CACert=/path/to/cert.pem
+EAP-TTLS-ServerDomainMask=*.example.com
+EAP-TTLS-Phase2-Method=Tunneled-PAP
+EAP-TTLS-Phase2-Identity=username
+EAP-TTLS-Phase2-Password=p@ssw0rd
+
+[Settings]
+AutoConnect=true

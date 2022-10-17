@@ -1,0 +1,13 @@
+[Security]
+EAP-Method=PEAP
+EAP-Identity=username@example.com
+EAP-PEAP-CACert=/path/to/root.crt
+EAP-PEAP-ServerDomainMask=radius.example.com
+EAP-PEAP-Phase2-Method=MSCHAPV2
+EAP-PEAP-Phase2-Identity=username@example.com
+EAP-PEAP-Phase2-Password=p@ssw0rd
+# Or use hash instead: echo -n p@ssword | iconv -t utf16le | openssl md4
+EAP-PEAP-Phase2-Password-Hash=xxx
+
+[Settings]
+AutoConnect=True
