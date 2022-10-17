@@ -1,0 +1,6 @@
+#
+# Udev Network Rules
+#
+
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="00:11:22:33:44:55", NAME="wlan0"
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="01:02:03:04:05:06", NAME="eth0"
