@@ -1,0 +1,6 @@
+[Match]
+MACAddress=11:22:33:44:55:66
+
+[Link]
+Description=Local Ethernet Adapter
+Name=eth0

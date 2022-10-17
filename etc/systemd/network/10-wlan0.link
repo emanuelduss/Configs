@@ -1,0 +1,6 @@
+[Match]
+MACAddress=01:02:03:04:05:06
+
+[Link]
+Description=Local WiFi Adapter
+Name=wlan0

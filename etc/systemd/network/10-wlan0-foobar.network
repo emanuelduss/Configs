@@ -1,0 +1,11 @@
+[Match]
+Name=wlan0
+SSID=foobar
+
+[Network]
+IgnoreCarrierLoss=3s
+Address=10.5.23.42/24
+Gateway=10.5.23.1
+DNS=10.5.23.46
+Domains=example.net
+IPv6PrivacyExtensions=true
