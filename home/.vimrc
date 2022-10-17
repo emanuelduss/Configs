@@ -127,13 +127,13 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
 
 filetype plugin indent on
 "let base16colorspace=256  " Access colors present in 256 colorspace
-set background=light
+set background=dark
 
 " templates
 autocmd BufNewFile *.html 0r ~/skeleton.html
-
-colorscheme peachpuff
+colorscheme default
 syntax on
+
 
 " filetype plugin indent on
 " set grepprg=grep\ -nH\ $*
