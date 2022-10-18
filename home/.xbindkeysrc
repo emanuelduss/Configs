@@ -59,7 +59,7 @@
 "rofi -show window -show-icons"
     Alt + Tab
 
-"rofi -show combi -combi-modi drun,run,ssh,calc -show-icons"
+"rofi -show combi -combi-modi drun,run,ssh -modes combi -show-icons"
     Mod4 + D
 
 "rofi -show drun"
