@@ -1,13 +1,14 @@
 #
 # ~/.xbindkeysrc
 #
+# Generate using: xbindkeys --multikey
 
 # Desktop Environment
 
-"i3-msg workspace locked; loginctl lock-session"
+"loginctl lock-session"
     XF86ScreenSaver
 
-"i3-msg workspace locked; loginctl lock-session"
+"loginctl lock-session"
     Control + Mod1 + Delete
 
 "i3-msg workspace locked; propersuspend"
@@ -29,13 +30,13 @@
     Control + Mod4 + alt + d
 
 "pactl set-sink-volume @DEFAULT_SINK@ +1000"
-    Control+Alt + Prior
+    Control + Alt + Prior
 
 "pactl set-sink-volume @DEFAULT_SINK@ +1000"
     XF86AudioRaiseVolume
 
 "pactl set-sink-volume @DEFAULT_SINK@ -1000"
-    Control+Alt + Next
+    Control + Alt + Next
 
 "pactl set-sink-volume @DEFAULT_SINK@ -1000"
     XF86AudioLowerVolume
@@ -54,6 +55,18 @@
 
 "xclip -out -selection clipboard | dos2unix | xclip -in -selection clipboard"
     Control + Shift + C
+
+"rofi -show window -show-icons"
+    Alt + Tab
+
+"rofi -show combi -combi-modi drun,run,ssh,calc -show-icons"
+    Mod4 + D
+
+"rofi -show drun"
+    Mod4 + Shift + D
+
+"rofi -modes emoji -show emoji"
+    Mod4 + period
 
 # Desktop Helper
 
@@ -83,16 +96,10 @@
 
 # Applications
 
-"ario"
-    Mod4 + m
-
-"xmag"
-    Mod4 + z
-
 "thunar"
     Mod4 + x
 
-# Playerctl
+# Music Player
 
 "playerctl next"
     XF86AudioNext
