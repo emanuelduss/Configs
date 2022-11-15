@@ -87,3 +87,8 @@ xsltproc
 xterm
 yersinia
 zbar-tools
+wireguard
+resolvconf
+freerdp2-x11
+pdftk
+responder
