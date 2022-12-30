@@ -14,9 +14,7 @@ hardcopydir $HOME      # Screenshots ins Homeverzeichnis
 defscrollback 10000    # Buffer
 defmonitor off         # Aktivitäten nicht in Fenstertitel schreiben
 
-screen -t bash
-screen -t bash
-screen -t bash
+# screen -t bash
 # screen -t irssi irssi
 # screen -t syslog sudo tail -f /var/log/everything.log
 # screen -t ncmpcpp ncmpcpp
