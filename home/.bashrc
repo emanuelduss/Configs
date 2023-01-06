@@ -110,6 +110,13 @@ then
   fi
 fi
 
+# bat
+hash bat &>/dev/null && alias cat='bat -pp'
+hash bat &>/dev/null && export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+bhelp(){
+  "$@" --help 2>&1 | bat --plain --language=help -pp
+}
+
 # Manpages
 export LESS_TERMCAP_us=$'\E[01;32m'    # Begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # End underline
@@ -180,7 +187,7 @@ alias burl='curl -k --proxy http://127.0.0.1:8080'
 alias c='clear'
 alias duchs='du -sch .[!.]* * |sort -h'
 alias ed='ed -v -p "ed> "'
-alias env='env | cat -v'
+alias env='env | \cat -v'
 alias feh="feh --auto-zoom --sort filename --borderless --scale-down --draw-filename --image-bg black"
 alias fop='fzf --preview="ls -l {}; file -b {}; echo; head {}" --preview-window=up:30% --bind "enter:execute(xdg-open {})"'
 alias grep-email="grep -E -o '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b'"
