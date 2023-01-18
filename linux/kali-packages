@@ -96,5 +96,9 @@ qmv
 ghidra
 x11vnc
 xtightvncviewerr
+dos2unix
 imagemagick
 exploitdb
+azure-cli
+autossh
+plocate
