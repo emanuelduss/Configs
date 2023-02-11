@@ -1,3 +1,7 @@
+#
+# ~/.gdbconfig
+#
+
 set disassembly-flavor intel
 
 define hook-stop

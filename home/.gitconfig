@@ -1,35 +1,49 @@
+################################################################################
 #
 # ~/.gitconfig
 #
+################################################################################
 
 [user]
-    name = Emanuel Duss
-    email = me@emanuelduss.ch
+  name = Emanuel Duss
+  email = me@emanuelduss.ch
+
 [core]
-    autocrlf = input
-    excludesfile = ~/.gitignore_global
-    safecrlf = true
-    editor = vim
-    pager = less -FiMnRX
+  autocrlf = input
+  excludesfile = ~/.gitignore_global
+  safecrlf = true
+  editor = vim
+  pager = less -FiMnRX
+
 [alias]
-    s = status
-    c = commit
-    hist = log --pretty=format:\"%h %ad [%an] | %s%d \" --date=short --all --decorate
-    type = cat-file -t
-    dump = cat-file -p
+  s = status
+  c = commit
+  hist = log --pretty=format:\"%h %ad [%an] | %s%d \" --date=short --all --decorate
+  type = cat-file -t
+  dump = cat-file -p
+
 [merge]
-    tool = vimdiff
+  tool = vimdiff
+  conflictstyle = diff3
+
 [color]
-    ui = true
-    status = auto
-    branch = auto
-    interactive = auto
-    diff = auto
+  ui = true
+  status = auto
+  branch = auto
+  interactive = auto
+  diff = auto
+
 [push]
-    default = matching
+  default = matching
+
 [pull]
-    rebase = true
+  rebase = true
+
 [fetch]
-    prune = true
+  prune = true
+
 [diff]
-    colorMoved = zebra
+  colorMoved = zebra
+
+[difftool]
+  prompt = false

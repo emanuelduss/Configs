@@ -1,9 +1,14 @@
+################################################################################
 #
 # ~/.bashrc
 #
+################################################################################
 
 ################################################################################
-# Basic Configuration
+#
+# General
+#
+################################################################################
 
 # Shell must be interactive
 [ -z "$PS1" ] && return
@@ -23,8 +28,12 @@ set -o vi
 
 umask 077
 
+
 ################################################################################
+#
 # Shell Prompt
+#
+################################################################################
 
 color_red="$(tput setaf 1)"
 color_green="$(tput setaf 2)"
@@ -90,8 +99,12 @@ ${color_orange}\$(__git_ps1)${color_reset} \$(exitcode)\n$cmd_line "
 # Window Title
 PS1="\[\e]0;\u@\H:\w\a\]$PS1"
 
+
 ################################################################################
+#
 # Colors
+#
+################################################################################
 
 # Commands
 alias ls='ls --color=auto'
@@ -129,8 +142,12 @@ export LESS_TERMCAP_me=$'\E[0m'        # End
 # GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+
 ################################################################################
+#
 # Environment
+#
+################################################################################
 
 GPG_TTY=$(tty)
 export GPG_TTY
@@ -154,8 +171,12 @@ do
   fi
 done
 
+
 ################################################################################
+#
 # External Tools
+#
+################################################################################
 
 # lesspipe: make less more friendly for non-text input files
 [[ -x "/usr/bin/lesspipe" ]] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -174,11 +195,16 @@ then
     fi
   done
 
-  export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+  export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --multi'
+  export FZF_DEFAULT_COMMAND='rg --files'
 fi
 
+
 ################################################################################
+#
 # Aliases and Functions
+#
+################################################################################
 
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias base16="basenc --base16"

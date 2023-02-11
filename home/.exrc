@@ -1,15 +1,22 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " ~/.exrc
 "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set showmode
-set wrapscan
-set nowrap
-set tabstop=2
-set shiftwidth=2
-set showmatch
-set number
-set noerrorbells
-set ignorecase
-set nolist
+" Behavior
 set autoindent
+set ignorecase
+set noerrorbells
+set nowrap
+set wrapscan
+
+" Visual
+set nolist
+set number
+set showmatch
+set showmode
+
+" Tabs
+set shiftwidth=2
+set tabstop=2

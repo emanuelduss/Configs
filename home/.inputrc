@@ -1,6 +1,8 @@
+################################################################################
 #
 # ~/.inputrc
 #
+################################################################################
 
 # Use vi mode
 set editing-mode vi
@@ -22,4 +24,3 @@ set colored-completion-prefix on
 
 # Highlight files with LS_COLORS for command completions
 set colored-stats on
-
