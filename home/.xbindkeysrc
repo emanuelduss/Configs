@@ -50,7 +50,7 @@
 "maim -s | xclip -selection clipboard -t image/png"
     Mod4 + Shift + S
 
-"scrot /tmp/screenshot.png; xclip -target image/png -selection clipboard /tmp/screenshot.png; feh /tmp/screenshot.png"
+"maim /tmp/screenshot.png; xclip -target image/png -selection clipboard /tmp/screenshot.png; feh /tmp/screenshot.png"
     Print
 
 "xclip -out -selection clipboard | dos2unix | xclip -in -selection clipboard"
