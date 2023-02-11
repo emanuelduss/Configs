@@ -352,6 +352,10 @@ ip-pub(){
   echo "Public IPv6 Address: $(curl -s -6 -L --write-out "\nLocal IPv6 Addres:   %{local_ip}" $ipurl)"
 }
 
+ipinfo(){
+  curl -s -H "Accept: application/json" "https://ipinfo.io/$1"
+}
+
 lf(){
   # Fuzzy search filenames containing all arguments case-insensitive in the
   # provided order without knowing the correct filename.
