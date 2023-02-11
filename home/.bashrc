@@ -402,6 +402,10 @@ shell-log(){
   fi
 }
 
+temperature(){
+  sed 's/\(.\)..$/.\1°C/' /sys/class/thermal/thermal_zone*/temp
+}
+
 xcopy(){
   xclip -in -selection clipboard -f | xclip -in -selection primary -f | xclip -in -selection secondary
 }
