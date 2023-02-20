@@ -16,9 +16,10 @@ let mapleader = "-"            " Change <leader>
 filetype plugin on             " Enable filetype plugins
 
 " Theme & Colors
-syntax on
-set background=dark
-colorscheme default
+syntax on                      " Syntax highlighting
+set term=xterm-256color        " Mitigate display issues
+set background=dark            " Dark terminal
+colorscheme default            " Colorscheme
 highlight LineNr ctermfg=grey
 highlight Comment ctermfg=grey
 highlight StatusLine ctermfg=gray
@@ -49,7 +50,8 @@ set hlsearch                   " Highlight search results
 set incsearch                  " Show search results while searching
 set laststatus=2               " Always show statusline
 set list                       " Show hidden characters
-set listchars=tab:→\ ,trail:·  " Hidden character styles
+set listchars=tab:→\           " Show tabs
+set listchars+=trail:·         " Show trailing spaces
 set matchpairs+=<:>            " Also match angle brackets
 set nofoldenable               " Don't fold by default
 set number                     " Show line numbers
@@ -59,7 +61,7 @@ set showmatch                  " Show matching bracket on insert
 set title                      " Show filename in window title
 
 " Statusline
-set statusline=
+set statusline=                " Reset statusline
 set statusline+=\ %n           " Buffer Number
 set statusline+=\ │            " Separator
 set statusline+=\ %f           " Filename
@@ -107,14 +109,12 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Navigation Buffers
-nnoremap gb :bnext<CR>
-nnoremap gB :bprevious<CR>
+nnoremap <silent> gb :bnext<CR>
+nnoremap <silent> gB :bprevious<CR>
 nnoremap <leader>b :ls<CR>:b<space>
-nnoremap <leader><Tab> :bnext<CR>
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
-nnoremap <A-l> :bnext<CR>
-nnoremap <A-h> :bprevious<CR>
+nnoremap <silent> <leader><Tab> :bnext<CR>
+nnoremap <silent> <Tab> :bnext<CR>
+nnoremap <silent> <S-Tab> :bprevious<CR>
 
 " Navigation Windows
 nnoremap <C-j> <C-w>j
