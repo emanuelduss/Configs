@@ -235,6 +235,7 @@ alias pstop='ps -eo user,pid,ppid,pcpu,cpu,pmem,rss,cmd --sort -pcpu --width $CO
 alias qrscan='maim -qs | zbarimg -q --raw - | tee >(xclip -selection clipboard)'
 alias shit='sudo $(history -p \!\!)' 
 alias slideshow="feh --fullscreen --auto-zoom --randomize --hide-pointer --slideshow-delay 3"
+alias ssh-k='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias strip-ansi="sed 's/\x1b\[[0-9;]*m//g'"
 
 if [[ -f "~/.bash_aliases" ]]
