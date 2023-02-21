@@ -50,3 +50,6 @@
 
 [difftool]
   prompt = false
+
+[includeIf "gitdir:~/work/"]
+  path = ~/.gitconfig-work
