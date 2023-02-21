@@ -15,6 +15,9 @@
   editor = vim
   pager = less -FiMnRX
 
+[init]
+  defaultBranch = main
+
 [alias]
   s = status
   c = commit
