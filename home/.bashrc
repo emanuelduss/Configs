@@ -187,7 +187,8 @@ then
   for file in \
     "/usr/share/fzf/key-bindings.bash" \
     "/usr/share/doc/fzf/examples/key-bindings.bash" \
-    "/usr/share/fzf/completion.bash"
+    "/usr/share/fzf/completion.bash" \
+    "/usr/share/bash-completion/completions/fzf"
   do
     if [[ -r "$file" ]]
     then
