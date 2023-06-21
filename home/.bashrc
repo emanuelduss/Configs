@@ -321,7 +321,7 @@ generateuuid(){
 }
 
 getmydotfiles(){
-  local DOTFILES=".bash_profile .bashrc .exrc .gdbinit .gitconfig .inputrc .screenrc .tmux.conf .vimrc"
+  local DOTFILES=".bash_profile .bashrc .exrc .inputrc .tmux.conf .vimrc"
   local BASEURL="https://raw.githubusercontent.com/emanuelduss/Configs/master/home/"
 
   for dotfile in $DOTFILES
