@@ -408,6 +408,14 @@ shell-log(){
   fi
 }
 
+showcolors(){
+for i in {30..37}
+do
+  printf "\e[1;$i;%sm  hello  " {40..47} 0
+  echo
+done
+}
+
 temperature(){
   sed 's/\(.\)..$/.\1°C/' /sys/class/thermal/thermal_zone*/temp
 }
