@@ -141,6 +141,13 @@ nnoremap <leader>hex :%!xxd<CR>
 nnoremap <leader>ipsort :%! sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4<CR>
 nnoremap <leader>nhex :%!xxd -r<CR>
 
+" Custom Leader in Diff Mode (mergetool)
+if &diff
+    map <leader>1 :diffget LOCAL<CR>
+    map <leader>2 :diffget BASE<CR>
+    map <leader>3 :diffget REMOTE<CR>
+endif
+
 " Custom Ex Commands
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
