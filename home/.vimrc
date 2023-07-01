@@ -50,6 +50,7 @@ set tabstop=4                  " Tab width
 set hlsearch                   " Highlight search results
 set incsearch                  " Show search results while searching
 set laststatus=2               " Always show statusline
+set linebreak                  " Visually wrap lines at breakat characters
 set list                       " Show hidden characters
 set listchars=tab:→\           " Show tabs
 set listchars+=trail:·         " Show trailing spaces
