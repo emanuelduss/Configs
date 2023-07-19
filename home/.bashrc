@@ -125,7 +125,8 @@ fi
 
 # bat
 hash bat &>/dev/null && alias cat='bat -pp'
-hash bat &>/dev/null && export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+hash bat &>/dev/null && export MANPAGER="sh -c 'col -bx | bat -l man -p'" && export MANROFFOPT="-c"
+
 bhelp(){
   "$@" --help 2>&1 | bat --plain --language=help -pp
 }
