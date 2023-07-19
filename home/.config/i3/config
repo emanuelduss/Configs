@@ -87,6 +87,10 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+# Change focus using tab key
+bindsym $mod+Tab focus next
+bindsym $mod+Shift+Tab focus prev
+
 # Move focused window
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
@@ -161,7 +165,7 @@ bindsym $mod+Mod1+Right move workspace to output right
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
-bindsym $mod+Tab [class="Xfce4-terminal"] scratchpad show
+bindsym $mod+Control+minus [class="Xfce4-terminal"] scratchpad show
 
 # Marks
 bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
