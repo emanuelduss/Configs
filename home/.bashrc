@@ -91,7 +91,7 @@ else
   }
 fi
 
-PROMPT_COMMAND="EXITCODE=\$?"
+PROMPT_COMMAND="PROMPT_COMMAND='EXITCODE=\$?;echo'"
 PS1="${font_bold}${color_user}\u@\H${color_reset}\
 ${font_bold}:${color_blue}\w\
 ${color_orange}\$(__git_ps1)${color_reset} \$(exitcode)\n$cmd_line "
