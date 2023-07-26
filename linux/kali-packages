@@ -102,3 +102,5 @@ exploitdb
 azure-cli
 autossh
 plocate
+
+yubikey-manager yubioath-desktop  yubikey-personalization yubikey-manager-qt
