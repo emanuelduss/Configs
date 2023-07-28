@@ -65,7 +65,7 @@
     Control + Shift + C
 
 "rofi -show window -show-icons"
-    Alt + Tab
+    Mod4 + Tab
 
 "rofi -show combi -combi-modi drun,run,ssh -modes combi -show-icons"
     Mod4 + D

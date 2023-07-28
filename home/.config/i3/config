@@ -88,8 +88,8 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # Change focus using tab key
-bindsym $mod+Tab focus next
-bindsym $mod+Shift+Tab focus prev
+bindsym Mod1+Tab focus next
+bindsym Mod1+Shift+Tab focus prev
 
 # Move focused window
 bindsym $mod+Shift+j move left
