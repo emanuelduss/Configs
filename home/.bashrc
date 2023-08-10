@@ -395,6 +395,15 @@ rgvim(){
   rg --color never -l $@ | xargs vim
 }
 
+set-title(){
+  # Set terminal title (https://askubuntu.com/questions/774532/how-to-change-terminal-title-in-ubuntu-16-04/774543#774543)
+  if [[ -z "$ORIG" ]]; then
+    ORIG="$PS1"
+  fi
+  TITLE="\[\e]2;$*\a\]"
+  PS1="${ORIG}${TITLE}"
+}
+
 shell-log(){
   local logdir="$HOME/.shell-logs"
   local logfile="$(date "+$logdir/%F_%H-%M-%S_$$")"
