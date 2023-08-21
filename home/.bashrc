@@ -214,6 +214,7 @@ alias base64url="basenc --base64url"
 alias burl='curl -k --proxy http://127.0.0.1:8080'
 alias c='clear'
 alias duchs='du -sch .[!.]* * |sort -h'
+alias dstat-net='dstat --net --bits --noheaders 10'
 alias ed='ed -v -p "ed> "'
 alias env='env | \cat -v'
 alias feh="feh --auto-zoom --sort filename --borderless --scale-down --draw-filename --image-bg black"
@@ -230,7 +231,7 @@ alias ip="ip --color"
 alias ipba="ip --color --brief addr list"
 alias ipbl="ip --color --brief link list"
 alias l='ls -hF --group-directories-first'
-alias la='ls -lhAF'
+alias la='ls -hlisFA --group-directories-first --time-style +%Y-%m-%d\ %H:%M:%S'
 alias ll='ls -hlisF --group-directories-first --time-style +%Y-%m-%d\ %H:%M:%S'
 alias pomodoro='play -q -n synth sine 480 sine 620 remix 1-2 fade 0 0.5 delay 0.5 repeat 5 2>/dev/null'
 alias pstop='ps -eo user,pid,ppid,pcpu,cpu,pmem,rss,cmd --sort -pcpu --width $COLUMNS | numfmt --header --to=iec --field 7 --padding 6 | cut -c 1-$COLUMNS | head -n $(($LINES-5))'
