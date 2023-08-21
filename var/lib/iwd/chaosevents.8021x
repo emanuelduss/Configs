@@ -1,0 +1,11 @@
+[Security]
+EAP-Method=PEAP
+EAP-Identity=anonymous@Camp2023
+EAP-PEAP-CACert=/etc/ssl/certs/ISRG_Root_X1.pem
+EAP-PEAP-ServerDomainMask=radius.c3noc.net
+EAP-PEAP-Phase2-Method=MSCHAPV2
+EAP-PEAP-Phase2-Identity=foobar
+EAP-PEAP-Phase2-Password=foobar
+
+[Settings]
+AutoConnect=true
