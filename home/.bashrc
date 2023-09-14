@@ -57,10 +57,7 @@ else
 fi
 
 exitcode() {
-  if [[ "$EXITCODE" != "0" ]]
-  then
-    echo "$EXITCODE "
-  fi
+  [[ "$EXITCODE" != "0" ]] && echo "$EXITCODE "
 }
 
 if hash git &> /dev/null
@@ -166,10 +163,7 @@ export LESS='-FiMnR'
 # Path
 for i in ~/.gem/ruby/*/bin ~/.local/bin
 do
-  if [[ -d $i ]]
-  then
-    PATH=$PATH:$i
-  fi
+  [[ -d $i ]] && PATH=$PATH:$i
 done
 
 ################################################################################
@@ -190,10 +184,7 @@ then
     "/usr/share/fzf/completion.bash" \
     "/usr/share/bash-completion/completions/fzf"
   do
-    if [[ -r "$file" ]]
-    then
-      . "$file"
-    fi
+    [[ -r "$file" ]] && . "$file"
   done
 
   export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --multi'
@@ -239,11 +230,6 @@ alias shit='sudo $(history -p \!\!)'
 alias slideshow="feh --fullscreen --auto-zoom --randomize --hide-pointer --slideshow-delay 3"
 alias ssh-k='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias strip-ansi="sed 's/\x1b\[[0-9;]*m//g'"
-
-if [[ -f "~/.bash_aliases" ]]
-then
-  . ~/.bash_aliases
-fi
 
 androidlogin(){
   local username="$1"
@@ -480,4 +466,5 @@ xcopy(){
 #
 ################################################################################
 
-[[ -f "~/.bashrc.local" ]] && source "~/.bashrc.local"
+[[ -f "~/.bash_aliases" ]] && . "~/.bash_aliases"
+[[ -f "~/.bashrc.local" ]] && . "~/.bashrc.local"
