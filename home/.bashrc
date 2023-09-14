@@ -172,7 +172,6 @@ do
   fi
 done
 
-
 ################################################################################
 #
 # External Tools
@@ -390,6 +389,38 @@ pa-output(){
 pretty_csv() {
   # Prettifies CSV input (https://www.stefaanlippens.net/pretty-csv.html)
   column -t -s, -n "$@" | less -F -S -X -K
+}
+
+proxy_on(){
+    local host="$1"
+    local port="${2:-8080}"
+    local proto="${3-http}"
+    local user="$4"
+    local pass="$5"
+
+    if [[ -n "$user" ]]
+    then
+        export http_proxy="$proto"://"$user":"$pass"@"$host":"$port"
+    else
+        export http_proxy="$proto"://"$host":"$port"
+    fi
+
+    export HTTP_PROXY=$http_proxy
+    export https_proxy=$http_proxy
+    export HTTPS_PROXY=$http_proxy
+    export ftp_proxy=$http_proxy
+    export FTP_PROXY=$http_proxy
+    export all_proxy=$http_proxy
+    export ALL_PROXY=$http_proxy
+
+    echo "Proxy: $http_proxy"
+}
+
+proxy_off(){
+ for i in http_proxy HTTP_PROXY https_proxy HTTPS_PROXY ftp_proxy FTP_PROXY all_proxy ALL_PROXY
+ do
+   unset "$i"
+ done
 }
 
 rgvim(){
