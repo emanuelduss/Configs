@@ -470,3 +470,16 @@ temperature(){
 xcopy(){
   xclip -in -selection clipboard -f | xclip -in -selection primary -f | xclip -in -selection secondary
 }
+
+
+################################################################################
+#
+# External Environments
+#
+################################################################################
+
+# Load local custom environment
+if [[ -f "~/.bashrc.local" ]]
+then
+  source "~/.bashrc.local"
+fi
