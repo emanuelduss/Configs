@@ -468,5 +468,5 @@ xcopy(){
 #
 ################################################################################
 
-[[ -f "~/.bash_aliases" ]] && . "~/.bash_aliases"
-[[ -f "~/.bashrc.local" ]] && . "~/.bashrc.local"
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+[[ -f ~/.bashrc.local ]] && . ~/.bashrc.local
