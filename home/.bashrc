@@ -413,7 +413,7 @@ proxy_on(){
     export all_proxy=$http_proxy
     export ALL_PROXY=$http_proxy
 
-    echo "Proxy: $http_proxy"
+    echo "Proxy is set to $http_proxy."
 }
 
 proxy_off(){
@@ -421,6 +421,8 @@ proxy_off(){
  do
    unset "$i"
  done
+
+  echo "Proxy is disabled."
 }
 
 rgvim(){
@@ -474,12 +476,8 @@ xcopy(){
 
 ################################################################################
 #
-# External Environments
+# Additional Initialization Files
 #
 ################################################################################
 
-# Load local custom environment
-if [[ -f "~/.bashrc.local" ]]
-then
-  source "~/.bashrc.local"
-fi
+[[ -f "~/.bashrc.local" ]] && source "~/.bashrc.local"
