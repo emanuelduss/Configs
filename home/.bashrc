@@ -457,6 +457,21 @@ temperature(){
   sed 's/\(.\)..$/.\1°C/' /sys/class/thermal/thermal_zone*/temp
 }
 
+terminalcolors(){
+# Source: https://askubuntu.com/questions/27314/script-to-display-all-terminal-colors
+  for x in 0 1 4 5 7 8
+  do
+    for i in {30..37}
+    do
+      for a in {40..47}
+      do
+        echo -ne "\e[$x;$i;$a""m\\\e[$x;$i;$a""m\e[0;37;40m "
+      done
+      echo
+    done
+  done
+}
+
 xcopy(){
   xclip -in -selection clipboard -f | xclip -in -selection primary -f | xclip -in -selection secondary
 }
