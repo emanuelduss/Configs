@@ -313,7 +313,7 @@ generateuuid(){
 }
 
 getmydotfiles(){
-  local DOTFILES=".bash_profile .bashrc .bashrc.local .exrc .inputrc .tmux.conf .vimrc"
+  local DOTFILES=".bash_profile .bashrc .exrc .inputrc .tmux.conf .vimrc"
   local BASEURL="https://raw.githubusercontent.com/emanuelduss/Configs/master/home/"
 
   for dotfile in $DOTFILES
@@ -322,7 +322,7 @@ getmydotfiles(){
     wget -q "$BASEURL/$dotfile" -O "$HOME/$dotfile"
   done
 
-  [[ ! -f "~/.bashrc.local" ]] && wget -q "$BASEURL/.bashrc.local" -O "$HOME/.bashrc.local"
+  [[ ! -f ~/.bashrc.local ]] && wget -q "$BASEURL/.bashrc.local" -O "$HOME/.bashrc.local"
 }
 
 gitpulldirs(){
