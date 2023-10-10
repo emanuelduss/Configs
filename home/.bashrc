@@ -348,6 +348,10 @@ ip-pub(){
   echo "Public IPv6 Address: $(curl -s -6 -L --write-out "\nLocal IPv6 Addres:   %{local_ip}" $ipurl)"
 }
 
+ipapi.is(){
+  curl -s -H "Accept: application/json" "https://api.ipapi.is/?q=$1"
+}
+
 ipinfo(){
   curl -s -H "Accept: application/json" "https://ipinfo.io/$1"
 }
