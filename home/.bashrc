@@ -121,7 +121,7 @@ then
 fi
 
 # bat
-hash bat &>/dev/null && alias cat='bat -App'
+hash bat &>/dev/null && alias cat='bat -pp'
 hash bat &>/dev/null && export MANPAGER="sh -c 'col -bx | bat -l man -p'" && export MANROFFOPT="-c"
 
 bhelp(){
