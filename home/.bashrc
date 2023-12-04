@@ -369,6 +369,26 @@ mycd(){
   ls -lah
 }
 
+nettest(){
+  echo "[*] IP address configuration:"
+  \ip -color -brief addr list
+
+  echo -e "\n[*] Route configuration:"
+  \ip -color route
+
+  echo -e "\n[*] Ping defaulg gateway:"
+  ping "$(\ip route show default | cut -d ' ' -f 3)" -c 2 && echo "[*] Success" || echo "[*] FAIL!"
+
+  echo -e "\n[*] Ping 1.1.1.1"
+  ping -c 2 1.1.1.1 && echo "[*] Success" || echo "[*] FAIL!"
+
+  echo -e "\n[*] Ping nameservers from resolv.conf"
+  awk '/^nameserver/{ print $2 }' /etc/resolv.conf  | while read nameserver
+  do
+    ping -c 2 "$nameserver" && echo "[*] Success" || echo "[*] FAIL!"
+  done
+}
+
 pa-output(){
   echo "Output devices:"
   pacmd list-sinks | grep -e device.description -e index:
