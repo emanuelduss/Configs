@@ -387,6 +387,17 @@ nettest(){
   do
     ping -c 2 "$nameserver" && echo "[*] Success" || echo "[*] FAIL!"
   done
+
+  echo -e "\n[*] Resolving via 9.9.9.9"
+  dig +noall +answer switch.ch example.net @9.9.9.9 && echo "[*] Success"
+
+  echo -e "\n[*] Resolving via OS"
+  getent hosts example.net switch.ch
+
+}
+
+nmap-scripts-help(){
+  nmap --script-help "*" | less
 }
 
 pa-output(){
