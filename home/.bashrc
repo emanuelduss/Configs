@@ -205,6 +205,7 @@ alias burl='curl -k --proxy http://127.0.0.1:8080'
 alias c='clear'
 alias duchs='du -sch .[!.]* * |sort -h'
 alias dstat-net='dstat --net --bits --noheaders 10'
+alias dool-net='dool --net --bits --noheaders 10'
 alias ed='ed -v -p "ed> "'
 alias env='env | \cat -v'
 alias feh="feh --auto-zoom --sort filename --borderless --scale-down --draw-filename --image-bg black"
