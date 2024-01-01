@@ -1,5 +1,16 @@
 # Bookmarklets
 
+## Template
+
+A template.
+
+```js
+javascript:
+    (function () {
+        alert("Hello World");
+    }());
+```
+
 ## Humble Bundle Downloader
 
 ```js
