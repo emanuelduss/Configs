@@ -2,8 +2,7 @@
 
 ## Media.ccc.de Information
 
-[media.ccc.de Information](
-javascript:(function(){
+```js
 var title = document.querySelector(".player-header > h1").innerText;
 var subtitle = document.querySelector(".player-header > h2").innerText;
 var url = document.URL;
@@ -16,4 +15,4 @@ text += "- Speakers: " + speakers + "\n";
 
 alert(text);
 })();
-)
+```
