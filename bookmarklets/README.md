@@ -3,6 +3,7 @@
 ## Media.ccc.de Information
 
 ```js
+javascript:(function(){
 var title = document.querySelector(".player-header > h1").innerText;
 var subtitle = document.querySelector(".player-header > h2").innerText;
 var url = document.URL;
