@@ -37,11 +37,13 @@ javascript:
 javascript:
     (function () {
         var title = document.querySelector('.player-header > h1').innerText;
-        var subtitle = document.querySelector('.player-header > h2').innerText;
+        var subtitle = document.querySelector('.player-header > h2');
         var url = document.URL;
         var speakers = document.querySelector('.persons').innerText.trim();
         var text = '### ' + title + '\n\n';
-        text += '- Subtitle: ' + subtitle + '\n';
+        if (subtitle != null){
+            text += '- Subtitle: ' + subtitle.innerText + '\n';
+        }
         text += '- Talk: ' + url + '\n';
         text += '- Speakers: ' + speakers + '\n';
         alert(text);
