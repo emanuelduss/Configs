@@ -411,6 +411,14 @@ pa-output(){
   pacmd set-default-sink "$number"
 }
 
+pdf2scan(){
+  local input="$1"
+  local output="scan_$1"
+  convert -density 150 -format JPG -compress lzw -quality 5 "$input" -rotate 0.33 -attenuate 0.55 +noise Multiplicative -colorspace Gray "$output"
+  exiftool -overwrite_original -all= "$output"
+  exiftool -overwrite_original -xmptoolkit= -Producer="HP Scanning Suite for Windows" -Title="Scanned Document" -Author="HP CF377A MFP" -Subject="" "$output"
+}
+
 pretty_csv() {
   # Prettifies CSV input (https://www.stefaanlippens.net/pretty-csv.html)
   column -t -s, -n "$@" | less -F -S -X -K
