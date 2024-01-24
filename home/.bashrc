@@ -411,6 +411,11 @@ pa-output(){
   pacmd set-default-sink "$number"
 }
 
+pdf2png(){
+  local input="$1"
+  convert -density 150 "$input" -quality 100 -alpha remove "$input.png"
+
+}
 pdf2scan(){
   local input="$1"
   local output="scan_$1"
