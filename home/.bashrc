@@ -425,6 +425,12 @@ pdf2scan(){
   exiftool -overwrite_original -xmptoolkit= -Producer="HP Scanning Suite for Windows" -Title="Scanned Document" -Author="HP CF377A MFP" -Subject="" "$output"
 }
 
+pdfshrink(){
+  local input="$1"
+  local output="${input%.pdf}_small.pdf"
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$output" "$input"
+}
+
 pretty_csv() {
   # Prettifies CSV input (https://www.stefaanlippens.net/pretty-csv.html)
   column -t -s, -n "$@" | less -F -S -X -K
