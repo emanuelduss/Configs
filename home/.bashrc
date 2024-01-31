@@ -413,12 +413,13 @@ pa-output(){
 
 pdf2png(){
   local input="$1"
-  convert -density 150 "$input" -quality 100 -alpha remove "$input.png"
+  local output="${input%.pdf}.png"
+  convert -density 150 "$input" -quality 100 -alpha remove "$output"
 
 }
 pdf2scan(){
   local input="$1"
-  local output="scan_$1"
+  local output="${input%.pdf}_scan.pdf"
   convert -density 150 -format JPG -compress lzw -quality 5 "$input" -rotate 0.33 -attenuate 0.55 +noise Multiplicative -colorspace Gray "$output"
   exiftool -overwrite_original -all= "$output"
   exiftool -overwrite_original -xmptoolkit= -Producer="HP Scanning Suite for Windows" -Title="Scanned Document" -Author="HP CF377A MFP" -Subject="" "$output"
