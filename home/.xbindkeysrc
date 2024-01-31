@@ -22,10 +22,10 @@
 "i3-msg workspace locked; propersuspend"
     XF86Sleep
 
-"xbacklight -inc 5"
+"brightnessctl s +200"
     XF86MonBrightnessUp
 
-"xbacklight -dec 5"
+"brightnessctl s 200-"
     XF86MonBrightnessDown
 
 "sleep 1; xset dpms force off"
