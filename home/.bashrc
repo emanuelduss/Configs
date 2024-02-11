@@ -340,6 +340,18 @@ how_in() {
   IFS=+ curl "https://cht.sh/$where/ $@"
 }
 
+imageshrink(){
+  local quality="75"
+  local size="2048x2048"
+  local outputdir="./small"
+  mkdir "$outputdir" || return 1
+  for image in "$@"
+  do
+    echo "[*] Shrinking $image to $outputdir/$image ..."
+    convert -resize "$size" -quality "$quality" "$image" "$outputdir/$image"
+  done
+}
+
 infoman(){
   info "$1" | less
 }
