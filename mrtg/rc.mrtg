@@ -1,0 +1,46 @@
+#!/bin/bash
+########################################################################
+#
+# rc.mrtg
+# MRTG starten, stopen, restarten
+#
+# 2011-07-03; Emanuel Duss; Erste Version
+#
+########################################################################
+
+########################################################################
+# Variabeln
+MRTGBIN="/usr/bin/mrtg"
+MRTGCFG="/etc/mrtg.cfg"
+
+########################################################################
+# Funktionen
+usage() {
+cat << EOF
+Usage:
+  $0 < start | stop | restart >
+EOF
+}
+
+########################################################################
+# Main
+case $1 in
+  stop)
+    echo "Stopping MRTG..."
+    kill `ps -ef | awk '/\/usr\/bin\/mrtg/{ print $2 }'` && echo "  done." || echo "  failed!"
+    ;;
+  start)
+    echo "Starting MRTG..."
+    env LANG=C /usr/bin/mrtg /etc/mrtg.cfg && echo "  done." || echo "  failed!"
+    ;;
+  restart)
+    $0 stop
+    sleep 2
+    $0 start
+    ;;
+  *)
+    usage
+    ;;
+esac
+
+# EOF

@@ -1,0 +1,61 @@
+########################################################################
+#
+# indexgen
+# Generiert eine Index-Seite fuer MRTG
+#
+# 2011-06-30; Emanuel Duss; Erste Version
+#
+########################################################################
+
+TIMESTAMP=`date "+%Y-%m-%d %H:%M:%S"`
+YEAR=`date "+%Y"`
+WWWDIR=/var/www/mrtg
+
+cd $WWWDIR
+{
+cat << EOI
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+  <title>MRTG von Emanuel Duss</title>
+</head>
+<body>
+<h1>MRTG - Multi Router Traffic Grapher</h1>
+<table border=1>
+<tr><th>Host</th><th>Monitoring</th></tr>
+EOI
+
+#  ls *-*.html | awk -F- '{ print $1 }' | sort -u | while read TARGET
+#  do
+#    echo "<h2>$TARGET</h2>"
+#    echo "  <ul>"
+#    ls $TARGET-*.html | awk -F- '{ gsub(/.html$/,"",$2); print $2 }' | sort -u | while read SERVICE
+#    do
+#      echo "    <li><a href=\"$TARGET-$SERVICE.html\">$SERVICE</a></li>"
+#    done
+#    echo "  </ul>"
+#  done
+
+  ls *-*.html | awk -F- '{ print $1 }' | sort -u | while read TARGET
+  do
+    echo "<tr><td>$TARGET</td>"
+    echo "  <td>"
+    ls $TARGET-*.html | awk -F- '{ gsub(/.html$/,"",$2); print $2 }' | sort -u | while read SERVICE
+    do
+      echo "<a href=\"$TARGET-$SERVICE.html\">$SERVICE</a>"
+    done
+    echo "  </td></tr>"
+  done
+
+cat << EOI
+</table>
+
+<hr />
+
+<i>Indexgen powered $YEAR by Emanuel Duss | Generated on $TIMESTAMP</i>
+</body>
+EOI
+} > index.html
+
+# EOF

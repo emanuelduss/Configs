@@ -1,0 +1,61 @@
+#!/bin/bash
+########################################################################
+#
+# mrtget
+# Liefert Werte fuer MRTG
+#
+# 2011-05-11; Emanuel Duss; Erste Version
+# 2011-07-01; Emanuel Duss; mem Memory in MB statt KB
+#
+########################################################################
+
+########################################################################
+# Variabeln
+
+
+########################################################################
+# Funktionen
+usage () {
+  echo "Usage:
+  $0 < -f eth <interface> | cpu | mem | user | proc >"
+}
+
+########################################################################
+# Main
+
+case $1 in
+  cpu)
+    vmstat 1 2|  tail -1 | awk '{ print $13+$14+$16 }' # Load Total
+    vmstat 1 2 | tail -1 | awk '{ print $13 }' # Load User
+    ;;
+  eth)
+    # Empfangene Bytes
+    sed 's/:/ /g' /proc/net/dev | awk '/'$2'/{ print $2 }'
+    # Gesendete Bytes
+    sed 's/:/ /g' /proc/net/dev | awk '/'$2'/{ print $10 }'
+    ;;
+  mem)
+    free -m | awk '/^Mem:/{ print $3 }'  # Used Memory
+    free -m | awk '/^Mem:/{ print $2 }'  # Total Memory
+    ;;
+  proc)
+    ps -ef | grep -E "^root" | wc -l # Prozesse root
+    ps -ef | grep -E "^[^(UID)]" | wc -l # Prozesse total
+    echo 0
+    ;;
+  swap)
+    free | awk '/^Swap:/{ print $3 }'  # Used SWAP
+    free | awk '/^Swap:/{ print $2 }'  # Total SWAP
+    ;;
+  disk)
+    df -P -B 1M $2
+    ;;
+  users)
+    who | wc -l
+    echo 0
+    ;;
+esac
+
+
+uptime | awk '{print $3 " " $4; }' | cut -f1 -d","
+hostname
