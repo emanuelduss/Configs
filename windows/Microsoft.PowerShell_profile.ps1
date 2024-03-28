@@ -43,7 +43,8 @@ function prompt
 {
   Write-Host "PS " -nonewline -ForegroundColor "DarkYellow"
   Write-Host "$env:USERNAME@$env:COMPUTERNAME " -ForegroundColor "Green" -NoNewLine
-  Write-Host "$PWD" -ForegroundColor "Blue"
+  Write-Host "$PWD " -ForegroundColor "Blue" -NoNewLine
+  Write-Host "$(Get-Date -Format '[dd.MM.yyyy HH:MM]')" -ForegroundColor "DarkYellow"
   Write-Host "PS >" -nonewline -ForegroundColor "DarkYellow"
 
   return " "
