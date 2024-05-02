@@ -57,3 +57,9 @@
 
 [includeIf "gitdir:~/work/"]
   path = ~/.gitconfig-work
+
+[includeIf "hasconfig:remote.*.url:https://git.internal.example.net/**"]
+  path = ~/.gitconfig-internal
+
+[includeIf "hasconfig:remote.*.url:git@git.internal.example.net/**"]
+  path = ~/.gitconfig-internal
