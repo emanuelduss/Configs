@@ -41,14 +41,19 @@ Set-PSReadLineOption -Colors @{
 
 function prompt
 {
-  Write-Host "PS " -nonewline -ForegroundColor "DarkYellow"
-  Write-Host "$env:USERNAME@$env:COMPUTERNAME " -ForegroundColor "Green" -NoNewLine
-  Write-Host "$PWD " -ForegroundColor "Blue" -NoNewLine
-  Write-Host "$(Get-Date -Format '[yyyy-MM-dd HH:MM]')" -ForegroundColor "DarkYellow"
-  Write-Host "PS >" -nonewline -ForegroundColor "DarkYellow"
+  $branch = $(git branch --show-current)
+  Write-Host "PS " -nonewline -ForegroundColor DarkYellow
+  Write-Host "$env:USERNAME@$env:COMPUTERNAME " -ForegroundColor Green -NoNewLine
+  Write-Host "$PWD " -ForegroundColor Blue -NoNewLine
+  if ($branch){
+    Write-Host "($branch) " -ForegroundColor Magenta -NoNewLine
+  }
+  Write-Host "$(Get-Date -Format '[yyyy-MM-dd HH:MM]')" -ForegroundColor DarkYellow
+  Write-Host "PS >" -nonewline -ForegroundColor DarkYellow
 
   return " "
 }
+
 #
 # Aliases
 #
