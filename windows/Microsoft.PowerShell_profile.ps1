@@ -68,7 +68,10 @@ Set-Alias vi vim
 
 function Update-GitRepositories {
   Get-ChildItem -Directory | ForEach-Object {
-    echo $_.BaseName
-    git -C $_.BaseName pull --ff-only
+    if (Join-Path $_.FullName ".git" | Test-Path -PathType Container){
+      Write-Host -ForegroundColor Green  "[*] Updating $_..."
+      git -C $_.FullName pull --ff-only
+      Write-Host
+    }
   }
 }
