@@ -491,6 +491,27 @@ rgvim(){
   rg --color never -l $@ | xargs vim
 }
 
+securitytxt(){
+  local domain="$1"
+  local count="1"
+
+  while true
+  do
+    host="$(cut -d . -f $count- <<< $domain)"
+    if [[ -n "$host" ]]
+    then
+      for url in "https://$host/.well-known/security.txt" "https://$host/security.txt"
+      do
+        echo "Looking for security.txt on $url..."
+        curl -sL "$url" | grep -qE "^Contact:" && echo -e "\nFound security.txt on $url:" && curl -isL "$url" && echo
+      done
+      ((count ++))
+    else
+      break
+    fi
+  done
+}
+
 set-title(){
   # Set terminal title (https://askubuntu.com/questions/774532/how-to-change-terminal-title-in-ubuntu-16-04/774543#774543)
   if [[ -z "$ORIG" ]]; then
