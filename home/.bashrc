@@ -500,10 +500,18 @@ securitytxt(){
     host="$(cut -d . -f $count- <<< $domain)"
     if [[ -n "$host" ]]
     then
-      for url in "https://$host/.well-known/security.txt" "https://$host/security.txt"
+      for url in "https://$host/.well-known/security.txt" "https://$host/security.txt" "https://www.$host/.well-known/security.txt" "https://www.$host/security.txt"
       do
-        echo "Looking for security.txt on $url..."
-        curl -sL "$url" | grep -qE "^Contact:" && echo -e "\nFound security.txt on $url:" && curl -isL "$url" && echo
+        echo -e "\033[0;34mLooking for security.txt on $url...\033[0m"
+        if curl -sL "$url" | grep -qE "^Contact:"
+        then
+          echo -e "\n\033[0;32mFound security.txt on $url:\033[0m"
+          curl -isL "$url"
+          echo
+        else
+          echo "No security contact information found."
+        fi
+          echo
       done
       ((count ++))
     else
