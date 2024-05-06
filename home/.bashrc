@@ -57,41 +57,20 @@ else
 fi
 
 exitcode() {
-  [[ "$EXITCODE" != "0" ]] && echo " $EXITCODE"
+  [[ "$EXITCODE" != "0" ]] && echo "$EXITCODE "
 }
 
 if hash git &> /dev/null
 then
-  for file in "/usr/share/git/git-prompt.sh" \
-    "/usr/share/git/completion/git-prompt.sh" \
-    "/usr/share/git-core/contrib/completion/git-prompt.sh" \
-    "/usr/share/git/completion/git-prompt.sh" \
-    "/usr/lib/git-core/git-sh-prompt"
-  do
-    if [[ -r "$file" ]]
-    then
-      . "$file"
-      GIT_PS1_SHOWDIRTYSTATE=true
-      GIT_PS1_SHOWSTASHSTATE=true
-      GIT_PS1_SHOWUNTRACKEDFILES=true
-      GIT_PS1_SHOWUPSTREAM="auto"
-      break
-    else
-      __git_ps1() {
-        git branch 2>/dev/null | awk '/^\*/{ print " ("$2")" }'
-      }
-    fi
-  done
-else
   __git_ps1() {
-    echo ""
+    local branch="$(git branch --show-current 2>/dev/null)"
+    [[ -n "$branch" ]] && echo "($branch) "
   }
 fi
 
 PROMPT_COMMAND="PROMPT_COMMAND='EXITCODE=\$?;echo'"
 PS1="${font_bold}${color_user}\u@\H${color_reset}\
-${font_bold}:${color_blue}\w\
-${color_orange}\$(__git_ps1)${color_reset}${color_red}\$(exitcode) ${color_yellow}\$(date '+[%F %R]')${color_reset}\n$cmd_line "
+${font_bold}:${color_blue}\w${color_orange} \$(__git_ps1)${color_reset}${color_red}\$(exitcode)${color_yellow}\$(date '+[%F %R]')${color_reset}\n$cmd_line "
 
 # Window Title
 PS1="\[\e]0;\u@\H:\w\a\]$PS1"
