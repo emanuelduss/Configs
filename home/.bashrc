@@ -14,7 +14,7 @@
 [ -z "$PS1" ] && return
 
 export HISTCONTROL=ignoreboth
-export HISTIGNORE="c;clear:bg:fg:cd:cd -:exit:date:w:* --help"
+export HISTIGNORE="c;clear:bg:fg:cd:cd -:exit:date:w"
 export HISTSIZE=100000
 export HISTTIMEFORMAT="%F %T "
 
@@ -66,6 +66,10 @@ then
     local branch="$(git branch --show-current 2>/dev/null)"
     [[ -n "$branch" ]] && echo "($branch) "
   }
+else
+  __git_ps1() {
+    true
+  }
 fi
 
 PROMPT_COMMAND="PROMPT_COMMAND='EXITCODE=\$?;echo'"
@@ -82,16 +86,16 @@ PS1="\[\e]0;\u@\H:\w\a\]$PS1"
 #
 ################################################################################
 
-# Commands
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+# General
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
 
-# ls colors
+# ls
 if hash dircolors &>/dev/null
 then
-  if [[ -r ~/.dircolors ]]
+  if [[ -r "~/.dircolors" ]]
   then
     eval "$(dircolors -b ~/.dircolors)"
   else
@@ -100,14 +104,19 @@ then
 fi
 
 # bat
-hash bat &>/dev/null && alias cat='bat -pp'
-hash bat &>/dev/null && export MANPAGER="sh -c 'col -bx | bat -l man -p'" && export MANROFFOPT="-c"
+if hash bat &>/dev/null
+then
+  alias cat="bat -pp"
 
-bhelp(){
-  "$@" --help 2>&1 | bat --plain --language=help -pp
-}
+  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+  export MANROFFOPT="-c"
 
-# Manpages
+  bhelp(){
+    "$@" --help 2>&1 | bat --plain --language=help -pp
+  }
+fi
+
+# man
 export LESS_TERMCAP_us=$'\E[01;32m'    # Begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # End underline
 export LESS_TERMCAP_so=$'\E[01;44;33m' # Begin standout-mode
@@ -116,7 +125,7 @@ export LESS_TERMCAP_md=$'\E[01;31m'    # Begin bold
 export LESS_TERMCAP_mb=$'\E[01;31m'    # Begin blink
 export LESS_TERMCAP_me=$'\E[0m'        # End
 
-# GCC warnings and errors
+# gcc
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 
@@ -126,24 +135,25 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 #
 ################################################################################
 
-GPG_TTY=$(tty)
+GPG_TTY="$(tty)"
 export GPG_TTY
 
-export EDITOR=vi
+export EDITOR="vi"
 if [[ -f "/usr/bin/vim" ]]
 then
   export EDITOR="vim"
-  alias vi='vim'
+  alias vi="vim"
 fi
-export VISUAL=$EDITOR
-export PAGER=less
-export LESS='-FiMnR'
+export VISUAL="$EDITOR"
+export PAGER="less"
+export LESS="-FiMnR"
 
 # Path
 for i in ~/.gem/ruby/*/bin ~/.local/bin
 do
-  [[ -d $i ]] && PATH=$PATH:$i
+  [[ -d $i ]] && PATH="$PATH:$i"
 done
+
 
 ################################################################################
 #
@@ -180,8 +190,8 @@ fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias base16="basenc --base16"
 alias base64url="basenc --base64url"
-alias burl='curl -k --proxy http://127.0.0.1:8080'
-alias c='clear'
+alias burl="curl -k --proxy http://127.0.0.1:8080"
+alias c="clear"
 alias duchs='du -sch .[!.]* * |sort -h'
 alias dstat-net='dstat --net --bits --noheaders 10'
 alias dool-net='dool --net --bits --noheaders 10'
@@ -303,7 +313,7 @@ getmydotfiles(){
     wget -q "$BASEURL/$dotfile" -O "$HOME/$dotfile"
   done
 
-  [[ ! -f ~/.bashrc.local ]] && wget -q "$BASEURL/.bashrc.local" -O "$HOME/.bashrc.local"
+  [[ ! -f ~/.bashrc.local ]] && wget -q "$BASEURL/.bashrc.local" -O "$HOME/.bashrc.local" || true
 }
 
 gitpulldirs(){
@@ -341,7 +351,7 @@ ip-pub(){
   echo "Public IPv6 Address: $(curl -s -6 -L --write-out "\nLocal IPv6 Addres:   %{local_ip}" $ipurl)"
 }
 
-ipapi.is(){
+ipapi(){
   curl -s -H "Accept: application/json" "https://api.ipapi.is/?q=$1"
 }
 
@@ -413,7 +423,7 @@ pdf2scan(){
   local output="${input%.pdf}_scan.pdf"
   convert -density 150 -format JPG -compress lzw -quality 5 "$input" -rotate 0.33 -attenuate 0.55 +noise Multiplicative -colorspace Gray "$output"
   exiftool -overwrite_original -all= "$output"
-  exiftool -overwrite_original -xmptoolkit= -Producer="HP Scanning Suite for Windows" -Title="Scanned Document" -Author="HP CF377A MFP" -Subject="" "$output"
+  exiftool -overwrite_original -xmptoolkit= -Producer="HP Scanning Suite for Windows" -Title="Scanned Document" -Author="HP CF1337A MFP" -Subject="" "$output"
 }
 
 pdfshrink(){
@@ -433,28 +443,28 @@ pretty_csv() {
 }
 
 proxy_on(){
-    local host="$1"
-    local port="${2:-8080}"
-    local proto="${3-http}"
-    local user="$4"
-    local pass="$5"
+  local host="$1"
+  local port="${2:-8080}"
+  local proto="${3-http}"
+  local user="$4"
+  local pass="$5"
 
-    if [[ -n "$user" ]]
-    then
-        export http_proxy="$proto"://"$user":"$pass"@"$host":"$port"
-    else
-        export http_proxy="$proto"://"$host":"$port"
-    fi
+  if [[ -n "$user" ]]
+  then
+      export http_proxy="$proto"://"$user":"$pass"@"$host":"$port"
+  else
+      export http_proxy="$proto"://"$host":"$port"
+  fi
 
-    export HTTP_PROXY=$http_proxy
-    export https_proxy=$http_proxy
-    export HTTPS_PROXY=$http_proxy
-    export ftp_proxy=$http_proxy
-    export FTP_PROXY=$http_proxy
-    export all_proxy=$http_proxy
-    export ALL_PROXY=$http_proxy
+  export HTTP_PROXY="$http_proxy"
+  export https_proxy="$http_proxy"
+  export HTTPS_PROXY="$http_proxy"
+  export ftp_proxy="$http_proxy"
+  export FTP_PROXY="$http_proxy"
+  export all_proxy="$http_proxy"
+  export ALL_PROXY="$http_proxy"
 
-    echo "Proxy is set to $http_proxy."
+  echo "Proxy is set to $http_proxy."
 }
 
 proxy_off(){
@@ -528,11 +538,11 @@ shell-log(){
 }
 
 showcolors(){
-for i in {30..37}
-do
-  printf "\e[1;$i;%sm  hello  " {40..47} 0
-  echo
-done
+  for i in {30..37}
+  do
+    printf "\e[1;$i;%sm  hello  " {40..47} 0
+    echo
+  done
 }
 
 temperature(){
@@ -540,7 +550,7 @@ temperature(){
 }
 
 terminalcolors(){
-# Source: https://askubuntu.com/questions/27314/script-to-display-all-terminal-colors
+  # Source: https://askubuntu.com/questions/27314/script-to-display-all-terminal-colors
   for x in 0 1 4 5 7 8
   do
     for i in {30..37}
