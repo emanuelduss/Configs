@@ -6,12 +6,6 @@
 
 [Scheme]
 Name=fresh32
-ColorPalette=rgb(19,19,19);rgb(253,38,4);rgb(150,217,3);rgb(243,188,1);rgb(1,155,239);rgb(124,88,173);rgb(7,211,229);rgb(224,224,224);rgb(224,224,224);rgb(253,38,4);rgb(150,217,3);rgb(243,188,1);rgb(1,155,239);rgb(124,88,173);rgb(7,211,229);rgb(224,224,224)
-ColorForeground=#e0e0e0e0e0e0
-ColorBackground=#232325252E2E
-#131313131313
-ColorCursorForeground=#2626a2a26969
-ColorCursor=#2626a2a26969
-ColorSelection=#e5e5a5a50a0a
-ColorSelectionBackground=#e5e5a5a50a0a
-ColorBold=#a5a51d1d2d2d
+ColorPalette=rgb(22,24,27);rgb(255,0,15);rgb(131,255,8);rgb(253,237,2);rgb(0,141,248);rgb(255,132,0);rgb(8,255,131);rgb(245,245,245);rgb(85,85,85);rgb(255,0,15);rgb(131,255,8);rgb(255,240,0);rgb(0,141,248);rgb(255,132,0);rgb(8,255,131);rgb(245,245,245)
+ColorForeground=rgb(245,245,245)
+ColorBackground=rgb(22,24,27)
