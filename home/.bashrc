@@ -367,6 +367,11 @@ lf(){
   locate -i --regex "$regex" | grep --color -i -E "$regex"
 }
 
+mano(){
+  # Open manpage of $1 and jump directly to the option $2
+  man -P "less -p \"(^|, ) *$2\"" "$1"
+}
+
 mycd(){
   \cd "${1:-$HOME}"
   ls -lah
