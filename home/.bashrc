@@ -486,7 +486,7 @@ rgvim(){
 }
 
 securitytxt(){
-  local domain="$1"
+  local domain="$(sed 's/\(^.*\/\/\|\/.*$\)//g' <<< $1)" # Extract domain if URL is provided
   local count="1"
 
   while true
