@@ -279,6 +279,10 @@ docker-sh(){
   docker exec -it "$container" "$command"
 }
 
+doh9(){
+  curl -s -H 'Accept: application/dns+json' "https://dns.quad9.net:5053/dns-query?name=${1}&type=${2:-A}" | jq
+}
+
 f() {
   DIRECTORY="$(find . -type d -ipath "*$@*" -print 2>/dev/null | head -1)"
   cd -- "$DIRECTORY"
