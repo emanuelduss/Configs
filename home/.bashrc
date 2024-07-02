@@ -221,6 +221,7 @@ alias shit='sudo $(history -p \!\!)'
 alias slideshow="feh --fullscreen --auto-zoom --randomize --hide-pointer --slideshow-delay 3"
 alias ssh-k='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias strip-ansi="sed 's/\x1b\[[0-9;]*m//g'"
+alias tv7="nvlc https://api.init7.net/tvchannels.xspf?rp=true"
 
 androidlogin(){
   local username="$1"
