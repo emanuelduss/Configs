@@ -486,6 +486,24 @@ proxy_off(){
   echo "Proxy is disabled."
 }
 
+proxy_off(){
+ for i in http_proxy HTTP_PROXY https_proxy HTTPS_PROXY ftp_proxy FTP_PROXY all_proxy ALL_PROXY
+ do
+   unset "$i"
+ done
+
+  echo "Proxy is disabled."
+}
+
+proxy_status(){
+  if [[ -n "$http_proxy" ]]
+  then
+    echo "Proxy is set to $http_proxy."
+  else
+    echo "Proxy is disabled."
+  fi
+}
+
 rgvim(){
   rg --color never -l $@ | xargs vim
 }
