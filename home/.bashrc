@@ -409,6 +409,23 @@ nettest(){
 
 }
 
+nmap-arpscan(){
+  ip -c=never route | grep -E "/.*link" | while read network foo
+  do
+    sudo nmap -n -sn -PR $network | while read line
+    do
+      if grep -q "^Nmap scan report for" <<< "$line"
+      then
+        echo -en "\n$(cut -d ' ' -f 5 <<< $line)\t"
+      elif grep -q "^MAC Address:" <<< "$line"
+      then
+        echo -en "$(cut -d ' ' -f 3 <<< $line)\t"
+        echo -en "$(cut -d ' ' -f 4- <<< $line)"
+      fi
+    done
+  done | sort -uV | sed '/^$/d'
+}
+
 nmap-scripts-help(){
   nmap --script-help "*" | less
 }
