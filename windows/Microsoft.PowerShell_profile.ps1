@@ -77,3 +77,19 @@ function Update-GitRepositories {
     }
   }
 }
+
+function Convert-PowerPointToPDF {
+  # Adapted from http://stackoverflow.com/questions/16534292/basic-powershell-batch-convert-word-docx-to-pdf
+  $curr_path = (Get-Item -Path ".\").FullName
+  $ppt_app = New-Object -ComObject PowerPoint.Application
+  Get-ChildItem -Path $curr_path -Recurse -Filter *.ppt? | ForEach-Object {
+    Write-Host "Processing" $_.FullName "..."
+    $document = $ppt_app.Presentations.Open($_.FullName)
+    $pdf_filename = "$($curr_path)\$($_.BaseName).pdf" # Or use $_.DirectoryName to save them besides the original file
+    $opt= [Microsoft.Office.Interop.PowerPoint.PpSaveAsFileType]::ppSaveAsPDF
+    $document.SaveAs($pdf_filename, $opt)
+    $document.Close()
+  }
+  $ppt_app.Quit()
+  [System.Runtime.Interopservices.Marshal]::ReleaseComObject($ppt_app)
+}
