@@ -58,6 +58,14 @@ Set-Alias dig Resolve-DnsName
 # Functions
 #
 
+function Print-ConsoleColors {
+  foreach ($color in [System.Enum]::getvalues([System.ConsoleColor])){
+    Write-Host -NoNewline "${color} "
+    Write-Host -NoNewline -ForegroundColor $color "$color "
+    Write-Host -BackgroundColor $color " $color "
+  }
+}
+
 # Update Git Repositories (buggy)
 
 function Update-GitRepositories {
