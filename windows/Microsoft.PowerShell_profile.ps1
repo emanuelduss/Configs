@@ -13,26 +13,18 @@ Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 #
 
 Set-PSReadLineOption -Colors @{
-  Command            = 'Magenta'
-  Number             = 'DarkGray'
-  Member             = 'DarkGray'
-  Operator           = 'DarkGray'
-  Type               = 'DarkGray'
-  Variable           = 'DarkGreen'
-  Parameter          = 'DarkGreen'
-  ContinuationPrompt = 'DarkGray'
-  Default            = 'DarkGray'
-}
-
-Set-PSReadLineOption -Colors @{
- # Use a ConsoleColor enum
- "Error" = [ConsoleColor]::DarkRed
-
- # 24 bit color escape sequence
- "String" = "$([char]0x1b)[38;5;100m"
-
- # RGB value
- "Command" = "#8181f7"
+  Default            = 'White'
+  Command            = 'Yellow'
+  ContinuationPrompt = 'DarkYellow'
+  Parameter          = 'Green'
+  Variable           = 'Green'
+  Number             = 'DarkCyan'
+  String             = 'DarkCyan'
+  Member             = 'DarkYellow'
+  Operator           = 'DarkYellow'
+  Type               = 'DarkYellow'
+  Emphasis           = 'Yellow'
+  Error              = 'Red'
 }
 
 #
