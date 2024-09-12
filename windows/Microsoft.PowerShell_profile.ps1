@@ -51,6 +51,8 @@ function prompt
 #
 
 Set-Alias vi vim
+Set-Alias grep Select-String
+Set-Alias dig Resolve-DnsName
 
 #
 # Functions
