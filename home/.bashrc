@@ -262,6 +262,15 @@ cdf(){
   cd -- "$path"
 }
 
+createcertificate(){
+  local subject="$1"
+  local certificate="$subject-certificate.pem"
+  local key="$subject-key.pem"
+  openssl req -x509 -new -subj "/CN=$subject" -addext "subjectAltName = DNS:$subject" -newkey rsa:2048 -keyout "$key" -out "$certificate" -sha256 -days 30 -nodes
+  openssl x509 -in "$certificate" -noout -text
+  ls -l "$certificate" "$key"
+}
+
 crtsh() {
   curl -s "https://crt.sh/?q=%25.${1}&output=json" | jq -r ".[].name_value" | sort -u
 }
