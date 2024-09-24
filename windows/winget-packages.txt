@@ -1,0 +1,9 @@
+Git.Git
+7zip.7zip
+WireGuard.WireGuard
+WiresharkFoundation.Wireshark
+Microsoft.VisualStudio.2022.Community
+Insecure.Nmap
+Insecure.Npcap
+Mozilla.Firefox
+VSCodium.VSCodium
