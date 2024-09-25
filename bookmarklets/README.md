@@ -139,3 +139,16 @@ javascript:
         window.location = "https://google.com/search?q=cache:" + window.location;
     }());
 ```
+
+## Extract all Links to PDFs
+
+```js
+javascript:(function() {
+  var links = document.querySelectorAll('a[href$=".pdf"]');
+  var result = '';
+  links.forEach(function(link) {
+    result += link.href + '\n';
+  });
+  console.log(result);
+})();
+```
