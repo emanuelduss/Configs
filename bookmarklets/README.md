@@ -5,10 +5,9 @@
 A template.
 
 ```js
-javascript:
-    (function () {
-        alert("Hello World");
-    }());
+javascript:(function() {
+  alert("Hello World");
+})();
 ```
 
 ## Humble Bundle Downloader
