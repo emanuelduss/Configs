@@ -530,6 +530,62 @@ proxy_status(){
   fi
 }
 
+rdp (){
+  # Simple xfreerdp wrapper to access machines via rdp using
+  # impacket-style conneciton string [domain/]username[:password]@hostname
+
+  local connectstring="$1"
+  local drive="$2"
+
+  # Check if domain provided
+  if [[ "$connectstring" == */* ]]
+  then
+    domain="${connectstring%%/*}"
+    rest="${connectstring#*/}"
+  else
+    domain=""
+    rest="$connectstring"
+  fi
+
+  # Check if password provided
+  if [[ "$rest" == *:*@* ]]
+  then
+    username="${rest%%:*}"
+    rest="${rest#*:}"
+    password="${rest%@*}" # Everything before @
+  else
+    username="${rest%%@*}" # No password
+    password=""
+  fi
+
+  hostname="${rest##*@}"
+  # Prompt user if empty password
+  if [[ -z "$password" ]]; then
+    read -sp "Password: " password
+    echo
+  fi
+
+  echo "Domain: $domain"
+  echo "Username: $username"
+  echo "Password: **********"
+  echo "Hostname: $hostname"
+  echo
+
+  # Extra flags for domain and drive
+  local extraflags=""
+  if [[ -n "$domain" ]]
+  then
+    extraflags="/d:$domain"
+  fi
+
+  if [[ -n "$drive" ]]
+  then
+    extraflags="$flags /drive:host,$drive"
+  fi
+
+  xfreerdp "/u:$username" /p:"$password" /v:"$hostname" /cert:ignore /dynamic-resolution /log-level:WARN $extraflags
+}
+
 rgvim(){
   rg --color never -l $@ | xargs vim
 }
