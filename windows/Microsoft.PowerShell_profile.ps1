@@ -35,7 +35,7 @@ function prompt
 {
   $branch = $(git branch --show-current)
   Write-Host "PS " -nonewline -ForegroundColor DarkYellow
-  Write-Host "$env:USERNAME@$env:COMPUTERNAME " -ForegroundColor Green -NoNewLine
+  Write-Host "$([environment]::username)@$([environment]::MachineName) " -ForegroundColor Green -NoNewLine
   Write-Host "$PWD " -ForegroundColor Blue -NoNewLine
   if ($branch){
     Write-Host "($branch) " -ForegroundColor Magenta -NoNewLine
