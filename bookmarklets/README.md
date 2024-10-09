@@ -15,7 +15,7 @@ javascript:(function() {
 ```js
 javascript:(function() {
   var url = window.location;
-  var title = document.querySelectorAll("#hibtext")[0].innerText.split('\n')[1].split(":")[1].trim().replaceAll(" ", "_");
+  var title = document.querySelectorAll("#hibtext")[0].innerText.split('\n')[1].split(":")[1].trim();
 
   var date = new Date();
   var year = date.getFullYear();
