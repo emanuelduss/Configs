@@ -13,21 +13,32 @@ javascript:(function() {
 ## Humble Bundle Downloader
 
 ```js
-javascript:
-    (function () {
-        var url = window.location;
-        var title = document.getElementById('hibtext').textContent.match('Humble .*')[0].split(':')[1].trim();
-        var date = new Date();
-        var year = date.getFullYear();
-        var month = ('0' + (date.getMonth() + 1)).slice(-2);
-        var dir = 'Humble Book Bundle - ' + year + '-' + month + ' - ' + title;
-        var dl_links = document.querySelectorAll('[href^="https://dl.humble.com"]');
-        var dl_list = '';
-        for (i = 0; i < dl_links.length; ++i) {
-            dl_list += dl_links[i].href + '\n';
-        }
-        document.documentElement.innerHTML = '<pre>mkdir "' + dir + '"<br>cd "' + dir + '"<br>echo "' + url + '" > bundle_downloadpage.txt<br>cat << EOI > bundle_links.txt<br>' + dl_list + 'EOI<br><br>xargs -n 1 curl -JLO < bundle_links.txt<br>for i in *\\?*; do mv -vf "${i}" "${i%%\\?*}"; done</pre>';
-    }());
+javascript:(function() {
+  var url = window.location;
+  var title = document.querySelectorAll("#hibtext")[0].innerText.split('\n')[1].split(":")[1].trim().replaceAll(" ", "_");
+
+  var date = new Date();
+  var year = date.getFullYear();
+  var month = ('0' + (date.getMonth() + 1)).slice(-2);
+
+  var dir = 'Humble Book Bundle - ' + year + '-' + month + ' - ' + title;
+
+  var links = document.querySelectorAll('a[href*=".epub"], a[href*=".pdf"], a[href*=".mobi"]');
+  var linklist = '';
+  links.forEach(function(link) {
+    linklist += link.href + '\n';
+  });
+
+  document.documentElement.innerHTML = `<pre>`
+    + `mkdir "${dir}"<br>`
+    + `cd "${dir}"<br>`
+    + `echo "${url}" > 00_bundle_downloadpage.txt<br>`
+    + `cat << EOI > 00_bundle_links.txt<br>`
+    + `${linklist}<br>EOI<br>`
+    + `<br>`
+    + `xargs -P 15 -n 1 curl -JLO < 00_bundle_links.txt<br>`
+    + `</pre>`;
+})();
 ```
 
 ## Media.ccc.de Information
