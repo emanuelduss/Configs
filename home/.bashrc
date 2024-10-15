@@ -293,6 +293,10 @@ doh9(){
   curl -s --header 'Accept: application/dns+json' "https://dns.quad9.net:5053/dns-query?name=${1}&type=${2:-A}" | jq
 }
 
+endoflife(){
+  curl -s --header 'Accept: application/json' https://endoflife.date/api/${1-all}.json | jq
+}
+
 f() {
   DIRECTORY="$(find . -type d -ipath "*$@*" -print 2>/dev/null | head -1)"
   cd -- "$DIRECTORY"
