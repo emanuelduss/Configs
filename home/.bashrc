@@ -290,7 +290,7 @@ docker-sh(){
 }
 
 doh9(){
-  curl -s -H 'Accept: application/dns+json' "https://dns.quad9.net:5053/dns-query?name=${1}&type=${2:-A}" | jq
+  curl -s --header 'Accept: application/dns+json' "https://dns.quad9.net:5053/dns-query?name=${1}&type=${2:-A}" | jq
 }
 
 f() {
@@ -366,11 +366,11 @@ ip-pub(){
 }
 
 ipapi(){
-  curl -s -H "Accept: application/json" "https://api.ipapi.is/?q=$1"
+  curl -s --header "Accept: application/json" "https://api.ipapi.is/?q=$1"
 }
 
-ipinfo(){
-  curl -s -H "Accept: application/json" "https://ipinfo.io/$1"
+ipinfo.io(){
+  curl -s --header "Accept: application/json" "https://ipinfo.io/$1"
 }
 
 lf(){
