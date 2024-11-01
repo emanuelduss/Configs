@@ -23,7 +23,7 @@ javascript:(function() {
 
   var dir = 'Humble Book Bundle - ' + year + '-' + month + ' - ' + title;
 
-  var links = document.querySelectorAll('a[href*=".epub"], a[href*=".pdf"], a[href*=".mobi"], a[href*=".torrent"]');
+  var links = document.querySelectorAll('a[href*=".epub"], a[href*=".pdf"], a[href*=".mobi"], a[href*=".torrent"], a[href*=".zip"]');
   var linklist = '';
   links.forEach(function(link) {
     linklist += link.href + '\n';
