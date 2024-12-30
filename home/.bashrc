@@ -192,6 +192,7 @@ alias base16="basenc --base16"
 alias base64url="basenc --base64url"
 alias burl="curl -k --proxy http://127.0.0.1:8080"
 alias c="clear"
+alias curl-downloader="xargs -P 15 -n 1 curl -JLO <"
 alias duchs='du -sch .[!.]* * |sort -h'
 alias dstat-net='dstat --net --bits --noheaders 10'
 alias dool-net='dool --net --bits --noheaders 10'
@@ -217,6 +218,7 @@ alias nmap-open='sudo nmap -v -d -n -Pn --open --reason -T4 --min-rate 100'
 alias pomodoro='play -q -n synth sine 480 sine 620 remix 1-2 fade 0 0.5 delay 0.5 repeat 5 2>/dev/null'
 alias pstop='ps -eo user,pid,ppid,pcpu,cpu,pmem,rss,cmd --sort -pcpu --width $COLUMNS | numfmt --header --to=iec --field 7 --padding 6 | cut -c 1-$COLUMNS | head -n $(($LINES-5))'
 alias qrscan='maim -qs | zbarimg -q --raw - | tee >(xclip -selection clipboard)'
+alias rlw="rlwrap -AciNr"
 alias shit='sudo $(history -p \!\!)' 
 alias slideshow="feh --fullscreen --auto-zoom --randomize --hide-pointer --slideshow-delay 3"
 alias ssh-k='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
