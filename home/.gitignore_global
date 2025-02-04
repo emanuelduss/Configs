@@ -4,5 +4,15 @@
 #
 ################################################################################
 
+# Default Files
+.DS_Store
+Thumbs.db
+
+# Temporary Files
 *.swp
 *~
+~$*
+
+# ADS
+*:encryptable
+*:Zone.Identifier
