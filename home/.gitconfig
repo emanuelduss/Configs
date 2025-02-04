@@ -7,6 +7,16 @@
 [user]
   name = Emanuel Duss
   email = me@emanuelduss.ch
+  signingkey = /home/emanuel/.ssh/id_rsa.pub
+
+[init]
+  defaultBranch = main
+
+[gpg]
+  format = ssh
+
+[commit]
+  gpgsign = true
 
 [core]
   autocrlf = input
@@ -14,9 +24,6 @@
   safecrlf = true
   editor = vim
   pager = less -FiMnRX
-
-[init]
-  defaultBranch = main
 
 [alias]
   s = status
@@ -52,10 +59,9 @@
 [difftool]
   prompt = false
 
-[init]
-  defaultBranch = main
 
-[includeIf "gitdir:~/work/"]
+# Includes should be at the end to overwrite previous settings
+[includeIf "gitdir:~/work/"] # Trailing slash is required
   path = ~/.gitconfig-work
 
 [includeIf "hasconfig:remote.*.url:https://git.internal.example.net/**"]
