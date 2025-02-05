@@ -296,6 +296,15 @@ doh9(){
   curl -s --header 'Accept: application/dns+json' "https://dns.quad9.net:5053/dns-query?name=${1}&type=${2:-A}" | jq
 }
 
+domainfronting(){
+  # Connects to a host with another SNI to check if domain fronting is possible
+  # SNI can be provided as an optional argument
+  local host="$1"
+  local sni="${2:-invalid}"
+  local ip="$(host $1 | awk '/has address/ { print $4; exit }')"
+  curl -k --connect-to invalid::$ip: -H "Host: $host" https://$sni/
+}
+
 endoflife(){
   curl -s --header 'Accept: application/json' https://endoflife.date/api/${1-all}.json | jq
 }
