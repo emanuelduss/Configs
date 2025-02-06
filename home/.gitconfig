@@ -18,6 +18,10 @@
 [commit]
   gpgsign = true
 
+# Required for Windows to support using signing keys from ssh-agent
+# [gpg "ssh"]
+#   program = C:/windows/System32/OpenSSH/ssh-keygen.exe
+
 [core]
   autocrlf = input
   excludesfile = ~/.gitignore_global
