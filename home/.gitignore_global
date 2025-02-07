@@ -4,15 +4,17 @@
 #
 ################################################################################
 
-# Default Files
+# Annoying Files
 .DS_Store
 Thumbs.db
+[Dd]esktop.ini
 
 # Temporary Files
 *.swp
 *~
 ~$*
+.~lock.*#
 
-# ADS
+# Windows ADS
 *:encryptable
 *:Zone.Identifier
