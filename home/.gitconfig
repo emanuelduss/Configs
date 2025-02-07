@@ -4,13 +4,18 @@
 #
 ################################################################################
 
+#
+# Personal Information
+#
+
 [user]
   name = Emanuel Duss
   email = me@emanuelduss.ch
   signingkey = /home/emanuel/.ssh/id_rsa.pub
 
-[init]
-  defaultBranch = main
+#
+# Commit Signing
+#
 
 [gpg]
   format = ssh
@@ -18,9 +23,13 @@
 [commit]
   gpgsign = true
 
-# Required for Windows to support using signing keys from ssh-agent
+# Required on Windows for ssh-agent support
 # [gpg "ssh"]
 #   program = C:/windows/System32/OpenSSH/ssh-keygen.exe
+
+#
+# Default Behaviour
+#
 
 [core]
   autocrlf = input
@@ -29,24 +38,8 @@
   editor = vim
   pager = less -FiMnRX
 
-[alias]
-  s = status
-  c = commit
-  hist = log --pretty=format:\"%h %ad [%an] | %s%d \" --date=short --all --decorate
-  type = cat-file -t
-  dump = cat-file -p
-  update = "!f(){ git status && echo && echo Add/commit everything above? && echo Press Enter after optional commit message to continue or ^C to cancel: && read msg && git add -A && git commit -m ${msg:-Update} && echo && echo Pull/push? && read && git pull && git push; }; f"
-
-[merge]
-  tool = vimdiff
-  conflictstyle = diff3
-
-[color]
-  ui = true
-  status = auto
-  branch = auto
-  interactive = auto
-  diff = auto
+[init]
+  defaultBranch = main
 
 [push]
   default = matching
@@ -57,14 +50,49 @@
 [fetch]
   prune = true
 
+#
+# Diffing
+#
+
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
+
 [diff]
   colorMoved = zebra
 
 [difftool]
   prompt = false
 
+#
+# Colors
+#
 
-# Includes should be at the end to overwrite previous settings
+[color]
+  ui = true
+  status = auto
+  branch = auto
+  interactive = auto
+  diff = auto
+
+#
+# Aliases
+#
+
+[alias]
+  s = status
+  c = commit
+  hist = log --pretty=format:\"%h %ad [%an] | %s%d \" --date=short --all --decorate
+  type = cat-file -t
+  dump = cat-file -p
+  update = "!f(){ git status && echo && echo Add/commit everything above? && echo Press Enter after optional commit message to continue or ^C to cancel: && read msg && git add -A && git commit -m ${msg:-Update} && echo && echo Pull/push? && read && git pull && git push; }; f"
+
+#
+# Includes
+#
+# Must be at the end to overwrite previous settings
+#
+
 [includeIf "gitdir:~/work/"] # Trailing slash is required
   path = ~/.gitconfig-work
 
