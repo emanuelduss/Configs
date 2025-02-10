@@ -346,6 +346,16 @@ getmydotfiles(){
   [[ ! -f ~/.bashrc.local ]] && wget -q "$BASEURL/.bashrc.local" -O "$HOME/.bashrc.local" || true
 }
 
+gpgkeysearch(){
+  local search="$1"
+  echo "[*] Searching for key id..."
+  curl "https://keys.openpgp.org/vks/v1/by-keyid/$search"
+  echo -e "\n[*] Searching for key fingerprint..."
+  curl "https://keys.openpgp.org/vks/v1/by-fingerprint/$search"
+  echo -e "\n[*] Searching for key email address..."
+  curl "https://keys.openpgp.org/vks/v1/by-email/$search"
+}
+
 gitpulldirs(){
   for repo in "$@"
   do
