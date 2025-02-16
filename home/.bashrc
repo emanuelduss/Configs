@@ -279,6 +279,16 @@ crtsh() {
   curl -s "https://crt.sh/?q=%25.${1}&output=json" | jq -r ".[].name_value" | sort -u
 }
 
+docker-compose-update(){
+  set -x
+  docker compose build
+  docker compose pull
+  docker compose down
+  docker compose up -d
+  docker compose logs -f
+  set +x
+}
+
 docker-sh(){
   # Lists Docker containers and starts a command (sh by default) in the selected one
   local command="${1:-sh}"
