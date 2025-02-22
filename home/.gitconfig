@@ -55,6 +55,7 @@
 #
 
 [merge]
+  ff = only
   tool = vimdiff
   conflictstyle = diff3
 
