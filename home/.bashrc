@@ -389,7 +389,7 @@ imageshrink(){
   for image in "$@"
   do
     echo "[*] Shrinking $image to $outputdir/$image ..."
-    convert -resize "$size" -quality "$quality" "$image" "$outputdir/$image"
+    magick "$image" -resize "$size" -quality "$quality" "$outputdir/$image"
   done
 }
 
