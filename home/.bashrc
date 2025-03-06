@@ -382,14 +382,11 @@ how_in() {
 }
 
 imageshrink(){
-  local quality="75"
-  local size="2048x2048"
-  local outputdir="./small"
-  mkdir "$outputdir" || return 1
   for image in "$@"
   do
-    echo "[*] Shrinking $image to $outputdir/$image ..."
-    magick "$image" -resize "$size" -quality "$quality" "$outputdir/$image"
+    local output="${image%.*}_small.${image##*.}"
+    echo "[*] Shrinking $image to $output..."
+    magick "$image" -resize "2048x2048" -quality 75 "$output"
   done
 }
 
