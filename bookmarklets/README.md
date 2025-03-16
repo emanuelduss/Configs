@@ -140,6 +140,16 @@ javascript:
     }());
 ```
 
+## Web Archive Add Site
+
+Adds the current site to the web archive.
+
+```js
+javascript:(function() {
+    window.location.href = 'https://web.archive.org/save/' + encodeURIComponent(window.location.href);
+})();
+```
+
 ## Google Web Cache
 
 Opens the page in Google Web Cache.
