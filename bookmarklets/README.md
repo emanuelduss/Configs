@@ -44,20 +44,19 @@ javascript:(function() {
 ## Media.ccc.de Information
 
 ```js
-javascript:
-    (function () {
-        var title = document.querySelector('.player-header > h1').innerText;
-        var subtitle = document.querySelector('.player-header > h2');
-        var url = document.URL;
-        var speakers = document.querySelector('.persons').innerText.trim();
-        var text = '### ' + title + '\n\n';
-        if (subtitle != null){
-            text += '- Subtitle: ' + subtitle.innerText + '\n';
-        }
-        text += '- Talk: ' + url + '\n';
-        text += '- Speakers: ' + speakers + '\n';
-        alert(text);
-    }());
+javascript:(function () {
+    var title = document.querySelector('.player-header > h1').innerText;
+    var subtitle = document.querySelector('.player-header > h2');
+    var url = document.URL;
+    var speakers = document.querySelector('.persons').innerText.trim();
+    var text = '### ' + title + '\n\n';
+    if (subtitle != null){
+        text += '- Subtitle: ' + subtitle.innerText + '\n';
+    }
+    text += '- Talk: ' + url + '\n';
+    text += '- Speakers: ' + speakers + '\n';
+    alert(text);
+}());
 ```
 
 ## BuildWith
@@ -65,10 +64,9 @@ javascript:
 Shows the current page non buildwith.com:
 
 ```js
-javascript:
-    (function () {
-        window.location = 'https://builtwith.com/' + window.location.hostname;
-    }());
+javascript:(function () {
+    window.location = 'https://builtwith.com/' + window.location.hostname;
+}());
 ```
 
 
@@ -77,10 +75,9 @@ javascript:
 Shows the `robots.txt` for the current website.
 
 ```js
-javascript:
-    (function () {
-        window.location = window.origin + "/robots.txt";
-    }());
+javascript:(function () {
+    window.location = window.origin + "/robots.txt";
+}());
 ```
 
 ## File security.txt
@@ -88,10 +85,9 @@ javascript:
 Shows the `security.txt` for the current website.
 
 ```js
-javascript:
-    (function () {
-        window.location = window.origin + "/.well-known/security.txt";
-    }());
+javascript:(function () {
+    window.location = window.origin + "/.well-known/security.txt";
+}());
 ```
 
 ## Link Popup
@@ -99,10 +95,9 @@ javascript:
 Shows the title and URL in a popup.
 
 ```js
-javascript:
-    (function () {
-        alert("Link:\n\n" + document.title + ": " + document.location);
-    }());
+javascript:(function () {
+    alert("Link:\n\n" + document.title + ": " + document.location);
+}());
 ```
 
 ## Toot on infosec.exchange
@@ -110,12 +105,10 @@ javascript:
 A template.
 
 ```js
-javascript:
-    (function () {
-        window.open('https://infosec.exchange/share?text=' + encodeURIComponent(document.title) + ' ' + encodeURIComponent(window.location.href) + encodeURIComponent(window.getSelection().toString() ? '' : '') + encodeURIComponent(window.getSelection().toString()), '_blank', 'width=600,height=600,toolbar=no');
-    }());
+javascript:(function () {
+    window.open('https://infosec.exchange/share?text=' + encodeURIComponent(document.title) + ' ' + encodeURIComponent(window.location.href) + encodeURIComponent(window.getSelection().toString() ? '' : '') + encodeURIComponent(window.getSelection().toString()), '_blank', 'width=600,height=600,toolbar=no');
+}());
 ```
-
 
 ## Web Archive First
 
@@ -123,10 +116,9 @@ Opens the first archived page on the web archive.
 
 
 ```js
-javascript:
-    (function () {
-        window.location = "https://web.archive.org/web/0/" + window.location;
-    }());
+javascript:(function () {
+    window.location = "https://web.archive.org/web/0/" + window.location;
+}());
 ```
 
 ## Web Archive Latest
@@ -134,10 +126,9 @@ javascript:
 Opens the latest archived page on the web archive.
 
 ```js
-javascript:
-    (function () {
-        window.location = "https://web.archive.org/web/" + window.location;
-    }());
+javascript:(function () {
+    window.location = "https://web.archive.org/web/" + window.location;
+}());
 ```
 
 ## Web Archive Add Site
@@ -155,10 +146,9 @@ javascript:(function() {
 Opens the page in Google Web Cache.
 
 ```js
-javascript:
-    (function () {
-        window.location = "https://google.com/search?q=cache:" + window.location;
-    }());
+javascript:(function () {
+    window.location = "https://google.com/search?q=cache:" + window.location;
+}());
 ```
 
 ## Extract all Links to PDFs
