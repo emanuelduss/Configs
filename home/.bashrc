@@ -565,6 +565,27 @@ proxy_status(){
   fi
 }
 
+quiz(){
+  clear
+  echo
+  figlet " Quiz-Time!"
+  echo
+  echo -e "\n\n\n Press enter to start quiz ..."
+  echo
+  read < /dev/tty
+  clear
+  while read line
+  do
+    clear
+    echo
+    figlet " Quiz-Time"
+    echo -e "\n\n\n $line \n\n"
+    read < /dev/tty
+  done
+  clear
+  figlet "Have a nice day!"
+}
+
 rdp (){
   # Simple xfreerdp wrapper to access machines via rdp using
   # impacket-style conneciton string [domain/]username[:password]@hostname
