@@ -37,6 +37,7 @@
   safecrlf = true
   editor = vim
   pager = less -FiMnRX
+  # sshCommand = C:/Windows/System32/OpenSSH/ssh.exe # Used on Windows
 
 [init]
   defaultBranch = main
@@ -85,10 +86,12 @@
   c = commit
   d = diff
   s = status
-  l = log --color=always --all --pretty='%C(yellow)%h%C(reset) %C(blue)%aN%C(reset) %C(green)%cr%Creset %s%C(yellow)%d%Creset' --abbrev-commit --decorate
+  l = log --color=always --all  --pretty='%C(yellow)%h%C(reset) %<|(30)%C(blue)%aN%C(reset) %<|(45)%C(green)%cr%Creset %s%C(yellow)%d%Creset'--abbrev-commit --decorate
   type = cat-file -t
   dump = cat-file -p
   update = "!f(){ git status && echo && echo Add/commit everything above? && echo Press Enter after optional commit message to continue or ^C to cancel: && read msg && git add -A && git commit -m ${msg:-Update} && echo && echo Pull/push? && read && git pull && git push; }; f"
+  wdiff = "diff --color-words"
+
 
 #
 # Includes
