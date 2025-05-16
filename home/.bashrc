@@ -317,6 +317,14 @@ domainfronting(){
   curl -k --connect-to invalid::$ip: -H "Host: $host" https://$sni/
 }
 
+eui64(){
+  local mac="$1"
+  local o1 o2 o3 o4 o5 o6
+  IFS=':' read -r o1 o2 o3 o4 o5 o6 <<< "$mac"
+  o1=$(printf "%02x" $(( 0x$o1 ^ 0x02 ))) # flip bit 7
+  echo "fe80::${o1}${o2}:${o3}ff:fe${o4}:${o5}${o6}"
+}
+
 endoflife(){
   curl -s --header 'Accept: application/json' https://endoflife.date/api/${1-all}.json | jq
 }
