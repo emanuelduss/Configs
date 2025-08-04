@@ -280,6 +280,13 @@ crtsh() {
   curl -s "https://crt.sh/?q=%25.${1}&output=json" | jq -r ".[].name_value" | sort -u
 }
 
+dnsresolve(){
+  while read hostname
+  do
+    getent hosts "$hostname"
+  done
+}
+
 docker-compose-update(){
   set -x
   docker compose build
