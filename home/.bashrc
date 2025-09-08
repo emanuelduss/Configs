@@ -253,10 +253,10 @@ androidtype(){
 }
 
 asciinema-gif(){
-  local filename="terminal-${1:-$(date +%F_%T)}"
+  local filename="asciinema-${1:-$(date +%F_%T)}"
   timestamp=${timestamp//:/-}
   echo "[*] Recording terminal session to $filename.cast..."
-  asciinema rec "$filename.cast" -c tmux
+  asciinema rec --overwrite "$filename.cast" -c tmux
   echo "[*] Terminal session recorded to $filename.cast."
   echo "[*] Converting terminal session to GIF..."
   agg --font-family "Fira Code" --font-size 18 --theme github-dark "$filename.cast" "$filename.gif"
