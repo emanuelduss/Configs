@@ -252,6 +252,17 @@ androidtype(){
   fi
 }
 
+asciinema-gif(){
+  local filename="terminal-${1:-$(date +%F_%T)}"
+  timestamp=${timestamp//:/-}
+  echo "[*] Recording terminal session to $filename.cast..."
+  asciinema rec "$filename.cast" -c tmux
+  echo "[*] Terminal session recorded to $filename.cast."
+  echo "[*] Converting terminal session to GIF..."
+  agg --font-family "Fira Code" --font-size 18 --theme github-dark "$filename.cast" "$filename.gif"
+  echo "[*] Terminal session convertet to GIF $filename.gif."
+}
+
 baseconv(){
   # Converts number ($3) from one base ($1) to another base ($2)
   bc <<< "obase=${2^^}; ibase=${1^^}; ${3^^}"
