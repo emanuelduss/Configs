@@ -149,7 +149,7 @@ export PAGER="less"
 export LESS="-FiMnR"
 
 # Path
-for i in ~/.gem/ruby/*/bin ~/.local/bin
+for i in ~/.gem/ruby/*/bin ~/.local/bin ~/.pdtm/go/bin
 do
   [[ -d $i ]] && PATH="$PATH:$i"
 done
