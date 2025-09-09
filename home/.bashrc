@@ -311,7 +311,7 @@ docker-compose-update(){
 docker-sh(){
   # Lists Docker containers and starts a command (sh by default) in the selected one
   local command="${1:-sh}"
-  local containers="$(docker ps | nl -v 0 -w 1)"
+  local containers="$(docker ps |  awk '{ print $NF }' | nl -v 0 -w 1)"
   echo -e "Running containers:\n$containers"
   echo -ne "\nSelect: "
   local number
