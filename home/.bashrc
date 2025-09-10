@@ -46,14 +46,11 @@ color_reset="$(tput sgr0)"
 if [[ "$UID" == "0" ]]
 then
   color_user="$color_red"
-  cmd_line="#"
 elif [[ -n "$SUDO_USER" ]]
 then
   color_user="$color_orange"
-  cmd_line="$"
 else
   color_user="$color_green"
-  cmd_line="$"
 fi
 
 exitcode() {
@@ -74,7 +71,7 @@ fi
 
 PROMPT_COMMAND="PROMPT_COMMAND='EXITCODE=\$?;echo'"
 PS1="${font_bold}${color_user}\u@\H${color_reset}\
-${font_bold}:${color_blue}\w${color_orange} \$(__git_ps1)${color_reset}${color_red}\$(exitcode)${color_yellow}\$(date '+[%F %R]')${color_reset}\n$cmd_line "
+${font_bold}:${color_blue}\w${color_orange} \$(__git_ps1)${color_reset}${color_red}\$(exitcode)${color_yellow}\$(date '+[%F %R]')${color_reset}\n\\$ "
 
 # Window Title
 PS1="\[\e]0;\u@\H:\w\a\]$PS1"
