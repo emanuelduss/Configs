@@ -146,7 +146,7 @@ export PAGER="less"
 export LESS="-FiMnR"
 
 # Path
-for i in ~/.gem/ruby/*/bin ~/.local/bin
+for i in ~/.gem/ruby/*/bin ~/.local/bin ~/.pdtm/go/bin
 do
   [[ -d $i ]] && PATH="$PATH:$i"
 done
@@ -250,6 +250,17 @@ androidtype(){
   fi
 }
 
+asciinema-gif(){
+  local filename="asciinema-${1:-$(date +%F_%T)}"
+  timestamp=${timestamp//:/-}
+  echo "[*] Recording terminal session to $filename.cast..."
+  asciinema rec --overwrite "$filename.cast" -c tmux
+  echo "[*] Terminal session recorded to $filename.cast."
+  echo "[*] Converting terminal session to GIF..."
+  agg --font-family "Fira Code" --font-size 18 --theme github-dark "$filename.cast" "$filename.gif"
+  echo "[*] Terminal session convertet to GIF $filename.gif."
+}
+
 baseconv(){
   # Converts number ($3) from one base ($1) to another base ($2)
   bc <<< "obase=${2^^}; ibase=${1^^}; ${3^^}"
@@ -278,6 +289,13 @@ crtsh() {
   curl -s "https://crt.sh/?q=%25.${1}&output=json" | jq -r ".[].name_value" | sort -u
 }
 
+dnsresolve(){
+  while read hostname
+  do
+    getent hosts "$hostname"
+  done
+}
+
 docker-compose-update(){
   set -x
   docker compose build
@@ -291,7 +309,7 @@ docker-compose-update(){
 docker-sh(){
   # Lists Docker containers and starts a command (sh by default) in the selected one
   local command="${1:-sh}"
-  local containers="$(docker ps | nl -v 0 -w 1)"
+  local containers="$(docker ps |  awk '{ print $NF }' | nl -v 0 -w 1)"
   echo -e "Running containers:\n$containers"
   echo -ne "\nSelect: "
   local number
