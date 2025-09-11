@@ -219,6 +219,7 @@ alias qrscan='maim -qs | zbarimg -q --raw - | tee >(xclip -selection clipboard)'
 alias rlw="rlwrap -AciNr"
 alias shit='sudo $(history -p \!\!)' 
 alias slideshow="feh --fullscreen --auto-zoom --randomize --hide-pointer --slideshow-delay 3"
+alias sshxcp='printf "\033]52;c;%s\007" "$(base64 | tr -d '\n')"' # Copy to clipboard via SSH https://jvns.ca/til/vim-osc52/
 alias ssh-k='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias strip-ansi="sed 's/\x1b\[[0-9;]*m//g'"
 alias subdl2='subliminal download -l en'
