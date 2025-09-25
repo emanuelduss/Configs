@@ -35,13 +35,13 @@ umask 077
 #
 ################################################################################
 
-color_red="$(tput setaf 1)"
-color_green="$(tput setaf 2)"
-color_yellow="$(tput setaf 3)"
-color_blue="$(tput setaf 4)"
-color_orange="$(tput setaf 6)"
-font_bold="$(tput bold)"
-color_reset="$(tput sgr0)"
+color_red="\[$(tput setaf 1)\]"
+color_green="\[$(tput setaf 2)\]"
+color_yellow="\[$(tput setaf 3)\]"
+color_blue="\[$(tput setaf 4)\]"
+color_orange="\[$(tput setaf 6)\]"
+font_bold="\[$(tput bold)\]"
+color_reset="\[$(tput sgr0)\]"
 
 if [[ "$UID" == "0" ]]
 then
