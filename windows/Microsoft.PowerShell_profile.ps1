@@ -93,3 +93,45 @@ function Convert-PowerPointToPDF {
   $ppt_app.Quit()
   [System.Runtime.Interopservices.Marshal]::ReleaseComObject($ppt_app)
 }
+
+function Get-DailyFirstAndLastSystemLogTimestamp {
+  param (
+    [int]$Days = 7
+  )
+
+  $today = (Get-Date).Date
+  $startDate = $today.AddDays(-$Days)
+
+  $results = @()
+
+  for ($i = 0; $i -le $Days; $i++) {  # <= to include today
+    $dayStart = $startDate.AddDays($i)
+    $dayEnd = $dayStart.AddDays(1).AddSeconds(-1)
+
+    $logs = Get-WinEvent -FilterHashtable @{
+      LogName = 'System'
+      StartTime = $dayStart
+      EndTime = $dayEnd
+    } -ErrorAction SilentlyContinue | Sort-Object TimeCreated
+
+    if ($logs -and $logs.Count -gt 0) {
+      $firstTime = $logs[0].TimeCreated
+      $lastTime  = $logs[-1].TimeCreated
+
+      $results += [PSCustomObject]@{
+        Date     = $dayStart.ToString("yyyy-MM-dd")
+        FirstEntry = $firstTime.ToString("HH:mm:ss")
+        LastEntry  = $lastTime.ToString("HH:mm:ss")
+      }
+    }
+    else {
+      $results += [PSCustomObject]@{
+        Date     = $dayStart.ToString("yyyy-MM-dd")
+        FirstEntry = 'N/A'
+        LastEntry  = 'N/A'
+      }
+    }
+  }
+
+  $results | Format-Table -AutoSize
+}
