@@ -40,7 +40,7 @@ function prompt
   if ($branch){
     Write-Host "($branch) " -ForegroundColor Magenta -NoNewLine
   }
-  Write-Host "$(Get-Date -Format '[yyyy-MM-dd HH:MM]')" -ForegroundColor DarkYellow
+  Write-Host "$(Get-Date -Format '[yyyy-MM-dd HH:mm]')" -ForegroundColor DarkYellow
   Write-Host "PS >" -nonewline -ForegroundColor DarkYellow
 
   return " "
