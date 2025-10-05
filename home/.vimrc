@@ -106,6 +106,11 @@ if isdirectory(expand("~/.vim/undo"))
   set undodir=~/.vim/undo
 endif
 
+" Use ripgrep as external grep if available
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case\ --follow
+endif
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
