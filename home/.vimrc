@@ -35,7 +35,7 @@ highlight StatusLineNc ctermfg=gray
 set autoindent                 " Automatically indent text
 set autoread                   " Re-read file if changed outside of vim
 set hidden                     " Don't ask for saving when switching buffers
-set mouse=                     " Disable mouse support
+set mouse=a                    " Enable mouse support
 set ignorecase                 " Search case-insensitive
 set smartcase                  " Search case-sensitive when uppercase, requires ignorecase
 
