@@ -173,4 +173,9 @@ nnoremap <silent> <leader>e :NERDTree<CR>
 nnoremap <silent> <leader>f :Files<CR>
 nnoremap <silent> <leader>g :Rg<CR>
 nnoremap <silent> <leader>/ :BLines<CR>
-nnoremap <silent> <leader>m :Marks<CR>
+nnoremap <silent> <leader>' :Marks<CR>
+nnoremap <silent> <leader>g :Commits<CR>
+nnoremap <silent> <leader>H :Helptags<CR>
+nnoremap <silent> <leader>hh :History<CR>
+nnoremap <silent> <leader>h: :History:<CR>
+nnoremap <silent> <leader>h/ :History/<CR>
