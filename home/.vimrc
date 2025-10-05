@@ -20,8 +20,8 @@ syntax on                      " Syntax highlighting
 set term=xterm-256color        " Mitigate display issues
 set background=dark            " Dark terminal
 colorscheme default            " Colorscheme
-highlight LineNr ctermfg=grey
-highlight Comment ctermfg=grey
+highlight LineNr ctermfg=gray
+highlight Comment ctermfg=gray
 highlight StatusLine ctermfg=gray
 highlight StatusLineNc ctermfg=gray
 " highlight Statement ctermfg=yellow
@@ -39,7 +39,7 @@ set mouse=a                    " Enable mouse support
 set ignorecase                 " Search case-insensitive
 set smartcase                  " Search case-sensitive when uppercase, requires ignorecase
 
-" Tabs
+" Indentation
 set expandtab                  " Convert tabs to spaces
 set shiftround                 " Adjust indentation on shiftwidth
 set shiftwidth=2               " Indent by n spaces
@@ -84,7 +84,7 @@ set statusline+=\ │            " Separator
 set statusline+=\ %l:%c        " Line and column number
 set statusline+=\ %LL          " Total line number
 set statusline+=\ %P           " Percentage through file
-set statusline+=\              " Leading space
+set statusline+=\              " Trailing space
 
 " Automatically jump to last position in file
 if has("autocmd")
