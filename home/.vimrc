@@ -62,6 +62,8 @@ set report=0                   " Always show number of lines/words changed
 set scrolloff=3                " Minimal lines before/after the cursor
 set showmatch                  " Show matching bracket on insert
 set title                      " Show filename in window title
+set wildoptions=pum            " PopUpMenu for wildmenu
+set wildmode=longest,full      " Auto-complete longest first, then show wildmenu
 
 " Statusline
 set statusline=                " Reset statusline
