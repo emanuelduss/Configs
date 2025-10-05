@@ -47,6 +47,7 @@ set softtabstop=2              " Add/remove spaces on tab/BS
 set tabstop=4                  " Tab width
 
 " Visual
+set fillchars+=vert:\          " Vertical window separator
 set hlsearch                   " Highlight search results
 set incsearch                  " Show search results while searching
 set laststatus=2               " Always show statusline
