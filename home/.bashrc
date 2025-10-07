@@ -663,7 +663,7 @@ rdp (){
     extraflags="$flags /drive:host,$drive"
   fi
 
-  xfreerdp "/u:$username" /p:"$password" /v:"$hostname" /cert:ignore /dynamic-resolution /log-level:WARN $extraflags
+  xfreerdp "/u:$username" /p:"$password" /v:"$hostname" /cert:ignore /dynamic-resolution /log-level:WARN -wallpaper -themes $extraflags
 }
 
 rgvim(){
