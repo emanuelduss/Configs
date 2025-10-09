@@ -121,7 +121,7 @@ endif
 " Navigation Buffers
 nnoremap <silent> gb :bnext<CR>
 nnoremap <silent> gB :bprevious<CR>
-nnoremap <leader>b :ls<CR>:b<space>
+nnoremap <leader>b :buffers<CR>:b<space>
 nnoremap <silent> <leader><Tab> :bnext<CR>
 nnoremap <silent> <Tab> :bnext<CR>
 nnoremap <silent> <S-Tab> :bprevious<CR>
@@ -151,9 +151,9 @@ nnoremap <leader>nhex :%!xxd -r<CR>
 
 " Custom Leader in Diff Mode (mergetool)
 if &diff
-    map <leader>1 :diffget LOCAL<CR>
-    map <leader>2 :diffget BASE<CR>
-    map <leader>3 :diffget REMOTE<CR>
+  map <leader>1 :diffget LOCAL<CR>
+  map <leader>2 :diffget BASE<CR>
+  map <leader>3 :diffget REMOTE<CR>
 endif
 
 " Custom Ex Commands
