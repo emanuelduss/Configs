@@ -163,3 +163,21 @@ javascript:(function() {
   console.log(result);
 })();
 ```
+
+## Refresh Page at Specific Time
+
+```js
+javascript:(function(){
+  const time = "23:05"; // Adjust time here
+  const[h,m] = time.split(":").map(Number);
+  const now = new Date();
+  const refresh = new Date(now);
+  refresh.setHours(h,m,0,0);
+  if(refresh <= now){
+    refresh.setDate(refresh.getDate() + 1);
+  }
+  const sleep = refresh-now;
+  console.log("Page will refresh at " + refresh.toLocaleTimeString());
+  setTimeout(()=>{location.reload(true)}, sleep);
+})();
+```
