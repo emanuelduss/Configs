@@ -355,7 +355,7 @@ f() {
 
 fakeprompt(){
   local path=${2:-$PWD} # Optionally specify a custom path
-  PS1="\[\e]0;${1}:${path}\a\]${font_bold}${color_user}${1}${color_reset}:${font_bold}${color_blue}${path}${color_reset}\n$cmd_line "
+  PS1="\[\e]0;${1}:${path}\a\]${font_bold}${color_user}${1}${color_reset}:${font_bold}${color_blue}${path}${color_reset}\n\\$ "
 }
 
 fd() {
