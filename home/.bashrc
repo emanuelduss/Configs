@@ -174,7 +174,10 @@ then
   done
 
   export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --multi'
-  export FZF_DEFAULT_COMMAND='rg --files'
+  if hash rg &> /dev/null
+  then
+    export FZF_DEFAULT_COMMAND='rg --files'
+  fi
 fi
 
 
