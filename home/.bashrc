@@ -54,7 +54,7 @@ else
 fi
 
 exitcode() {
-  [[ "$EXITCODE" != "0" ]] && echo "$EXITCODE "
+  [[ "${EXITCODE:-0}" != "0" ]] && echo "$EXITCODE "
 }
 
 if hash git &> /dev/null
