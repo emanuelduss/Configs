@@ -26,15 +26,6 @@ set $color_focused "#2777FF"
 set $color_urgent "#a40000"
 set $color_separator "#404552"
 
-# Screen Lock
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --ignore-empty-password --show-failed-attempts --nofork --color=0f0f0f --pointer=default
-
-# Modifier
-set $mod Mod4
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
 # Workspace Names
 set $ws1  "1"
 set $ws2  "2"
@@ -50,6 +41,17 @@ set $ws10 "10"
 #
 # Startup
 #
+
+#
+# Key Bindings i3
+#
+
+# Windows as modifier key
+set $mod Mod4
+
+# Drag windows to their wanted position via $mod or titlebar
+floating_modifier $mod
+tiling_drag modifier titlebar
 
 # Start terminal
 bindsym $mod+Return exec xfce4-terminal
