@@ -1,5 +1,5 @@
 #
-# i3 config file (v4)
+# i3 config file
 # ~/.config/i3/config
 #
 
@@ -16,10 +16,10 @@ for_window [all] title_window_icon yes
 # Fullscreen Apps
 for_window [class="Xmag"] fullscreen enable
 
-# default container layout
+# Default Container Layout
 workspace_layout tabbed
 
-# Color definitions
+# Color Definitions
 set $color_text "#ffffff"
 set $color_background "#272A34"
 set $color_focused "#2777FF"
@@ -48,7 +48,7 @@ set $ws9  "9"
 set $ws10 "10"
 
 #
-# Key Bindings
+# Startup
 #
 
 # Start terminal
@@ -56,6 +56,7 @@ bindsym $mod+Return exec xfce4-terminal
 
 # Kill focused window
 bindsym $mod+Shift+q kill
+
 # Kill with middle mouse button
 bindsym --whole-window $mod+button2 kill
 
