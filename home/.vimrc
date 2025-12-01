@@ -146,11 +146,10 @@ nnoremap <silent> <leader>- :nohl<CR>:echo<CR>
 nnoremap <silent> <Space> :nohl<CR>:echo<CR>
 
 " Custom Leader External Commands
-nnoremap <leader>copy :w ! xclip -selection primary<CR>
 nnoremap <leader>date :r!date +\%Y-\%m-\%d<CR>
-nnoremap <leader>hex :%!xxd<CR>
 nnoremap <leader>ipsort :%! sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4<CR>
-nnoremap <leader>nhex :%!xxd -r<CR>
+nnoremap <leader>x :%!xxd<CR>
+nnoremap <leader>X :%!xxd -r<CR>
 
 " Custom Leader in Diff Mode (mergetool)
 if &diff
