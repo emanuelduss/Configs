@@ -205,6 +205,63 @@ mode "resize" {
 }
 
 #
+# Keybindings Desktop
+#
+# Mod1 = Alt; Mod4 = Windows
+
+set $refresh_i3status killall -SIGUSR1 i3status
+
+# Volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym Control+Mod1+Prior exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym Control+Mod1+Next exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Media Player
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym Control+Mod1+Right exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym Control+Mod1+Left exec --no-startup-id playerctl previous
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym Control+Mod1+Down exec --no-startup-id playerctl play-pause
+bindsym XF86AudioStop exec --no-startup-id playerctl stop
+bindsym Control+Mod1+Up exec --no-startup-id playerctl stop
+
+# Screen Lock
+bindsym XF86ScreenSaver exec --no-startup-id loginctl lock-session
+bindsym Control+Mod1+Delete exec --no-startup-id loginctl lock-session
+
+# Screen
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +500
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 500-
+
+# External Screens
+bindsym XF86Display exec --no-startup-id screenctl dialog
+bindsym Control+$mod+Mod1+p exec --no-startup-id screenctl dialog
+bindsym Control+$mod+Mod1+i exec --no-startup-id screenctl internal
+bindsym Control+$mod+Mod1+e exec --no-startup-id screenctl external
+bindsym Control+$mod+Mod1+r exec --no-startup-id screenctl extend right
+bindsym Control+$mod+Mod1+l exec --no-startup-id screenctl extend left
+bindsym Control+$mod+Mod1+c exec --no-startup-id screenctl clone
+
+# Applications
+bindsym $mod+x exec --no-startup-id thunar
+
+# Rofi
+bindsym $mod+Tab exec --no-startup-id rofi -show window -show-icons
+bindsym $mod+D exec --no-startup-id "rofi -show combi -combi-modi drun,run,ssh -modes combi -show-icons"
+bindsym $mod+Shift+D exec --no-startup-id rofi -show drun
+bindsym $mod+period exec --no-startup-id rofi -modes emoji -show emoji
+
+# Other
+bindsym $mod+Shift+s exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
+bindsym Print exec --no-startup-id "maim /tmp/screenshot.png; xclip -target image/png -selection clipboard /tmp/screenshot.png; feh /tmp/screenshot.png"
+bindsym $mod+o exec --no-startup-id /usr/local/bin/magnify
+bindsym Mod1+Shift+c exec --no-startup-id xclip -out -selection clipboard | dos2unix | xclip -in -selection clipboard
+
+#
 # i3bar
 #
 
