@@ -132,6 +132,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 
+" Remappings
+vnoremap <C-c> :w !xclip -selection clipboard<CR><CR>:echo "Copied selection to system clipboard."<CR>
+
 " Custom Leader Vim Commands
 nnoremap <leader>l :setlocal list!<CR>:setlocal list?<CR>
 nnoremap <leader>n :setlocal number!<CR>:setlocal number?<CR>
