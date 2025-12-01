@@ -403,6 +403,20 @@ gitpulldirs(){
   done
 }
 
+git-update(){
+  git status
+  echo
+  echo "Add/commit everything above?"
+  echo "Press Enter after optional commit message to continue or ^C to cancel:"
+  read msg
+  git add -A
+  git commit -m ${msg:-Update}
+  echo
+  echo "Press Enter to pull & push or ^C to cancel:"
+  read
+  git pull && git push
+}
+
 how_in() {
   where="$1"; shift
   IFS=+ curl "https://cht.sh/$where/ $@"
