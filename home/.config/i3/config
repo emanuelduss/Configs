@@ -42,6 +42,16 @@ set $ws10 "10"
 # Startup
 #
 
+# Start XDG autostart .desktop files using dex
+exec --no-startup-id dex --autostart --environment i3
+
+# Screen Lock
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --ignore-empty-password --show-failed-attempts --nofork --color=0f0f0f --pointer=default
+
+#exec --no-startup-id nm-applet
+exec --no-startup-id pasystray
+exec --no-startup-id blueman-applet
+
 #
 # Key Bindings i3
 #
