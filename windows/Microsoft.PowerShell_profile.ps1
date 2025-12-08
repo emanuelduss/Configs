@@ -143,5 +143,11 @@ function Probe-Port {
     [int]$Port
   )
 
-  (new-object Net.Sockets.TcpClient).BeginConnect("$Hostname", $Port, $null, $null).AsyncWaitHandle.WaitOne(1000)
+  $c = New-Object Net.Sockets.TcpClient
+  try {
+    $c.BeginConnect($Hostname,$Port,$null,$null).AsyncWaitHandle.WaitOne(1000)
+  }
+  finally {
+    $c.Close()
+  }
 }
