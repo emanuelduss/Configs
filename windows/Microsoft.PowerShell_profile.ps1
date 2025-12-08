@@ -151,3 +151,7 @@ function Probe-Port {
     $c.Close()
   }
 }
+
+function Get-Uptime {
+  [TimeSpan]::FromMilliseconds([Environment]::TickCount) | Select-Object Days,Hours,Minutes,Seconds
+}
