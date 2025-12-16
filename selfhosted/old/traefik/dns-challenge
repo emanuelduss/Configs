@@ -1,0 +1,45 @@
+#!/usr/bin/env sh
+
+ACTION="$1"
+FQDN="$2"
+CHALLENGE="$3"
+
+echo "[*] ACTION: $ACTION" >> /etc/letsencrypt/dns-challenge.log
+echo "[*] FQDN: $FQDN" >> /etc/letsencrypt/dns-challenge.log
+echo "[*] CHALLENGE: $CHALLENGE" >> /etc/letsencrypt/dns-challenge.log
+
+DOMAIN="$(echo "$FQDN" | sed 's/_acme-challenge\.//;s/\.$//')"
+echo "[*] DOMAIN: $DOMAIN" >> /etc/letsencrypt/dns-challenge.log
+
+CONFIGFILE="/etc/letsencrypt/$DOMAIN.conf"
+echo "[*] CONFIGFILE: $CONFIGFILE" >> /etc/letsencrypt/dns-challenge.log
+. "$CONFIGFILE"
+echo "[*] NAMESERVER: $NAMESERVER" >> /etc/letsencrypt/dns-challenge.log
+echo "[*] ZONE: $ZONE" >> /etc/letsencrypt/dns-challenge.log
+
+KEYFILE="/etc/letsencrypt/$DOMAIN.key"
+echo "[*] KEYFILE: $KEYFILE" >> /etc/letsencrypt/dns-challenge.log
+
+case "$ACTION" in
+  "present")
+    (
+      echo "server $NAMESERVER"
+      echo "zone $ZONE"
+      echo "update add $FQDN 1 TXT $CHALLENGE"
+      echo "send"
+    ) | nsupdate -k "$KEYFILE"
+    ;;
+  "cleanup")
+    (
+      echo "server $NAMESERVER"
+      echo "zone $ZONE"
+      echo "update delete $FQDN TXT"
+      echo "send"
+    ) | nsupdate -k "$KEYFILE"
+    ;;
+  *)
+    exit 1
+    ;;
+esac
+
+sleep 2
