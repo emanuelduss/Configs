@@ -133,3 +133,21 @@ function Get-DailyFirstAndLastSystemLogTimestamp {
 
   $results | Format-Table -AutoSize
 }
+
+function Probe-Port {
+  param(
+    [Parameter(Mandatory=$true)]
+    [string]$Hostname,
+
+    [Parameter(Mandatory=$true)]
+    [int]$Port
+  )
+
+  $c = New-Object Net.Sockets.TcpClient
+  try {
+    $c.BeginConnect($Hostname,$Port,$null,$null).AsyncWaitHandle.WaitOne(1000)
+  }
+  finally {
+    $c.Close()
+  }
+}
