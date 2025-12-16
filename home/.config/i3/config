@@ -259,7 +259,7 @@ bindsym $mod+period exec --no-startup-id rofi -modes emoji -show emoji
 bindsym $mod+Shift+s exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
 bindsym Print exec --no-startup-id "maim /tmp/screenshot.png; xclip -target image/png -selection clipboard /tmp/screenshot.png; feh /tmp/screenshot.png"
 bindsym $mod+o exec --no-startup-id /usr/local/bin/magnify
-bindsym Mod1+Shift+c exec --no-startup-id xclip -out -selection clipboard | dos2unix | xclip -in -selection clipboard
+bindsym Control+Mod1+Shift+c exec --no-startup-id xclip -out -selection clipboard | dos2unix | xclip -in -selection clipboard
 
 #
 # i3bar
