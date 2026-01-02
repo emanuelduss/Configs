@@ -110,7 +110,7 @@ A simple Ethernet switch.
 | Description                  | Configuration                                        |
 | ---------------------------- | ---------------------------------------------------- |
 | Profile Name                 | `ethernet-switch`                                    |
-| File                         | [ethernet-switch](https://github.com/emanuelduss/Configs/blob/master/mikrotik_hap_ac2/profiles/ethernet-switch)          |
+| File                         | [ethernet-switch](profiles/ethernet-switch)          |
 | Hostname                     | `myrouter`                                           |
 | Management                   | `10.5.23.1/24` on all ports                          |
 | Credentials                  | `admin:password`                                     |
@@ -125,7 +125,7 @@ A simple Ethernet switch and also a Wi-Fi access point to access the same networ
 | Description                  | Configuration                                           |
 | ---------------------------- | ------------------------------------------------------- |
 | Profile Name                 | `wifi-ethernet-switch`                                  |
-| File                         | [wifi-ethernet-switch](https://github.com/emanuelduss/Configs/blob/master/mikrotik_hap_ac2/profiles/wifi-ethernet-switch)   |
+| File                         | [wifi-ethernet-switch](profiles/wifi-ethernet-switch)   |
 | Hostname                     | `myrouter`                                              |
 | Management                   | `10.5.23.1/24` on all ports and Wi-Fi                   |
 | Credentials                  | `admin:password`                                        |
@@ -143,7 +143,7 @@ A router with one WAN port for the uplink and the other ports for the clients.
 | Description                  | Configuration                                                        |
 | ---------------------------- | -------------------------------------------------------------------- |
 | Profile Name                 | `nat-router`                                                         |
-| File                         | [nat-router](https://github.com/emanuelduss/Configs/blob/master/mikrotik_hap_ac2/profiles/nat-router)                                    |
+| File                         | [nat-router](profiles/nat-router)                                    |
 | Hostname                     | `myrouter`                                                           |
 | Management                   | `10.5.23.1/24` on ports `2`-`5`                                      |
 | Credentials                  | `admin:password`                                                     |
@@ -159,7 +159,7 @@ A router with one WAN port for the uplink and the other ports and Wi-Fi for the 
 | Description                            | Configuration                                                        |
 | ---------------------------------      | -------------------------------------------------------------------- |
 | Profile Name                           | `wifi-nat-router`                                                    |
-| File                                   | [wifi-nat-router](https://github.com/emanuelduss/Configs/blob/master/mikrotik_hap_ac2/profiles/wifi-nat-router)                          |
+| File                                   | [wifi-nat-router](profiles/wifi-nat-router)                          |
 | Hostname                               | `myrouter`                                                           |
 | Management                             | `10.5.23.1/24` on ports `2`-`5`                                      |
 | Credentials                            | `admin:password`                                                     |
@@ -178,7 +178,7 @@ A router using the mobile phone connected via USB for the uplink and the etherne
 | Description                  | Configuration                                        |
 | ---------------------------- | ---------------------------------------------------- |
 | Profile Name                 | `lte-nat-router`                                     |
-| File                         | [lte-nat-router](https://github.com/emanuelduss/Configs/blob/master/mikrotik_hap_ac2/profiles/lte-nat-router)            |
+| File                         | [lte-nat-router](profiles/lte-nat-router)            |
 | Hostname                     | `myrouter`                                           |
 | Management                   | `10.5.23.1/24` on all ports                          |
 | Credentials                  | `admin:password`                                     |
@@ -194,7 +194,7 @@ A router using the mobile phone connected via USB for the uplink and the etherne
 | Description                  | Configuration                                        |
 | ---------------------------- | ---------------------------------------------------- |
 | Profile Name                 | `lte-wifi-nat-router`                                |
-| File                         | [lte-wifi-nat-router](https://github.com/emanuelduss/Configs/blob/master/mikrotik_hap_ac2/profiles/lte-wifi-nat-router)  |
+| File                         | [lte-wifi-nat-router](profiles/lte-wifi-nat-router)  |
 | Hostname                     | `myrouter`                                           |
 | Management                   | `10.5.23.1/24` on all ports                          |
 | Credentials                  | `admin:password`                                     |
