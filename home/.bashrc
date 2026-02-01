@@ -524,6 +524,23 @@ pa-output(){
   pacmd set-default-sink "$number"
 }
 
+pandock-md-to-pdf(){
+  local mdfile="$1"
+  local pdffile="${2:-${mdfile%.md}.pdf}"
+
+  [[ ! -f "$mdfile" ]] && echo "Usage: pandock-md-to-pdf file.md [file.pdf]" && return
+  [[ -f "$pdffile" ]] && echo "PDF file $pdffile already exists. Press enter to continue and overwrite." && read
+
+  echo "Converting Markdown file $mdfile to PDF file $pdffile..."
+
+  docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/extra \
+    "$mdfile" -o "$pdffile" \
+    --template eisvogel \
+    --number-sections \
+    --shift-heading-level-by=-1 \
+    --syntax-highlighting idiomatic
+}
+
 pdf2png(){
   local input="$1"
   local output="${input%.pdf}.png"
