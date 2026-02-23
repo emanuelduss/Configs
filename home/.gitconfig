@@ -62,6 +62,7 @@
 
 [diff]
   colorMoved = zebra
+  algorithm = histogram
 
 [difftool]
   prompt = false
