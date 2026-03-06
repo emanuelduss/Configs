@@ -292,6 +292,19 @@ crtsh() {
   curl -s "https://crt.sh/?q=%25.${1}&output=json" | jq -r ".[].name_value" | sort -u
 }
 
+dnscompare(){
+  echo "[*] Quad9 (9.9.9.9)"
+  dig "$1" @9.9.9.9 +noall +answer
+  echo -e "\n[*] Quad9 Unsecured (9.9.9.10)"
+  dig "$1" @9.9.9.10 +noall +answer
+  echo -e "\n[*] Google (8.8.8.8)"
+  dig "$1" @8.8.8.8 +noall +answer
+  echo -e "\n[*] Init7 (77.109.128.2)"
+  dig "$1" @77.109.128.2 +noall +answer
+  echo -e "\n[*] Swisscom (195.186.4.162)"
+  dig "$1" @195.186.4.162 +noall +answer
+}
+
 dnsresolve(){
   while read hostname
   do
