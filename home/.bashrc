@@ -782,6 +782,13 @@ showcolors(){
   done
 }
 
+stopwatch(){
+  local start=$(date +%s)
+  read -p "Press Enter to stop..."
+  local=$(date +%s)
+  echo "Duration: $((end - start)) Seconds"
+}
+
 temperature(){
   sed 's/\(.\)..$/.\1°C/' /sys/class/thermal/thermal_zone*/temp
 }
