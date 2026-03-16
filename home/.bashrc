@@ -439,7 +439,7 @@ http-trace(){
   local target="$1"
 
   (
-    echo -e "\e[32m[*] Search for "^Host:" in the responses!\e[0m"
+    echo -e "\e[31m[*] Search for "^[Hh]ost:" in the responses!\e[0m"
     echo
 
     echo -e "\e[32m[*] Trying HTTP TRACE...\e[0m"
@@ -458,7 +458,7 @@ http-trace(){
       echo -e "\e[32m[*] Trying HTTP TRACE...\e[0m"
       curl -s -v -H "Content-Type: application/x-www-form-urlencoded" -d "$parameter=TRACE" "$target" 2>&1
     done
-  ) | grep --color=always -E '^Host:|$' | less +"/^Host:"
+  ) | grep --color=always -E '^Host:|$' | less +"/^[Hh]ost:"
 }
 
 imageshrink(){
