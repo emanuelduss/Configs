@@ -440,22 +440,21 @@ http-trace(){
 
   (
     echo -e "\e[31m[*] Search for "^[Hh]ost:" in the responses!\e[0m"
-    echo
 
-    echo -e "\e[32m[*] Trying HTTP TRACE...\e[0m"
+    echo -e "\n\e[32m[*] Trying HTTP TRACE...\e[0m"
     curl -s -v -X TRACE "$target" 2>&1
 
     for header in X-Http-Method-Override X-Http-Method X-HTTP-Method X-Method-Override
     do
-      echo -e "\e[32m[*] Trying HTTP TRACE...\e[0m"
+      echo -e "\n\n\e[32m[*] Trying HTTP TRACE...\e[0m"
       curl -s -v -H "$header: TRACE" "$target" 2>&1
     done
 
     for parameter in method _method httpMethod _HttpMethod
     do
-      echo -e "\e[32m[*] Trying HTTP TRACE...\e[0m"
+      echo -e "\n\n\e[32m[*] Trying HTTP TRACE...\e[0m"
       curl -s -v "$target/?_$parameter=TRACE" 2>&1
-      echo -e "\e[32m[*] Trying HTTP TRACE...\e[0m"
+      echo -e "\n\n\e[32m[*] Trying HTTP TRACE...\e[0m"
       curl -s -v -H "Content-Type: application/x-www-form-urlencoded" -d "$parameter=TRACE" "$target" 2>&1
     done
   ) | grep --color=always -E '^Host:|$' | less +"/^[Hh]ost:"
