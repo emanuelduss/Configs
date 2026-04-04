@@ -408,12 +408,8 @@ gpgkeysearch(){
   curl "https://keys.openpgp.org/vks/v1/by-email/$search"
 }
 
-gitpulldirs(){
-  for repo in "$@"
-  do
-    echo -e "\n[*] Updating $repo..."
-    git -C "$repo" pull --ff-only
-  done
+git-pull-dirs(){
+  find . -maxdepth 2 -iname ".git" -type d -exec echo -e "\n\033[0;32m[*] {}... \033[0m" \; -exec git --git-dir={} pull --ff-only \;
 }
 
 git-update(){
