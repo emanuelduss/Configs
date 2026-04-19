@@ -829,6 +829,22 @@ terminalcolors(){
   done
 }
 
+thc-ip(){
+  # Domain Recon using ip.htc.org (https://ip.thc.org/docs/cli)
+  local ip="$1"
+  for url in "https://ip.thc.org/${ip}?l=100" "https://ip.thc.org/cn/${ip}?l=100"
+  do
+    echo -e "\n[*] Querying ip.thc.org..."
+    while true
+    do
+      response="$(curl -s "$url")"
+      echo "$response"
+      url="$(grep "^;;Next" <<< "$response" | grep -o "https://[[:print:]]*")" || break
+      sleep 0.5 # Ratelimit
+    done
+  done
+}
+
 xcopy(){
   xclip -in -selection clipboard -f | xclip -in -selection primary -f | xclip -in -selection secondary
 }

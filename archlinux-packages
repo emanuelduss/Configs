@@ -1,0 +1,109 @@
+#
+# Arch Linux Packages
+#
+
+# Console Applications
+ansible # System Management
+android-tools # ADB
+bc # Calculator
+binutils # Binary tools
+diffutils # Diffing tools
+elfutils ltrace strace # ELF Debugging
+file # File identification tool
+dos2unix
+fzf # CLI Fuzzy Finder
+git # Versioning
+gnupg # Encryption
+imagemagick # Image Manipulation
+jhead perl-image-exiftool # Metadata
+jq # JSON Parsing
+lsof # List Open Files
+p7zip unrar zip unzip # Compression
+patch # Apply patches
+plocate # File Finder
+progress # Progressbar
+qrencode # QR Code Generation
+renameutils # qmv
+ripgrep ripgrep-all
+rlwrap # Readline Wrapper
+rsync # File Copy Tool
+sshpass # SSH Login with Password
+sysstat vnstat dstat # System Monitoring
+subdl # Subtitle Downloader
+tmux # Terminal Multiplexer
+usbutils # USB
+vim # Text Editor
+yt-dlp # Youtube
+zbar # Barcodes
+fdupes # Duplicate file finder
+reptyr # Attach process to TTTY
+
+# System Tools
+bash-completion
+e2fsprogs # EXT Filesystem Tools
+nftables # Firewall
+ntfs-3g # Filesystems
+sudo # sudo
+usbutils
+which # Command path finder
+pacman-contrib
+
+# Desktop Environment
+acpi # Battery Information
+alsa-utils pipewire-audio pipewire-alsa pipewire-pulse # Sound
+bluez bluez-utils # Bluetooth
+dunst # Notifications
+figlet # ASCII Text Generation
+gnome-themes-extra arc-icon-theme arc-gtk-theme # Themes
+gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb # Virtual File Systems
+i3-wm i3blocks i3lock i3status dmenu # i3 Window Manager
+lightdm ligthdem-gtk-greeter # Login Manager
+lxappearance-gtk3 # Theme Chooser
+pavucontrol # Sound manager
+playerctl # Media Player Controller
+thunar thunar-volman thunar-archive-plugin thunar-media-tags-plugin tumbler # File Manager
+xarchiver # Archive Manager
+ttf-droid ttf-dejavu ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-ubuntu-font-family noto-fonts noto-fonts-emoji noto-fonts-extra terminus-font # Fonts
+xbindkeys # Shortcuts
+xclip # Clipboard
+xdg-user-dirs # User Directory Maangement
+xfce4-terminal # Terminal
+xterm # Simple Terminal
+zenity # Graphical Dialogues
+
+# Desktop Application
+blueman # Bluetooth
+chromium firefox # Browser
+evince # PDF Viewer
+feh # Image Viewer
+guvcview cheese # Webcam
+keepassxc # Password Manager
+libreoffice-fresh # Office
+maim # Screenshots
+mpv # Video Player
+nextcloud-client # Nextcloud Client
+obsidian # Notes
+thunderbird # Mail Client
+virtualbox # Virtualization
+xchm # XCHM Reader
+xss-lock # Lock Screen Manager
+yubioath-desktop yubikey-manager-qt # Yubikey
+
+# Network Tools
+bind-tools # DNS
+freerdp # RDP
+inteutils # FTP, Telnet, hostname
+ncat socat # TCP
+nfsutils # NFS
+openssh mosh # SSH
+scapy # Network Package Creation
+sipcalc # Subnet Calculator
+smbclient # SMB
+speedtest-cli # Speed Test
+tcpdump # Network Sniffing
+traceroute # Traceroute
+transmission-gtk # Torrent
+wget curl httpie # HTTP
+whois # Whois
+wireguard-tools # Wireguard
+wireshark-qt # Network Sniffing
