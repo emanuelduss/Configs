@@ -595,6 +595,7 @@ pdfshrink(){
     local input="$pdf"
     local original="${input%.pdf}_original.pdf"
     local output="$input"
+    # Alternatively, use -dPDFSETTINGS=/ebook for a bit better quality
     mv "$input" "$original" && gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$output" "$original" || (echo "[*] Error while shrinking!" && return 1)
     du -h "$original" "$output"
   done
