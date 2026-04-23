@@ -831,9 +831,9 @@ terminalcolors(){
 }
 
 thc-ip(){
-  # Domain Recon using ip.htc.org (https://ip.thc.org/docs/cli)
-  local ip="$1"
-  for url in "https://ip.thc.org/${ip}?l=100" "https://ip.thc.org/cn/${ip}?l=100"
+  # Domain Recon using ip.thc.org (https://ip.thc.org/docs/cli)
+  local domain="$1"
+  for url in "https://ip.thc.org/${domain}?l=100" "https://ip.thc.org/cn/${domain}?l=100"
   do
     echo -e "[*] Querying ip.thc.org..."
     while true
