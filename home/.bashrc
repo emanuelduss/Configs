@@ -835,7 +835,7 @@ thc-ip(){
   local ip="$1"
   for url in "https://ip.thc.org/${ip}?l=100" "https://ip.thc.org/cn/${ip}?l=100"
   do
-    echo -e "\n[*] Querying ip.thc.org..."
+    echo -e "[*] Querying ip.thc.org..."
     while true
     do
       response="$(curl -s "$url")"
@@ -843,6 +843,7 @@ thc-ip(){
       url="$(grep "^;;Next" <<< "$response" | grep -o "https://[[:print:]]*")" || break
       sleep 0.5 # Ratelimit
     done
+    echo
   done
 }
 
