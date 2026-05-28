@@ -839,7 +839,7 @@ thc-ip(){
     while true
     do
       response="$(curl -s "$url")"
-      echo "$response"
+      echo "$response" | sed -r 's/\x1B\[[0-9;]*[mGKHF]//g' # Strip ANSI color sequences
       url="$(grep "^;;Next" <<< "$response" | grep -o "https://[[:print:]]*")" || break
       sleep 0.5 # Ratelimit
     done
