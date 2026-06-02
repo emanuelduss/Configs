@@ -514,15 +514,15 @@ nettest(){
   \ip -color route
 
   echo -e "\n${c_blue}[*] Ping defaulg gateway:${c_reset}"
-  ping "$(\ip route show default | cut -d ' ' -f 3)" -c 2 && echo -e "${c_green}[*] Success${c_reset}" || echo -e "${c_red}[*] FAIL!${c_reset}"
+  ping "$(\ip route show default | cut -d ' ' -f 3)" -c 2 && echo -e "${c_green}[*] ✓ Success${c_reset}" || echo -e "${c_red}[*] ✗ Failed!${c_reset}"
 
   echo -e "\n${c_blue}[*] Ping 1.1.1.1${c_reset}"
-  ping -c 2 1.1.1.1 && echo -e "${c_green}[*] Success${c_reset}" || echo -e "${c_red}[*] FAIL!${c_reset}"
+  ping -c 2 1.1.1.1 && echo -e "${c_green}[*] ✓ Success${c_reset}" || echo -e "${c_red}[*] ✗ Failed!${c_reset}"
 
   echo -e "\n${c_blue}[*] Ping nameservers from resolv.conf${c_reset}"
   awk '/^nameserver/{ print $2 }' /etc/resolv.conf  | while read nameserver
   do
-    ping -c 2 "$nameserver" && echo -e "${c_green}[*] Success${c_reset}" || echo -e "${c_red}[*] FAIL!${c_reset}"
+    ping -c 2 "$nameserver" && echo -e "${c_green}[*] ✓ Success${c_reset}" || echo -e "${c_red}[*] ✗ Failed!${c_reset}"
   done
 
   echo -e "\n${c_blue}[*] Resolving via 9.9.9.9${c_reset}"
