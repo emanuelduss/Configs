@@ -502,30 +502,34 @@ mycd(){
 }
 
 nettest(){
-  echo "[*] IP address configuration:"
+  local c_blue='\e[34m'
+  local c_green='\e[32m'
+  local c_red='\e[31m'
+  local c_reset='\e[0m'   # No Color
+
+  echo -e "${c_blue}[*] IP address configuration:${c_reset}"
   \ip -color -brief addr list
 
-  echo -e "\n[*] Route configuration:"
+  echo -e "\n${c_blue}[*] Route configuration:${c_reset}"
   \ip -color route
 
-  echo -e "\n[*] Ping defaulg gateway:"
-  ping "$(\ip route show default | cut -d ' ' -f 3)" -c 2 && echo "[*] Success" || echo "[*] FAIL!"
+  echo -e "\n${c_blue}[*] Ping defaulg gateway:${c_reset}"
+  ping "$(\ip route show default | cut -d ' ' -f 3)" -c 2 && echo -e "${c_green}[*] Success${c_reset}" || echo -e "${c_red}[*] FAIL!${c_reset}"
 
-  echo -e "\n[*] Ping 1.1.1.1"
-  ping -c 2 1.1.1.1 && echo "[*] Success" || echo "[*] FAIL!"
+  echo -e "\n${c_blue}[*] Ping 1.1.1.1${c_reset}"
+  ping -c 2 1.1.1.1 && echo -e "${c_green}[*] Success${c_reset}" || echo -e "${c_red}[*] FAIL!${c_reset}"
 
-  echo -e "\n[*] Ping nameservers from resolv.conf"
+  echo -e "\n${c_blue}[*] Ping nameservers from resolv.conf${c_reset}"
   awk '/^nameserver/{ print $2 }' /etc/resolv.conf  | while read nameserver
   do
-    ping -c 2 "$nameserver" && echo "[*] Success" || echo "[*] FAIL!"
+    ping -c 2 "$nameserver" && echo -e "${c_green}[*] Success${c_reset}" || echo -e "${c_red}[*] FAIL!${c_reset}"
   done
 
-  echo -e "\n[*] Resolving via 9.9.9.9"
-  dig +noall +answer switch.ch example.net @9.9.9.9 && echo "[*] Success"
+  echo -e "\n${c_blue}[*] Resolving via 9.9.9.9${c_reset}"
+  dig +noall +answer switch.ch example.net @9.9.9.9
 
-  echo -e "\n[*] Resolving via OS"
+  echo -e "\n${c_blue}[*] Resolving via OS${c_reset}"
   getent hosts example.net switch.ch
-
 }
 
 nmap-arpscan(){
