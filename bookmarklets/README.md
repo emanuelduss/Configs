@@ -43,8 +43,10 @@ javascript:(function() {
 
 ## Media.ccc.de Information
 
+Shows information from media.ccc.de talk and copies it to clipboard.
+
 ```js
-javascript:(function () {
+javascript:(async function () {
     var title = document.querySelector('.player-header > h1').innerText;
     var subtitle = document.querySelector('.player-header > h2');
     var url = document.URL;
@@ -55,7 +57,9 @@ javascript:(function () {
     }
     text += '- Talk: ' + url + '\n';
     text += '- Speakers: ' + speakers + '\n';
+    text += '- Rating: `TBD⭐⭐⭐⭐⭐`\n';
     alert(text);
+    await navigator.clipboard.writeText(text);
 }());
 ```
 
