@@ -496,6 +496,10 @@ ipinfo.io(){
   curl -s --header "Accept: application/json" "https://ipinfo.io/$1"
 }
 
+jwtparse(){
+  jq -R 'split(".") | .[0:2] | map(@base64d) | map(fromjson)'
+}
+
 lf(){
   # Fuzzy search filenames containing all arguments case-insensitive in the
   # provided order without knowing the correct filename.
