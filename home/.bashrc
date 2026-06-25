@@ -422,7 +422,12 @@ gpgkeysearch(){
 }
 
 git-pull-dirs(){
-  find . -maxdepth 2 -iname ".git" -type d -exec echo -e "\n\033[0;32m[*] {}... \033[0m" \; -exec git --git-dir={} pull --ff-only \;
+  find . -maxdepth 3 -type d -name ".git" -print0 | while IFS= read -r -d '' d
+  do
+    repo="${d%/.git}"
+    echo -e "\n\033[0;32m[*] $repo... \033[0m"
+    git -C "$repo" pull --ff-only
+  done
 }
 
 git-update(){
