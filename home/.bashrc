@@ -206,9 +206,10 @@ alias base64url="basenc --base64url"
 alias burl="curl -k --proxy http://127.0.0.1:8080"
 alias c="clear"
 alias curl-downloader="xargs -P 15 -n 1 curl -JLO <"
-alias duchs='du -sch .[!.]* * |sort -h'
-alias dstat-net='dstat --net --bits --noheaders 10'
+alias diff-word="git diff --no-index --word-diff=color"
 alias dool-net='dool --net --bits --noheaders 10'
+alias dstat-net='dstat --net --bits --noheaders 10'
+alias duchs='du -sch .[!.]* * |sort -h'
 alias ed='ed -v -p "ed> "'
 alias env='env | \cat -v'
 alias feh="feh --auto-zoom --sort filename --borderless --scale-down --draw-filename --image-bg black"
@@ -493,6 +494,18 @@ ipapi(){
 }
 
 ipinfo.io(){
+  curl -s --header "Accept: application/json" "https://ipinfo.io/$1"
+}
+
+ip.motd.ch(){
+  curl -s --header "Accept: application/json" "https://ipinfo.io/$1"
+}
+
+ipv4.motd.ch(){
+  curl -s --header "Accept: application/json" "https://ipinfo.io/$1"
+}
+
+ipv6.motd.ch(){
   curl -s --header "Accept: application/json" "https://ipinfo.io/$1"
 }
 
