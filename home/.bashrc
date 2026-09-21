@@ -351,7 +351,8 @@ docker-sh(){
 }
 
 doh9(){
-  curl -s --header 'Accept: application/dns+json' "https://dns.quad9.net:5053/dns-query?name=${1}&type=${2:-A}" | jq
+  curl -s --header 'Accept: application/dns+json' "https://dns.quad9.net:5053/dns-query?name=${1}&type=${2:-A}" \
+    | if command -v jq > /dev/null; then jq .; else cat; fi
 }
 
 domainfronting(){
@@ -372,7 +373,8 @@ eui64(){
 }
 
 endoflife(){
-  curl -s --header 'Accept: application/json' https://endoflife.date/api/${1-all}.json | jq
+  curl -s --header 'Accept: application/json' https://endoflife.date/api/${1-all}.json \
+    | if command -v jq > /dev/null; then jq .; else cat; fi
 }
 
 f() {
@@ -495,23 +497,28 @@ ip-pub(){
 }
 
 ipapi(){
-  curl -s --header "Accept: application/json" "https://api.ipapi.is/?q=$1"
+  curl -s --header "Accept: application/json" "https://api.ipapi.is/?q=$1" \
+    | if command -v jq > /dev/null; then jq .; else cat; fi
 }
 
 ipinfo.io(){
-  curl -s --header "Accept: application/json" "https://ipinfo.io/$1"
+  curl -s --header "Accept: application/json" "https://ipinfo.io/$1" \
+    | if command -v jq > /dev/null; then jq .; else cat; fi
 }
 
 ip.motd.ch(){
-  curl -s --header "Accept: application/json" "https://ip.motd.ch/?ip=$1"
+  curl -s --header "Accept: application/json" "https://ip.motd.ch/?ip=$1" \
+    | if command -v jq > /dev/null; then jq .; else cat; fi
 }
 
 ipv4.motd.ch(){
-  curl -s --header "Accept: application/json" "https://ipv4.motd.ch/?ip=$1"
+  curl -s --header "Accept: application/json" "https://ipv4.motd.ch/?ip=$1" \
+    | if command -v jq > /dev/null; then jq .; else cat; fi
 }
 
 ipv6.motd.ch(){
-  curl -s --header "Accept: application/json" "https://ipv6.motd.ch/?ip=$1"
+  curl -s --header "Accept: application/json" "https://ipv6.motd.ch/?ip=$1" \
+    | if command -v jq > /dev/null; then jq .; else cat; fi
 }
 
 jwtparse(){
