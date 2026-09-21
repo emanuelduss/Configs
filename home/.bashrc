@@ -503,15 +503,15 @@ ipinfo.io(){
 }
 
 ip.motd.ch(){
-  curl -s --header "Accept: application/json" "https://ipinfo.io/$1"
+  curl -s --header "Accept: application/json" "https://ip.motd.ch/?ip=$1"
 }
 
 ipv4.motd.ch(){
-  curl -s --header "Accept: application/json" "https://ipinfo.io/$1"
+  curl -s --header "Accept: application/json" "https://ipv4.motd.ch/?ip=$1"
 }
 
 ipv6.motd.ch(){
-  curl -s --header "Accept: application/json" "https://ipinfo.io/$1"
+  curl -s --header "Accept: application/json" "https://ipv6.motd.ch/?ip=$1"
 }
 
 jwtparse(){
