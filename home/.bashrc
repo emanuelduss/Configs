@@ -704,6 +704,10 @@ proxy_status(){
   fi
 }
 
+pwgenwords(){
+  echo $(grep -hE '^[a-zA-Z]+$' /usr/share/dict/* 2>/dev/null | tr 'A-Z' 'a-z' | shuf -n3 | paste -sd. | sed 's/\b\(.\)/\u\1/g').$(($RANDOM % 99))
+}
+
 quiz(){
   clear
   echo
